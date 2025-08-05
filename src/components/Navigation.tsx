@@ -37,13 +37,13 @@ const Navigation = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuLink className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
                     Home
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/about" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
                     About Us
                   </NavigationMenuLink>
                 </NavigationMenuItem>
@@ -70,31 +70,31 @@ const Navigation = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/accreditations" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
                     Accreditations
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/gallery" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
                     Gallery
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/#news" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
                     News & Events
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/#testimonials" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
                     Testimonials
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/contact" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
                     Contact Us
                   </NavigationMenuLink>
                 </NavigationMenuItem>
@@ -118,14 +118,14 @@ const Navigation = () => {
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-border">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="#" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Home</a>
-              <a href="#" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">About Us</a>
-              <a href="#" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Our Programs</a>
-              <a href="#" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Accreditations</a>
-              <a href="#" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Gallery</a>
-              <a href="#" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">News & Events</a>
-              <a href="#" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Testimonials</a>
-              <a href="#" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Contact Us</a>
+              <a href="/" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Home</a>
+              <a href="/about" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">About Us</a>
+              <a href="/programs" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Our Programs</a>
+              <a href="/accreditations" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Accreditations</a>
+              <a href="/gallery" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Gallery</a>
+              <a href="/#news" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">News & Events</a>
+              <a href="/#testimonials" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Testimonials</a>
+              <a href="/contact" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Contact Us</a>
             </div>
           </div>
         )}
