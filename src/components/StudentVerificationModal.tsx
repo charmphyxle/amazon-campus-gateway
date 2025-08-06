@@ -23,15 +23,16 @@ const StudentVerificationModal = ({
         <DialogContent className="sm:max-w-md animate-fade-in">
           <div className="animate-[shake_0.5s_ease-in-out]">
             <DialogHeader className="text-center">
-              <div className="flex justify-center mb-4">
-                <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center">
-                  <AlertCircle className="w-8 h-8 text-destructive" />
-                </div>
-              </div>
-              <DialogTitle className="text-xl text-destructive">
-                Verification Failed
-              </DialogTitle>
-            </DialogHeader>
+  <div className="flex justify-center mb-4">
+    <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center">
+      <AlertCircle className="w-8 h-8 text-destructive" />
+    </div>
+  </div>
+  <DialogTitle className="text-xl text-destructive text-center">
+    Verification Failed
+  </DialogTitle>
+</DialogHeader>
+
             <div className="text-center pt-4">
               <p className="text-muted-foreground mb-2">
                 No record found for the provided Student ID.

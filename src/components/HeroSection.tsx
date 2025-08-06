@@ -60,7 +60,7 @@ const HeroSection = () => {
               alt={slide.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/50 via-primary/30 to-transparent" />
           </div>
         ))}
       </div>
@@ -68,15 +68,18 @@ const HeroSection = () => {
       {/* Content Overlay */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         <div className="max-w-4xl mx-auto animate-bounce-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-text-glow gradient-text">
-            {slides[currentSlide].title}
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <span className="text-blue-800">{slides[currentSlide].title.split(' ')[0]}</span>{' '}
+            <span className="text-yellow-500">{slides[currentSlide].title.split(' ').slice(1).join(' ')}</span>
           </h1>
-          <p className="text-2xl md:text-3xl mb-4 font-light text-secondary animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-3xl md:text-4xl mb-4 font-light text-blue-700">
             {slides[currentSlide].subtitle}
           </p>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-yellow-600">
             {slides[currentSlide].description}
           </p>
+
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{ animationDelay: '0.6s' }}>
             <Button variant="hero" size="xl" className="group hover-lift hover-glow animate-pulse-glow">
