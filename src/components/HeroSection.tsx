@@ -67,24 +67,24 @@ const HeroSection = () => {
 
       {/* Content Overlay */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
-        <div className="max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        <div className="max-w-4xl mx-auto animate-bounce-in">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-text-glow gradient-text">
             {slides[currentSlide].title}
           </h1>
-          <p className="text-2xl md:text-3xl mb-4 font-light text-secondary">
+          <p className="text-2xl md:text-3xl mb-4 font-light text-secondary animate-slide-up" style={{ animationDelay: '0.2s' }}>
             {slides[currentSlide].subtitle}
           </p>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90 animate-slide-up" style={{ animationDelay: '0.4s' }}>
             {slides[currentSlide].description}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="hero" size="xl" className="group">
-              <BookOpen className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{ animationDelay: '0.6s' }}>
+            <Button variant="hero" size="xl" className="group hover-lift hover-glow animate-pulse-glow">
+              <BookOpen className="w-5 h-5 group-hover:scale-110 transition-transform animate-float" />
               Explore Programs
             </Button>
-            <Button variant="cta" size="xl" className="group">
-              <UserPlus className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <Button variant="cta" size="xl" className="group hover-lift hover-glow">
+              <UserPlus className="w-5 h-5 group-hover:scale-110 transition-transform animate-float" style={{ animationDelay: '0.5s' }} />
               Register Now
             </Button>
           </div>
