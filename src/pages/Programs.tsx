@@ -6,7 +6,9 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { GraduationCap, Languages, Baby, Users, Clock, Calendar, Download, CheckCircle } from "lucide-react";
+import ProgramHighlights from "@/components/ProgramHighlights";
+import ProgramSuccessStories from "@/components/ProgramSuccessStories";
+import { GraduationCap, Languages, Baby, Users, Clock, Calendar, Download, CheckCircle, Star, Trophy, Award } from "lucide-react";
 
 const Programs = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -24,6 +26,7 @@ const Programs = () => {
       schedule: "Mon-Fri, 2 hours/day",
       image: "bg-gradient-to-br from-success to-success-light",
       icon: Languages,
+      category_icon: "📚",
       features: ["Speaking Practice", "Writing Workshops", "Mock Tests", "Individual Feedback"],
       requirements: ["Basic English Level", "Placement Test"],
       fee: "$800",
@@ -38,6 +41,7 @@ const Programs = () => {
       schedule: "Weekend Classes",
       image: "bg-gradient-to-br from-primary to-primary-light",
       icon: GraduationCap,
+      category_icon: "🎓",
       features: ["Management Skills", "Financial Planning", "Marketing Strategies", "Internship Opportunities"],
       requirements: ["High School Certificate", "English Proficiency"],
       fee: "$2,500",
@@ -52,6 +56,7 @@ const Programs = () => {
       schedule: "Weekends, 3 hours/day",
       image: "bg-gradient-to-br from-secondary to-secondary-light",
       icon: Baby,
+      category_icon: "👶",
       features: ["Art & Craft", "Science Experiments", "Language Development", "Social Skills"],
       requirements: ["Age 4-12", "Parent Consent"],
       fee: "$600",
@@ -66,6 +71,7 @@ const Programs = () => {
       schedule: "Flexible Timing",
       image: "bg-gradient-to-br from-trust to-primary",
       icon: Users,
+      category_icon: "👨‍🏫",
       features: ["Methodology Training", "Practical Teaching", "Certification", "Job Placement Support"],
       requirements: ["Bachelor's Degree", "English Fluency"],
       fee: "$1,200",
@@ -80,6 +86,7 @@ const Programs = () => {
       schedule: "Evening Classes",
       image: "bg-gradient-to-br from-success to-success-light",
       icon: Languages,
+      category_icon: "💼",
       features: ["Professional Communication", "Presentation Skills", "Email Writing", "Meeting Etiquette"],
       requirements: ["Intermediate English", "Work Experience"],
       fee: "$600",
@@ -94,6 +101,7 @@ const Programs = () => {
       schedule: "Full-time",
       image: "bg-gradient-to-br from-primary to-primary-light",
       icon: GraduationCap,
+      category_icon: "💻",
       features: ["Programming Languages", "Database Management", "Web Development", "Industry Projects"],
       requirements: ["High School Certificate", "Basic Computer Skills"],
       fee: "$3,000",
@@ -125,22 +133,38 @@ const Programs = () => {
       <section className="py-8 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={activeFilter === category ? "default" : "outline"}
-                onClick={() => setActiveFilter(category)}
-                className="transition-all duration-300"
-              >
-                {category}
-              </Button>
-            ))}
+            {categories.map((category) => {
+              const categoryIcons: Record<string, string> = {
+                "All": "🎯",
+                "English Courses": "📚",
+                "Diplomas": "🎓",
+                "Kids Learning": "👶",
+                "Teacher Training": "👨‍🏫"
+              };
+              
+              return (
+                <Button
+                  key={category}
+                  variant={activeFilter === category ? "default" : "outline"}
+                  onClick={() => setActiveFilter(category)}
+                  className="transition-all duration-300 group"
+                >
+                  <span className="mr-2 text-lg group-hover:scale-110 transition-transform">
+                    {categoryIcons[category]}
+                  </span>
+                  {category}
+                </Button>
+              );
+            })}
           </div>
         </div>
       </section>
 
+      {/* Program Highlights */}
+      <ProgramHighlights />
+
       {/* Programs Grid */}
-      <section className="py-20">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPrograms.map((program) => {
@@ -274,6 +298,9 @@ const Programs = () => {
           </Button>
         </div>
       )}
+
+      {/* Success Stories */}
+      <ProgramSuccessStories />
 
       <Footer />
     </div>

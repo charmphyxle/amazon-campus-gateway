@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import AboutAmazonSection from "@/components/AboutAmazonSection";
+import WhyChooseAmazonSection from "@/components/WhyChooseAmazonSection";
 import { Target, Eye, Heart, Award, Users, Globe } from "lucide-react";
 
 const AboutUs = () => {
@@ -74,6 +76,12 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+
+      {/* About Amazon Section */}
+      <AboutAmazonSection />
+
+      {/* Why Choose Amazon College Section */}
+      <WhyChooseAmazonSection />
 
       {/* College History Timeline */}
       <section className="py-20 bg-muted/30">
