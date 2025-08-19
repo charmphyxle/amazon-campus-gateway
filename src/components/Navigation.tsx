@@ -9,6 +9,7 @@ import {
   NavigationMenuTrigger 
 } from "@/components/ui/navigation-menu";
 import { ChevronDown, Menu, X } from "lucide-react";
+import logoImage from "@/assets/amazon-college-logo.png";
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -43,7 +44,7 @@ const Navigation = () => {
           <div className="flex items-center">
             <a href="/" className="flex items-center space-x-3 group transition-transform hover:scale-105">
               <img 
-                src="/lovable-uploads/04d74a51-2d96-43ee-b40d-8cf6fa3c32fe.png" 
+                src={logoImage} 
                 alt="Amazon College Logo"
                 className="h-16 w-auto object-contain drop-shadow-md"
               />
@@ -75,7 +76,7 @@ const Navigation = () => {
                     Our Programs
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid w-[450px] gap-3 p-4 bg-background/95 backdrop-blur-sm border border-border/50">
+                    <div className="grid w-[450px] gap-3 p-4 bg-background/30 backdrop-blur-md border border-border/50">
                       {programs.map((program) => (
                         <NavigationMenuLink
                           key={program.name}
