@@ -32,10 +32,10 @@ const Navigation = () => {
                 alt="Amazon College Logo"
                 className="h-12 w-auto object-contain"
               />
-              <div className="text-xl font-bold text-primary group-hover:text-primary/80 transition-colors">
+              {/* <div className="text-xl font-bold text-primary group-hover:text-primary/80 transition-colors">
                 Amazon College
                 <span className="block text-sm font-normal text-muted-foreground">International Campus</span>
-              </div>
+              </div> */}
             </a>
           </div>
 
