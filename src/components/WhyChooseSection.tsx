@@ -34,7 +34,7 @@ const WhyChooseSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-background via-muted/5 to-background relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-muted/30 via-accent/20 to-secondary/10 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float" />

@@ -71,7 +71,7 @@ const VerificationSection = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <div className="flex-1">
                   <Input
-                    placeholder="Enter Student ID (e.g., AMZ/A001, AMZ/A002)"
+                    placeholder="Enter Student ID (e.g., AMZ/A001 to AMZ/A015)"
                     value={studentId}
                     onChange={(e) => setStudentId(e.target.value)}
                     className="h-12 text-lg"
