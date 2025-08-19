@@ -110,174 +110,277 @@ const ProgramsSection = () => {
   const handleMouseLeave = () => setIsAutoPlaying(true);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-background via-muted/20 to-background relative overflow-hidden">
-      {/* Background Pattern */}
+    <section className="py-20 bg-gradient-to-br from-background via-background/95 to-muted/10 relative overflow-hidden">
+      {/* Background Elements */}
       <div className="absolute inset-0 pattern-dots opacity-5" />
+      <div className="absolute top-20 right-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-20 w-32 h-32 bg-secondary/5 rounded-full blur-2xl" />
       
       <div className="relative z-10 container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 gradient-text">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent mb-6">
             Our Programs
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover world-class educational programs designed to unlock your potential and shape your future
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Discover world-class educational programs designed to unlock your potential and shape your future in today's competitive landscape
           </p>
         </div>
 
-        {/* Programs Carousel */}
-        <div 
-          className="relative"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          {/* Navigation Arrows */}
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-background/90 hover:bg-background border-primary/20 hover:border-primary/50 shadow-elegant"
-            aria-label="Previous programs"
+        {/* Desktop and Tablet View */}
+        <div className="hidden md:block">
+          <div 
+            className="relative"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
-            <ChevronLeft className="w-5 h-5" />
-          </Button>
-          
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-background/90 hover:bg-background border-primary/20 hover:border-primary/50 shadow-elegant"
-            aria-label="Next programs"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </Button>
-
-          {/* Cards Container */}
-          <div className="mx-4 md:mx-12 overflow-hidden">
-            <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${(currentIndex * 100) / visibleCards}%)` }}
+            {/* Navigation Arrows */}
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-background/95 backdrop-blur-sm hover:bg-background border-border hover:border-primary/50 shadow-lg hover:shadow-xl transition-all duration-300"
+              aria-label="Previous programs"
             >
-              {programs.map((program) => (
-                <div
-                  key={program.id}
-                  className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-2 md:px-3"
-                >
-                  <Card className="group bg-background border border-muted-foreground/10 hover:border-primary/30 transition-all duration-300 hover:shadow-elegant hover:scale-105 overflow-hidden h-full">
-                    <div className="relative aspect-video overflow-hidden">
-                      <img
-                        src={program.image}
-                        alt={program.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        loading="lazy"
-                        srcSet={`${program.image} 1x`}
-                      />
-                      {/* Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-                      
-                      {/* Title Overlay */}
-                      <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                        <h3 className="text-lg font-bold mb-1 line-clamp-2">
-                          {program.title}
-                        </h3>
-                        <p className="text-sm opacity-90 line-clamp-1">
-                          {program.shortDescription}
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <CardContent className="p-4">
-                      <div className="flex items-center justify-between text-sm text-muted-foreground mb-3">
-                        <div className="flex items-center">
-                          <Clock className="w-4 h-4 mr-1" />
-                          {program.duration}
-                        </div>
-                        <div className="flex items-center">
-                          <Users className="w-4 h-4 mr-1" />
-                          {program.students}
-                        </div>
-                      </div>
-                      
-                      <ul className="text-sm space-y-1 mb-4">
-                        {program.features.map((feature, index) => (
-                          <li key={index} className="flex items-center text-muted-foreground">
-                            <ArrowRight className="w-3 h-3 mr-2 text-primary" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
+              <ChevronLeft className="w-5 h-5" />
+            </Button>
+            
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-background/95 backdrop-blur-sm hover:bg-background border-border hover:border-primary/50 shadow-lg hover:shadow-xl transition-all duration-300"
+              aria-label="Next programs"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </Button>
 
-                      <Dialog>
-                        <DialogTrigger asChild>
-                          <Button 
-                            className="w-full group hover-lift"
-                            tabIndex={0}
-                            aria-label={`Learn more about ${program.title}`}
-                          >
-                            <BookOpen className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                            Learn More
-                          </Button>
-                        </DialogTrigger>
-                        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-                          <DialogHeader>
-                            <DialogTitle className="text-2xl gradient-text">{program.title}</DialogTitle>
-                          </DialogHeader>
-                          <div className="space-y-6">
-                            <img
-                              src={program.image}
-                              alt={program.title}
-                              className="w-full aspect-video object-cover rounded-lg"
-                            />
-                            
-                            <p className="text-muted-foreground leading-relaxed">
-                              {program.fullDescription}
-                            </p>
-                            
-                            <div>
-                              <h4 className="font-semibold mb-3 text-primary">Course Syllabus</h4>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                {program.syllabus.map((item, index) => (
-                                  <div key={index} className="flex items-center text-sm">
-                                    <ArrowRight className="w-3 h-3 mr-2 text-primary" />
-                                    {item}
-                                  </div>
-                                ))}
+            {/* Cards Container */}
+            <div className="mx-16 overflow-hidden">
+              <div 
+                className="flex transition-transform duration-700 ease-out"
+                style={{ transform: `translateX(-${(currentIndex * 100) / visibleCards}%)` }}
+              >
+                {programs.map((program) => (
+                  <div
+                    key={program.id}
+                    className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4"
+                  >
+                    <Card className="group bg-background/60 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] overflow-hidden h-full">
+                      <div className="relative aspect-[4/3] overflow-hidden">
+                        <img
+                          src={program.image}
+                          alt={program.title}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          loading="lazy"
+                        />
+                        {/* Modern Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent opacity-85 group-hover:opacity-95 transition-all duration-500" />
+                        
+                        {/* Floating Info */}
+                        <div className="absolute top-4 right-4 flex gap-2">
+                          <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-medium">
+                            {program.duration}
+                          </span>
+                          <span className="px-3 py-1 bg-secondary/20 backdrop-blur-sm rounded-full text-white text-xs font-medium">
+                            {program.students}
+                          </span>
+                        </div>
+                        
+                        {/* Title Overlay */}
+                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                          <h3 className="text-xl font-bold mb-2 leading-tight">
+                            {program.title}
+                          </h3>
+                          <p className="text-sm opacity-90 line-clamp-2">
+                            {program.shortDescription}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <CardContent className="p-6">
+                        <div className="space-y-3 mb-6">
+                          {program.features.slice(0, 3).map((feature, index) => (
+                            <div key={index} className="flex items-center text-sm text-muted-foreground">
+                              <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0" />
+                              {feature}
+                            </div>
+                          ))}
+                        </div>
+
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <Button 
+                              className="w-full group hover-lift bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white border-0 rounded-xl py-3 font-semibold"
+                              tabIndex={0}
+                              aria-label={`Learn more about ${program.title}`}
+                            >
+                              <BookOpen className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                              Explore Program
+                              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                          </DialogTrigger>
+                          <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto">
+                            <DialogHeader>
+                              <DialogTitle className="text-2xl md:text-3xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                {program.title}
+                              </DialogTitle>
+                            </DialogHeader>
+                            <div className="space-y-6">
+                              <img
+                                src={program.image}
+                                alt={program.title}
+                                className="w-full aspect-video object-cover rounded-xl"
+                              />
+                              
+                              <p className="text-muted-foreground leading-relaxed text-lg">
+                                {program.fullDescription}
+                              </p>
+                              
+                              <div>
+                                <h4 className="font-semibold mb-4 text-primary text-xl">Course Syllabus</h4>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                  {program.syllabus.map((item, index) => (
+                                    <div key={index} className="flex items-center p-3 bg-muted/50 rounded-lg">
+                                      <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0" />
+                                      <span className="text-sm font-medium">{item}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                              
+                              <div className="flex flex-col sm:flex-row gap-4">
+                                <Button className="flex-1 hover-lift bg-gradient-to-r from-muted to-muted/80 text-foreground border-0 rounded-xl">
+                                  <Download className="w-4 h-4 mr-2" />
+                                  Download Brochure
+                                </Button>
+                                <Button className="flex-1 hover-lift hover-glow bg-gradient-to-r from-secondary to-secondary/80 text-white border-0 rounded-xl">
+                                  Apply Now
+                                </Button>
                               </div>
                             </div>
-                            
-                            <div className="flex flex-col sm:flex-row gap-3">
-                              <Button className="flex-1 hover-lift">
-                                <Download className="w-4 h-4 mr-2" />
-                                Download Brochure
-                              </Button>
-                              <Button variant="cta" className="flex-1 hover-lift hover-glow">
-                                Apply Now
-                              </Button>
-                            </div>
-                          </div>
-                        </DialogContent>
-                      </Dialog>
-                    </CardContent>
-                  </Card>
-                </div>
-              ))}
+                          </DialogContent>
+                        </Dialog>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
+              </div>
             </div>
+          </div>
+
+          {/* Pagination Indicators */}
+          <div className="flex justify-center mt-12 space-x-3">
+            {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? 'bg-primary scale-125 shadow-lg'
+                    : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
 
-        {/* Pagination Indicators */}
-        <div className="flex justify-center mt-8 space-x-2">
-          {Array.from({ length: maxIndex + 1 }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex
-                  ? 'bg-primary scale-125'
-                  : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
+        {/* Mobile View - Grid Layout */}
+        <div className="md:hidden grid gap-6">
+          {programs.map((program) => (
+            <Card key={program.id} className="group bg-background/80 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-xl overflow-hidden">
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <img
+                  src={program.image}
+                  alt={program.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent opacity-85" />
+                
+                <div className="absolute top-3 right-3 flex flex-col gap-2">
+                  <span className="px-2 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-medium">
+                    {program.duration}
+                  </span>
+                  <span className="px-2 py-1 bg-secondary/20 backdrop-blur-sm rounded-full text-white text-xs font-medium">
+                    {program.students}
+                  </span>
+                </div>
+                
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <h3 className="text-lg font-bold mb-1">
+                    {program.title}
+                  </h3>
+                  <p className="text-sm opacity-90">
+                    {program.shortDescription}
+                  </p>
+                </div>
+              </div>
+              
+              <CardContent className="p-4">
+                <div className="space-y-2 mb-4">
+                  {program.features.slice(0, 3).map((feature, index) => (
+                    <div key={index} className="flex items-center text-sm text-muted-foreground">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2 flex-shrink-0" />
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button 
+                      className="w-full bg-gradient-to-r from-primary to-primary/80 text-white border-0 rounded-lg"
+                      size="sm"
+                    >
+                      <BookOpen className="w-4 h-4 mr-2" />
+                      Learn More
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-[95vw] max-h-[85vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle className="text-xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                        {program.title}
+                      </DialogTitle>
+                    </DialogHeader>
+                    <div className="space-y-4">
+                      <img
+                        src={program.image}
+                        alt={program.title}
+                        className="w-full aspect-video object-cover rounded-lg"
+                      />
+                      
+                      <p className="text-muted-foreground leading-relaxed">
+                        {program.fullDescription}
+                      </p>
+                      
+                      <div>
+                        <h4 className="font-semibold mb-3 text-primary">Course Syllabus</h4>
+                        <div className="space-y-2">
+                          {program.syllabus.map((item, index) => (
+                            <div key={index} className="flex items-center p-2 bg-muted/50 rounded-lg">
+                              <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2 flex-shrink-0" />
+                              <span className="text-sm">{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <div className="flex flex-col gap-3">
+                        <Button className="hover-lift bg-gradient-to-r from-muted to-muted/80 text-foreground border-0">
+                          <Download className="w-4 h-4 mr-2" />
+                          Download Brochure
+                        </Button>
+                        <Button className="hover-lift bg-gradient-to-r from-secondary to-secondary/80 text-white border-0">
+                          Apply Now
+                        </Button>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
