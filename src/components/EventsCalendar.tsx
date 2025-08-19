@@ -77,6 +77,50 @@ const EventsCalendar = () => {
       description: "Individual meetings between parents, students, and teachers to discuss academic progress.",
       attendees: "By appointment",
       rsvpRequired: true
+    },
+    {
+      id: 7,
+      title: "Technology Workshop Series",
+      date: "2024-11-15",
+      time: "3:00 PM - 6:00 PM",
+      location: "Computer Lab",
+      type: "academic",
+      description: "Hands-on workshops covering latest technology trends and digital literacy skills.",
+      attendees: "100+ expected",
+      rsvpRequired: true
+    },
+    {
+      id: 8,
+      title: "International Food Festival",
+      date: "2024-11-28",
+      time: "11:00 AM - 7:00 PM",
+      location: "Campus Courtyard",
+      type: "cultural",
+      description: "Celebrate global cuisine with traditional dishes from our international student community.",
+      attendees: "800+ expected",
+      rsvpRequired: false
+    },
+    {
+      id: 9,
+      title: "Winter Graduation Ceremony",
+      date: "2024-12-10",
+      time: "2:00 PM - 5:00 PM",
+      location: "Main Auditorium",
+      type: "ceremony",
+      description: "Celebrating the achievements of our graduating class with family, friends, and faculty.",
+      attendees: "400+ expected",
+      rsvpRequired: false
+    },
+    {
+      id: 10,
+      title: "Holiday Cultural Exchange",
+      date: "2024-12-18",
+      time: "4:00 PM - 8:00 PM",
+      location: "Student Center",
+      type: "cultural",
+      description: "Share holiday traditions from around the world in our diverse community celebration.",
+      attendees: "300+ expected",
+      rsvpRequired: false
     }
   ];
 
@@ -123,7 +167,7 @@ const EventsCalendar = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
           {/* Calendar Section */}
           <Card className="bg-background border border-muted-foreground/10 shadow-elegant">
             <CardHeader>

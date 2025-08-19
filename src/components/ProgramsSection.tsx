@@ -153,7 +153,7 @@ const ProgramsSection = () => {
           </Button>
 
           {/* Cards Container */}
-          <div className="mx-12 overflow-hidden">
+          <div className="mx-4 md:mx-12 overflow-hidden">
             <div 
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${(currentIndex * 100) / visibleCards}%)` }}
@@ -161,7 +161,7 @@ const ProgramsSection = () => {
               {programs.map((program) => (
                 <div
                   key={program.id}
-                  className="flex-shrink-0 w-1/3 px-3"
+                  className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-2 md:px-3"
                 >
                   <Card className="group bg-background border border-muted-foreground/10 hover:border-primary/30 transition-all duration-300 hover:shadow-elegant hover:scale-105 overflow-hidden h-full">
                     <div className="relative aspect-video overflow-hidden">

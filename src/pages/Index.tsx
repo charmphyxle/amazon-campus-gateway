@@ -26,14 +26,13 @@ const Index = () => {
       <PartnersSlideshow />
       <WelcomeVisionSection />
       <ProgramsSection />
-      <EventsCalendar />
       <WhyChooseSection />
       <StatsSection />
       <FeaturesSection />
       <VerificationSection />
       <GalleryPreview />
+      <EventsCalendar />
       <TestimonialsSection />
-      <AccreditationsSection />
       <NewsEventsSection />
       <InternationalSection />
       <CTASection />

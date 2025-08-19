@@ -30,7 +30,7 @@ const Navigation = () => {
               <img 
                 src="/lovable-uploads/04d74a51-2d96-43ee-b40d-8cf6fa3c32fe.png" 
                 alt="Amazon College Logo"
-                className="h-12 w-auto object-contain"
+                className="h-16 w-auto object-contain drop-shadow-md"
               />
               {/* <div className="text-xl font-bold text-primary group-hover:text-primary/80 transition-colors">
                 Amazon College

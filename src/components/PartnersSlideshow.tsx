@@ -45,17 +45,17 @@ const PartnersSlideshow = () => {
   const visiblePartners = partners.slice(currentIndex, currentIndex + 5);
 
   return (
-    <section className="py-12 bg-muted/30 relative overflow-hidden">
+    <section className="py-12 bg-gradient-to-br from-blue-50 via-orange-50 to-blue-50 dark:from-blue-950/20 dark:via-orange-950/20 dark:to-blue-950/20 relative overflow-hidden">
       {/* Background Decoration */}
-      <div className="absolute inset-0 bg-gradient-to-r from-muted/50 via-background to-muted/50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-100/30 via-orange-100/30 to-blue-100/30 dark:from-blue-900/20 dark:via-orange-900/20 dark:to-blue-900/20" />
       
       <div className="relative z-10 container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+          <h2 className="text-3xl md:text-4xl font-black text-foreground mb-4 bg-gradient-to-r from-blue-600 via-primary to-orange-600 bg-clip-text text-transparent">
             Trusted Partners & Accreditations
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg font-semibold text-muted-foreground max-w-2xl mx-auto">
             Amazon College is proudly affiliated with leading universities, accreditation bodies, 
             and international organizations that recognize our commitment to educational excellence.
           </p>
@@ -93,13 +93,13 @@ const PartnersSlideshow = () => {
                   key={index}
                   className="flex-shrink-0 w-1/5 px-4"
                 >
-                  <div className="group bg-background rounded-lg p-6 shadow-sm border border-muted-foreground/10 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:scale-105 h-32 flex items-center justify-center">
-                    <img
-                      src={partner.logo}
-                      alt={partner.name}
-                      className="max-w-full max-h-16 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
-                    />
-                  </div>
+                   <div className="group bg-gradient-to-br from-white to-blue-50 dark:from-gray-800 dark:to-blue-900/20 rounded-lg p-6 shadow-elegant border-2 border-blue-200 dark:border-blue-800 hover:border-orange-300 dark:hover:border-orange-700 transition-all duration-300 hover:shadow-lg hover:scale-105 hover:rotate-1 h-32 flex items-center justify-center">
+                     <img
+                       src={partner.logo}
+                       alt={partner.name}
+                       className="max-w-full max-h-16 object-contain filter brightness-110 contrast-110 hover:brightness-125 transition-all duration-300"
+                     />
+                   </div>
                   <div className="mt-3 text-center">
                     <p className="text-sm font-medium text-foreground truncate">
                       {partner.name}
@@ -129,12 +129,6 @@ const PartnersSlideshow = () => {
           ))}
         </div>
 
-        {/* Trust Message */}
-        <div className="text-center mt-8">
-          <p className="text-sm text-muted-foreground italic">
-            "Quality education backed by global recognition and accreditation standards"
-          </p>
-        </div>
       </div>
     </section>
   );
