@@ -77,13 +77,13 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 flex items-center justify-center h-full px-4 text-center">
         <div className="max-w-4xl text-white">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-tight drop-shadow-[0_3px_10px_rgba(0,0,0,0.8)] text-primary">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-tight bg-gradient-to-r from-white via-blue-100 to-orange-100 bg-clip-text text-transparent">
             {slides[current].title}
           </h1>
-          <p className="mt-3 text-xl sm:text-2xl md:text-3xl font-medium text-secondary drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
+          <p className="mt-3 text-xl sm:text-2xl md:text-3xl font-medium text-orange-200 drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
             {slides[current].subtitle}
           </p>
-          <p className="mt-4 text-base sm:text-lg md:text-xl text-white max-w-3xl mx-auto drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
+          <p className="mt-4 text-base sm:text-lg md:text-xl text-blue-100 max-w-3xl mx-auto drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
             {slides[current].description}
           </p>
 
