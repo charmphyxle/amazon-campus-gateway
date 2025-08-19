@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
@@ -45,12 +46,12 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">About Us</a></li>
-              <li><a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Our Programs</a></li>
-              <li><a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Admissions</a></li>
-              <li><a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Student Services</a></li>
-              <li><a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Career Services</a></li>
-              <li><a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Alumni Network</a></li>
+              <li><a href="/about" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">About Us</a></li>
+              <li><a href="/programs" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Our Programs</a></li>
+              <li><a href="/accreditations" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Accreditations</a></li>
+              <li><a href="/gallery" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Gallery</a></li>
+              <li><a href="/#news" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">News & Events</a></li>
+              <li><a href="/contact" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Contact Us</a></li>
             </ul>
           </div>
 
@@ -61,19 +62,19 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-secondary" />
                 <span className="text-primary-foreground/80 text-sm">
-                  123 Education Street, Academic District, City 12345
+                  294, 2nd Floor Galle Road, Colombo-4, Sri Lanka
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-secondary" />
                 <span className="text-primary-foreground/80 text-sm">
-                  +1 (555) 123-4567
+                  +94 114-386-126
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-secondary" />
                 <span className="text-primary-foreground/80 text-sm">
-                  info@amazoncollege.edu
+                  info@amazoncollege.lk
                 </span>
               </div>
             </div>

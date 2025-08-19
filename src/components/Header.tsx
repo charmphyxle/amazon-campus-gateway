@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -19,6 +20,11 @@ const Header = () => {
                 <Shield className="w-3 h-3" />
                 Award-Winning Institution
               </Badge>
+              <div className="hidden md:flex items-center text-sm">
+                <span className="opacity-80">📞 +94 114-386-126</span>
+                <span className="mx-2 opacity-60">|</span>
+                <span className="opacity-80">📧 info@amazoncollege.lk</span>
+              </div>
             </div>
             
             <div className="flex items-center gap-2">
