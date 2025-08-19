@@ -1,112 +1,284 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { GraduationCap, Languages, Baby, Users } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { ChevronLeft, ChevronRight, BookOpen, Clock, Users, Download, ArrowRight } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+
+// Import program images
 import businessClass from "@/assets/business-class.jpg";
 import languageClass from "@/assets/language-class.jpg";
 import kidsProgram from "@/assets/kids-program.jpg";
 import teacherTraining from "@/assets/teacher-training.jpg";
+import computerLab from "@/assets/computer-lab.jpg";
+import libraryStudy from "@/assets/library-study.jpg";
 
 const ProgramsSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
   const programs = [
     {
-      icon: GraduationCap,
-      title: "Diploma Programs",
-      description: "Professional diploma courses in business, technology, and healthcare designed for career advancement.",
-      features: ["Industry-Relevant Curriculum", "Experienced Faculty", "Practical Training"],
+      id: 1,
+      title: "Business Administration Diploma",
+      shortDescription: "Comprehensive business skills for modern leaders",
       image: businessClass,
-      gradient: "from-primary/80 to-primary-dark/80"
+      duration: "18 months",
+      students: "250+ enrolled",
+      features: ["International certification", "Practical training", "Industry connections"],
+      fullDescription: "Our Business Administration Diploma provides comprehensive training in modern business practices, leadership, and management. Students gain practical skills through real-world projects and internships.",
+      syllabus: ["Business Fundamentals", "Financial Management", "Marketing Strategy", "Leadership Skills", "International Business"]
     },
     {
-      icon: Languages,
-      title: "Language Courses",
-      description: "Comprehensive English and international language programs for academic and professional success.",
-      features: ["IELTS Preparation", "Business English", "Academic Writing"],
+      id: 2,
+      title: "English Language Program",
+      shortDescription: "Master English for academic and professional success",
       image: languageClass,
-      gradient: "from-success/80 to-success-light/80"
+      duration: "12 months",
+      students: "400+ enrolled",
+      features: ["IELTS preparation", "Academic writing", "Speaking confidence"],
+      fullDescription: "Intensive English language training designed for academic and professional advancement. Our program includes IELTS preparation and practical communication skills.",
+      syllabus: ["Grammar & Vocabulary", "Academic Writing", "Speaking & Pronunciation", "IELTS Preparation", "Business English"]
     },
     {
-      icon: Baby,
-      title: "Kids Programs",
-      description: "Engaging educational programs designed to develop young minds and prepare them for future success.",
-      features: ["Creative Learning", "Skill Development", "Safe Environment"],
+      id: 3,
+      title: "Kids Educational Program",
+      shortDescription: "Creative learning for children aged 5-12",
       image: kidsProgram,
-      gradient: "from-secondary/80 to-secondary-light/80"
+      duration: "Ongoing",
+      students: "180+ enrolled",
+      features: ["Creative arts", "STEM activities", "Language development"],
+      fullDescription: "Engaging educational programs for children that combine creativity, STEM learning, and language development in a fun, supportive environment.",
+      syllabus: ["Creative Arts", "Basic Mathematics", "Science Exploration", "Language Skills", "Social Development"]
     },
     {
-      icon: Users,
-      title: "Teacher Training",
-      description: "Professional development courses for educators to enhance teaching skills and methodologies.",
-      features: ["Modern Techniques", "Certification", "Continuous Support"],
+      id: 4,
+      title: "Teacher Training Certificate",
+      shortDescription: "Professional development for educators",
       image: teacherTraining,
-      gradient: "from-trust/80 to-primary/80"
+      duration: "6 months",
+      students: "120+ enrolled",
+      features: ["Teaching methodologies", "Classroom management", "Assessment techniques"],
+      fullDescription: "Professional teacher training program covering modern teaching methodologies, classroom management, and student assessment techniques.",
+      syllabus: ["Teaching Methods", "Classroom Management", "Student Assessment", "Educational Technology", "Professional Ethics"]
+    },
+    {
+      id: 5,
+      title: "Computer Technology Diploma",
+      shortDescription: "Modern IT skills for the digital workplace",
+      image: computerLab,
+      duration: "15 months",
+      students: "200+ enrolled",
+      features: ["Programming languages", "Web development", "Database management"],
+      fullDescription: "Comprehensive computer technology program covering programming, web development, and database management for modern IT careers.",
+      syllabus: ["Programming Fundamentals", "Web Development", "Database Design", "Network Security", "Software Engineering"]
+    },
+    {
+      id: 6,
+      title: "Academic Research Program",
+      shortDescription: "Advanced research skills and methodology",
+      image: libraryStudy,
+      duration: "24 months",
+      students: "80+ enrolled",
+      features: ["Research methodology", "Data analysis", "Academic writing"],
+      fullDescription: "Advanced academic research program focusing on research methodology, data analysis, and scholarly writing for postgraduate studies.",
+      syllabus: ["Research Methods", "Statistical Analysis", "Academic Writing", "Literature Review", "Thesis Development"]
     }
   ];
 
+  const visibleCards = 3;
+  const maxIndex = programs.length - visibleCards;
+
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    }, 4000);
+    
+    return () => clearInterval(timer);
+  }, [isAutoPlaying, maxIndex]);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+  };
+
+  const handleMouseEnter = () => setIsAutoPlaying(false);
+  const handleMouseLeave = () => setIsAutoPlaying(true);
+
   return (
-    <section className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Our Program Offerings
+    <section className="py-16 bg-gradient-to-br from-background via-muted/20 to-background relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 pattern-dots opacity-5" />
+      
+      <div className="relative z-10 container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 gradient-text">
+            Our Programs
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Discover world-class education programs designed to shape your future and unlock your potential
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Discover world-class educational programs designed to unlock your potential and shape your future
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {programs.map((program, index) => {
-            const IconComponent = program.icon;
-            return (
-              <Card 
-                key={program.title} 
-                className="group hover:shadow-elegant-lg transition-all duration-500 hover:scale-105 border-0 overflow-hidden hover-lift animate-slide-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="h-56 relative overflow-hidden">
-                  <img 
-                    src={program.image} 
-                    alt={program.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${program.gradient} transition-opacity duration-300`} />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <IconComponent className="w-16 h-16 text-white animate-float group-hover:scale-110 transition-transform duration-300" />
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <div className="w-3 h-3 bg-success rounded-full animate-glow"></div>
-                  </div>
-                </div>
-                
-                <CardHeader className="pb-4">
-                  <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {program.title}
-                  </CardTitle>
-                  <CardDescription className="text-muted-foreground">
-                    {program.description}
-                  </CardDescription>
-                </CardHeader>
+        {/* Programs Carousel */}
+        <div 
+          className="relative"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          {/* Navigation Arrows */}
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-background/90 hover:bg-background border-primary/20 hover:border-primary/50 shadow-elegant"
+            aria-label="Previous programs"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </Button>
+          
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-background/90 hover:bg-background border-primary/20 hover:border-primary/50 shadow-elegant"
+            aria-label="Next programs"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </Button>
 
-                <CardContent className="pt-0">
-                  <ul className="space-y-2 mb-6">
-                    {program.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                        <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Button 
-                    variant="outline" 
-                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 hover-glow"
-                  >
-                    Learn More
-                  </Button>
-                </CardContent>
-              </Card>
-            );
-          })}
+          {/* Cards Container */}
+          <div className="mx-12 overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${(currentIndex * 100) / visibleCards}%)` }}
+            >
+              {programs.map((program) => (
+                <div
+                  key={program.id}
+                  className="flex-shrink-0 w-1/3 px-3"
+                >
+                  <Card className="group bg-background border border-muted-foreground/10 hover:border-primary/30 transition-all duration-300 hover:shadow-elegant hover:scale-105 overflow-hidden h-full">
+                    <div className="relative aspect-video overflow-hidden">
+                      <img
+                        src={program.image}
+                        alt={program.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy"
+                        srcSet={`${program.image} 1x`}
+                      />
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+                      
+                      {/* Title Overlay */}
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                        <h3 className="text-lg font-bold mb-1 line-clamp-2">
+                          {program.title}
+                        </h3>
+                        <p className="text-sm opacity-90 line-clamp-1">
+                          {program.shortDescription}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <CardContent className="p-4">
+                      <div className="flex items-center justify-between text-sm text-muted-foreground mb-3">
+                        <div className="flex items-center">
+                          <Clock className="w-4 h-4 mr-1" />
+                          {program.duration}
+                        </div>
+                        <div className="flex items-center">
+                          <Users className="w-4 h-4 mr-1" />
+                          {program.students}
+                        </div>
+                      </div>
+                      
+                      <ul className="text-sm space-y-1 mb-4">
+                        {program.features.map((feature, index) => (
+                          <li key={index} className="flex items-center text-muted-foreground">
+                            <ArrowRight className="w-3 h-3 mr-2 text-primary" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <Button 
+                            className="w-full group hover-lift"
+                            tabIndex={0}
+                            aria-label={`Learn more about ${program.title}`}
+                          >
+                            <BookOpen className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                            Learn More
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+                          <DialogHeader>
+                            <DialogTitle className="text-2xl gradient-text">{program.title}</DialogTitle>
+                          </DialogHeader>
+                          <div className="space-y-6">
+                            <img
+                              src={program.image}
+                              alt={program.title}
+                              className="w-full aspect-video object-cover rounded-lg"
+                            />
+                            
+                            <p className="text-muted-foreground leading-relaxed">
+                              {program.fullDescription}
+                            </p>
+                            
+                            <div>
+                              <h4 className="font-semibold mb-3 text-primary">Course Syllabus</h4>
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                {program.syllabus.map((item, index) => (
+                                  <div key={index} className="flex items-center text-sm">
+                                    <ArrowRight className="w-3 h-3 mr-2 text-primary" />
+                                    {item}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                            
+                            <div className="flex flex-col sm:flex-row gap-3">
+                              <Button className="flex-1 hover-lift">
+                                <Download className="w-4 h-4 mr-2" />
+                                Download Brochure
+                              </Button>
+                              <Button variant="cta" className="flex-1 hover-lift hover-glow">
+                                Apply Now
+                              </Button>
+                            </div>
+                          </div>
+                        </DialogContent>
+                      </Dialog>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Pagination Indicators */}
+        <div className="flex justify-center mt-8 space-x-2">
+          {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentIndex
+                  ? 'bg-primary scale-125'
+                  : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

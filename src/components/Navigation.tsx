@@ -26,10 +26,17 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-primary">
-              Amazon College
-              <span className="block text-sm font-normal text-muted-foreground">International Campus</span>
-            </div>
+            <a href="/" className="flex items-center space-x-3 group transition-transform hover:scale-105">
+              <img 
+                src="/lovable-uploads/04d74a51-2d96-43ee-b40d-8cf6fa3c32fe.png" 
+                alt="Amazon College Logo"
+                className="h-12 w-auto object-contain"
+              />
+              <div className="text-xl font-bold text-primary group-hover:text-primary/80 transition-colors">
+                Amazon College
+                <span className="block text-sm font-normal text-muted-foreground">International Campus</span>
+              </div>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
