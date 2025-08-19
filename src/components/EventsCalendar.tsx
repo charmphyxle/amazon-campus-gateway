@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CalendarDays, Clock, MapPin, Users, Plus, Download } from "lucide-react";
+import { CalendarDays, Clock, MapPin, Users, Plus, Download, ArrowRight } from "lucide-react";
 
 const EventsCalendar = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
@@ -155,184 +155,318 @@ const EventsCalendar = () => {
   const upcomingEvents = getUpcomingEvents();
 
   return (
-    <section className="py-16 bg-gradient-to-br from-muted/30 via-background to-muted/30">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-gradient-to-br from-muted/20 via-background to-accent/10 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 right-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-secondary/5 rounded-full blur-3xl" />
+      </div>
+      
+      <div className="relative z-10 container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 gradient-text">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent mb-6">
             Events & Calendar
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Stay connected with campus life through our exciting events and academic calendar
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Stay connected with campus life through our exciting events and comprehensive academic calendar
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
-          {/* Calendar Section */}
-          <Card className="bg-background border border-muted-foreground/10 shadow-elegant">
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <CardTitle className="flex items-center text-primary">
-                  <CalendarDays className="w-5 h-5 mr-2" />
-                  Event Calendar
-                </CardTitle>
-                <Tabs value={viewMode} onValueChange={(value) => setViewMode(value as "month" | "list")}>
-                  <TabsList className="grid w-32 grid-cols-2">
-                    <TabsTrigger value="month" className="text-xs">Month</TabsTrigger>
-                    <TabsTrigger value="list" className="text-xs">List</TabsTrigger>
-                  </TabsList>
-                </Tabs>
-              </div>
-            </CardHeader>
-            <CardContent>
-              {viewMode === "month" ? (
-                <Calendar
-                  mode="single"
-                  selected={selectedDate}
-                  onSelect={setSelectedDate}
-                  className="rounded-md border border-muted-foreground/10"
-                  modifiers={{
-                    eventDay: events.map(event => new Date(event.date))
-                  }}
-                  modifiersClassNames={{
-                    eventDay: "bg-primary/20 text-primary font-semibold"
-                  }}
-                />
-              ) : (
-                <div className="space-y-3 max-h-80 overflow-y-auto">
-                  {events.map((event) => (
-                    <div key={event.id} className="p-3 border border-muted-foreground/10 rounded-lg hover:border-primary/30 transition-colors">
-                      <div className="flex items-start justify-between">
-                        <div className="flex-1">
-                          <h4 className="font-medium text-foreground mb-1">{event.title}</h4>
-                          <div className="flex items-center text-sm text-muted-foreground mb-2">
-                            <Clock className="w-3 h-3 mr-1" />
-                            {formatDate(event.date)} • {event.time}
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
+          {/* Calendar Section - Takes up more space */}
+          <div className="xl:col-span-7">
+            <Card className="bg-background/80 backdrop-blur-sm border border-border/50 shadow-xl overflow-hidden h-full">
+              <CardHeader className="bg-gradient-to-r from-primary/5 to-secondary/5 border-b border-border/50">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <CardTitle className="flex items-center text-primary text-xl">
+                    <CalendarDays className="w-6 h-6 mr-3" />
+                    Event Calendar
+                  </CardTitle>
+                  <Tabs value={viewMode} onValueChange={(value) => setViewMode(value as "month" | "list")}>
+                    <TabsList className="grid w-40 grid-cols-2">
+                      <TabsTrigger value="month" className="text-sm">Month</TabsTrigger>
+                      <TabsTrigger value="list" className="text-sm">List</TabsTrigger>
+                    </TabsList>
+                  </Tabs>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6">
+                {viewMode === "month" ? (
+                  <div className="w-full">
+                    <Calendar
+                      mode="single"
+                      selected={selectedDate}
+                      onSelect={setSelectedDate}
+                      className="w-full mx-auto rounded-lg border border-border/20 bg-background/50"
+                      classNames={{
+                        months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
+                        month: "space-y-4 w-full",
+                        caption: "flex justify-center pt-1 relative items-center text-lg font-semibold",
+                        caption_label: "text-lg font-semibold",
+                        nav: "space-x-1 flex items-center",
+                        nav_button: "h-8 w-8 bg-transparent p-0 opacity-50 hover:opacity-100 border border-border/20 rounded-md hover:bg-primary/10",
+                        nav_button_previous: "absolute left-1",
+                        nav_button_next: "absolute right-1",
+                        table: "w-full border-collapse space-y-1",
+                        head_row: "flex w-full",
+                        head_cell: "text-muted-foreground rounded-md w-full font-normal text-sm p-2",
+                        row: "flex w-full mt-2",
+                        cell: "h-12 w-full text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
+                        day: "h-12 w-full p-0 font-normal aria-selected:opacity-100 hover:bg-accent hover:text-accent-foreground rounded-md border-2 border-transparent transition-all duration-200",
+                        day_range_end: "day-range-end",
+                        day_selected: "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground border-primary",
+                        day_today: "bg-accent text-accent-foreground font-semibold",
+                        day_outside: "day-outside text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30",
+                        day_disabled: "text-muted-foreground opacity-50",
+                        day_range_middle: "aria-selected:bg-accent aria-selected:text-accent-foreground",
+                        day_hidden: "invisible",
+                      }}
+                      modifiers={{
+                        eventDay: events.map(event => new Date(event.date))
+                      }}
+                      modifiersClassNames={{
+                        eventDay: "bg-secondary/20 text-secondary font-bold border-secondary/50 relative after:content-[''] after:absolute after:bottom-1 after:left-1/2 after:transform after:-translate-x-1/2 after:w-1 after:h-1 after:bg-secondary after:rounded-full"
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <div className="space-y-4 max-h-96 overflow-y-auto">
+                    {events.map((event) => (
+                      <div key={event.id} className="p-4 border border-border/30 rounded-xl hover:border-primary/40 hover:shadow-md transition-all duration-300 bg-background/50">
+                        <div className="flex items-start justify-between mb-3">
+                          <div className="flex-1">
+                            <h4 className="font-semibold text-foreground mb-2 text-lg">{event.title}</h4>
+                            <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-muted-foreground">
+                              <div className="flex items-center">
+                                <Clock className="w-4 h-4 mr-2" />
+                                {formatDate(event.date)}
+                              </div>
+                              <div className="hidden sm:block">•</div>
+                              <div className="flex items-center">
+                                <MapPin className="w-4 h-4 mr-2" />
+                                {event.time}
+                              </div>
+                            </div>
                           </div>
+                          <Badge variant="outline" className={getEventTypeColor(event.type) + " ml-4"}>
+                            {event.type}
+                          </Badge>
                         </div>
-                        <Badge variant="outline" className={getEventTypeColor(event.type)}>
-                          {event.type}
-                        </Badge>
+                        <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
+                          {event.description}
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs text-muted-foreground flex items-center">
+                            <Users className="w-3 h-3 mr-1" />
+                            {event.attendees}
+                          </span>
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <Button variant="outline" size="sm" className="hover-lift">
+                                View Details
+                              </Button>
+                            </DialogTrigger>
+                            <DialogContent className="max-w-lg">
+                              <DialogHeader>
+                                <DialogTitle className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                  {event.title}
+                                </DialogTitle>
+                              </DialogHeader>
+                              <div className="space-y-4">
+                                <div className="flex items-center justify-between">
+                                  <Badge variant="outline" className={getEventTypeColor(event.type)}>
+                                    {event.type}
+                                  </Badge>
+                                  {event.rsvpRequired && (
+                                    <Badge variant="outline" className="bg-yellow-500/10 text-yellow-700 border-yellow-200">
+                                      RSVP Required
+                                    </Badge>
+                                  )}
+                                </div>
+                                
+                                <div className="space-y-3 text-sm">
+                                  <div className="flex items-center">
+                                    <CalendarDays className="w-4 h-4 mr-3 text-primary" />
+                                    {formatDate(event.date)}
+                                  </div>
+                                  <div className="flex items-center">
+                                    <Clock className="w-4 h-4 mr-3 text-primary" />
+                                    {event.time}
+                                  </div>
+                                  <div className="flex items-center">
+                                    <MapPin className="w-4 h-4 mr-3 text-primary" />
+                                    {event.location}
+                                  </div>
+                                  <div className="flex items-center">
+                                    <Users className="w-4 h-4 mr-3 text-primary" />
+                                    {event.attendees}
+                                  </div>
+                                </div>
+
+                                <p className="text-muted-foreground leading-relaxed">
+                                  {event.description}
+                                </p>
+
+                                <div className="flex flex-col sm:flex-row gap-3">
+                                  {event.rsvpRequired && (
+                                    <Button className="flex-1 hover-lift bg-gradient-to-r from-primary to-primary/80">
+                                      <Plus className="w-4 h-4 mr-2" />
+                                      RSVP Now
+                                    </Button>
+                                  )}
+                                  <Button variant="outline" className="flex-1 hover-lift">
+                                    <Download className="w-4 h-4 mr-2" />
+                                    Add to Calendar
+                                  </Button>
+                                </div>
+                              </div>
+                            </DialogContent>
+                          </Dialog>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Upcoming Events Section - Responsive sidebar */}
+          <div className="xl:col-span-5">
+            <Card className="bg-background/80 backdrop-blur-sm border border-border/50 shadow-xl h-full">
+              <CardHeader className="bg-gradient-to-r from-secondary/5 to-primary/5 border-b border-border/50">
+                <CardTitle className="flex items-center text-secondary text-xl">
+                  <Users className="w-6 h-6 mr-3" />
+                  Upcoming Events
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6 space-y-6">
+                {upcomingEvents.map((event) => (
+                  <div key={event.id} className="p-5 border border-border/30 rounded-xl hover:border-primary/40 hover:shadow-lg transition-all duration-300 group bg-gradient-to-r from-background to-background/80">
+                    <div className="flex items-start justify-between mb-3">
+                      <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors text-lg leading-tight">
+                        {event.title}
+                      </h4>
+                      <Badge variant="outline" className={getEventTypeColor(event.type) + " ml-3 flex-shrink-0"}>
+                        {event.type}
+                      </Badge>
+                    </div>
+                    
+                    <div className="space-y-2 text-sm text-muted-foreground mb-4">
+                      <div className="flex items-center">
+                        <CalendarDays className="w-4 h-4 mr-3 text-primary" />
+                        <span className="font-medium">{formatDate(event.date)}</span>
+                      </div>
+                      <div className="flex items-center">
+                        <Clock className="w-4 h-4 mr-3 text-primary" />
+                        <span>{event.time}</span>
+                      </div>
+                      <div className="flex items-center">
+                        <MapPin className="w-4 h-4 mr-3 text-primary" />
+                        <span>{event.location}</span>
                       </div>
                     </div>
-                  ))}
-                </div>
-              )}
-            </CardContent>
-          </Card>
 
-          {/* Upcoming Events Section */}
-          <Card className="bg-background border border-muted-foreground/10 shadow-elegant">
-            <CardHeader>
-              <CardTitle className="flex items-center text-primary">
-                <Users className="w-5 h-5 mr-2" />
-                Upcoming Events
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {upcomingEvents.map((event) => (
-                <div key={event.id} className="p-4 border border-muted-foreground/10 rounded-lg hover:border-primary/30 transition-all duration-300 hover:shadow-sm group">
-                  <div className="flex items-start justify-between mb-2">
-                    <h4 className="font-medium text-foreground group-hover:text-primary transition-colors">
-                      {event.title}
-                    </h4>
-                    <Badge variant="outline" className={getEventTypeColor(event.type)}>
-                      {event.type}
-                    </Badge>
-                  </div>
-                  
-                  <div className="space-y-1 text-sm text-muted-foreground mb-3">
-                    <div className="flex items-center">
-                      <CalendarDays className="w-3 h-3 mr-2" />
-                      {formatDate(event.date)}
-                    </div>
-                    <div className="flex items-center">
-                      <Clock className="w-3 h-3 mr-2" />
-                      {event.time}
-                    </div>
-                    <div className="flex items-center">
-                      <MapPin className="w-3 h-3 mr-2" />
-                      {event.location}
-                    </div>
-                  </div>
+                    <p className="text-sm text-muted-foreground mb-4 line-clamp-3 leading-relaxed">
+                      {event.description}
+                    </p>
 
-                  <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
-                    {event.description}
-                  </p>
-
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-muted-foreground">
-                      {event.attendees}
-                    </span>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button variant="outline" size="sm" className="hover-lift">
-                          View Details
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-lg">
-                        <DialogHeader>
-                          <DialogTitle className="gradient-text">{event.title}</DialogTitle>
-                        </DialogHeader>
-                        <div className="space-y-4">
-                          <div className="flex items-center justify-between">
-                            <Badge variant="outline" className={getEventTypeColor(event.type)}>
-                              {event.type}
-                            </Badge>
-                            {event.rsvpRequired && (
-                              <Badge variant="outline" className="bg-yellow-500/10 text-yellow-700 border-yellow-200">
-                                RSVP Required
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-muted-foreground flex items-center">
+                        <Users className="w-3 h-3 mr-2" />
+                        {event.attendees}
+                      </span>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <Button variant="outline" size="sm" className="hover-lift group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                            View Details
+                            <ArrowRight className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" />
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                          <DialogHeader>
+                            <DialogTitle className="text-2xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                              {event.title}
+                            </DialogTitle>
+                          </DialogHeader>
+                          <div className="space-y-6">
+                            <div className="flex flex-wrap items-center gap-3">
+                              <Badge variant="outline" className={getEventTypeColor(event.type)}>
+                                {event.type}
                               </Badge>
-                            )}
-                          </div>
-                          
-                          <div className="space-y-2 text-sm">
-                            <div className="flex items-center">
-                              <CalendarDays className="w-4 h-4 mr-2 text-primary" />
-                              {formatDate(event.date)}
+                              {event.rsvpRequired && (
+                                <Badge variant="outline" className="bg-yellow-500/10 text-yellow-700 border-yellow-200">
+                                  RSVP Required
+                                </Badge>
+                              )}
                             </div>
-                            <div className="flex items-center">
-                              <Clock className="w-4 h-4 mr-2 text-primary" />
-                              {event.time}
+                            
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-muted/30 rounded-lg">
+                              <div className="flex items-center">
+                                <CalendarDays className="w-5 h-5 mr-3 text-primary" />
+                                <div>
+                                  <span className="text-sm font-medium text-muted-foreground">Date</span>
+                                  <p className="font-semibold">{formatDate(event.date)}</p>
+                                </div>
+                              </div>
+                              <div className="flex items-center">
+                                <Clock className="w-5 h-5 mr-3 text-primary" />
+                                <div>
+                                  <span className="text-sm font-medium text-muted-foreground">Time</span>
+                                  <p className="font-semibold">{event.time}</p>
+                                </div>
+                              </div>
+                              <div className="flex items-center">
+                                <MapPin className="w-5 h-5 mr-3 text-primary" />
+                                <div>
+                                  <span className="text-sm font-medium text-muted-foreground">Location</span>
+                                  <p className="font-semibold">{event.location}</p>
+                                </div>
+                              </div>
+                              <div className="flex items-center">
+                                <Users className="w-5 h-5 mr-3 text-primary" />
+                                <div>
+                                  <span className="text-sm font-medium text-muted-foreground">Attendees</span>
+                                  <p className="font-semibold">{event.attendees}</p>
+                                </div>
+                              </div>
                             </div>
-                            <div className="flex items-center">
-                              <MapPin className="w-4 h-4 mr-2 text-primary" />
-                              {event.location}
-                            </div>
-                            <div className="flex items-center">
-                              <Users className="w-4 h-4 mr-2 text-primary" />
-                              {event.attendees}
-                            </div>
-                          </div>
 
-                          <p className="text-muted-foreground leading-relaxed">
-                            {event.description}
-                          </p>
+                            <div>
+                              <h4 className="font-semibold text-lg mb-3">Event Details</h4>
+                              <p className="text-muted-foreground leading-relaxed">
+                                {event.description}
+                              </p>
+                            </div>
 
-                          <div className="flex flex-col sm:flex-row gap-3">
-                            {event.rsvpRequired && (
-                              <Button className="flex-1 hover-lift">
-                                <Plus className="w-4 h-4 mr-2" />
-                                RSVP Now
+                            <div className="flex flex-col sm:flex-row gap-3">
+                              {event.rsvpRequired && (
+                                <Button className="flex-1 hover-lift bg-gradient-to-r from-primary to-primary/80">
+                                  <Plus className="w-4 h-4 mr-2" />
+                                  RSVP Now
+                                </Button>
+                              )}
+                              <Button variant="outline" className="flex-1 hover-lift">
+                                <Download className="w-4 h-4 mr-2" />
+                                Add to Calendar
                               </Button>
-                            )}
-                            <Button variant="outline" className="flex-1 hover-lift">
-                              <Download className="w-4 h-4 mr-2" />
-                              Add to Calendar
-                            </Button>
+                            </div>
                           </div>
-                        </div>
-                      </DialogContent>
-                    </Dialog>
+                        </DialogContent>
+                      </Dialog>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
 
-              <Button variant="outline" className="w-full mt-4 hover-lift">
-                View All Events
-              </Button>
-            </CardContent>
-          </Card>
+                <Button variant="outline" className="w-full mt-6 hover-lift bg-gradient-to-r hover:from-primary hover:to-primary/80 hover:text-white transition-all duration-300">
+                  <Calendar className="w-4 h-4 mr-2" />
+                  View All Events
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </section>
