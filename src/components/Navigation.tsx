@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { 
   NavigationMenu, 
@@ -12,6 +12,17 @@ import { ChevronDown, Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const programs = [
     { name: "Diploma Programs", description: "Professional diploma courses" },
@@ -25,7 +36,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-background/90 backdrop-blur-md border-b border-border/50 sticky top-0 z-50 shadow-elegant">
+    <nav className={`${isScrolled ? 'bg-background/30' : 'bg-background/90'} backdrop-blur-md border-b border-border/50 sticky top-0 z-50 shadow-elegant transition-all duration-300`}>
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -48,19 +59,19 @@ const Navigation = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/" className="px-4 py-3 text-base font-semibold hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/" className="px-4 py-3 text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
                     Home
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/about" className="px-4 py-3 text-base font-semibold hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/about" className="px-4 py-3 text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
                     About Us
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="px-4 py-3 text-base font-semibold">
+                  <NavigationMenuTrigger className="px-4 py-3 text-lg font-semibold">
                     Our Programs
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -81,31 +92,31 @@ const Navigation = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/accreditations" className="px-4 py-3 text-base font-semibold hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/accreditations" className="px-4 py-3 text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
                     Accreditations
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/gallery" className="px-4 py-3 text-base font-semibold hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/gallery" className="px-4 py-3 text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
                     Gallery
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/#news" className="px-4 py-3 text-base font-semibold hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/#news" className="px-4 py-3 text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
                     News & Events
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/#testimonials" className="px-4 py-3 text-base font-semibold hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/#testimonials" className="px-4 py-3 text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
                     Testimonials
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/contact" className="px-4 py-3 text-base font-semibold hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/contact" className="px-4 py-3 text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
                     Contact Us
                   </NavigationMenuLink>
                 </NavigationMenuItem>
