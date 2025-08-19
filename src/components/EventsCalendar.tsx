@@ -5,7 +5,15 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CalendarDays, Clock, MapPin, Users, Plus, Download, ArrowRight } from "lucide-react";
+import { 
+  CalendarDays, 
+  Clock, 
+  MapPin, 
+  Users, 
+  Plus, 
+  Download, 
+  ArrowRight 
+} from "lucide-react";
 
 const EventsCalendar = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
