@@ -17,13 +17,17 @@ const Navigation = () => {
     { name: "Diploma Programs", description: "Professional diploma courses" },
     { name: "Language Courses", description: "English & international languages" },
     { name: "Kids Programs", description: "Educational programs for children" },
-    { name: "Teacher Training", description: "Professional development courses" }
+    { name: "Teacher Training", description: "Professional development courses" },
+    { name: "Business Administration", description: "MBA and business management courses" },
+    { name: "Computer Science", description: "IT and programming courses" },
+    { name: "Healthcare Programs", description: "Medical and nursing certifications" },
+    { name: "Engineering", description: "Technical and engineering diplomas" }
   ];
 
   return (
-    <nav className="bg-background border-b border-border sticky top-0 z-50 shadow-elegant">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <nav className="bg-background/90 backdrop-blur-md border-b border-border/50 sticky top-0 z-50 shadow-elegant">
+      <div className="container mx-auto px-4 py-2">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="flex items-center space-x-3 group transition-transform hover:scale-105">
@@ -44,23 +48,23 @@ const Navigation = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/" className="px-4 py-3 text-base font-semibold hover:text-primary transition-colors cursor-pointer">
                     Home
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/about" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/about" className="px-4 py-3 text-base font-semibold hover:text-primary transition-colors cursor-pointer">
                     About Us
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="px-3 py-2 text-sm font-medium">
+                  <NavigationMenuTrigger className="px-4 py-3 text-base font-semibold">
                     Our Programs
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid w-[400px] gap-3 p-4">
+                    <div className="grid w-[450px] gap-3 p-4 bg-background/95 backdrop-blur-sm border border-border/50">
                       {programs.map((program) => (
                         <NavigationMenuLink
                           key={program.name}
@@ -77,31 +81,31 @@ const Navigation = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/accreditations" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/accreditations" className="px-4 py-3 text-base font-semibold hover:text-primary transition-colors cursor-pointer">
                     Accreditations
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/gallery" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/gallery" className="px-4 py-3 text-base font-semibold hover:text-primary transition-colors cursor-pointer">
                     Gallery
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/#news" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/#news" className="px-4 py-3 text-base font-semibold hover:text-primary transition-colors cursor-pointer">
                     News & Events
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/#testimonials" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/#testimonials" className="px-4 py-3 text-base font-semibold hover:text-primary transition-colors cursor-pointer">
                     Testimonials
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/contact" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/contact" className="px-4 py-3 text-base font-semibold hover:text-primary transition-colors cursor-pointer">
                     Contact Us
                   </NavigationMenuLink>
                 </NavigationMenuItem>
