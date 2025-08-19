@@ -85,7 +85,7 @@ const ProgramsSection = () => {
     }
   ];
 
-  const visibleCards = 3;
+  const visibleCards = 4;
   const maxIndex = programs.length - visibleCards;
 
   useEffect(() => {
@@ -118,7 +118,7 @@ const ProgramsSection = () => {
       
       <div className="relative z-10 container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 px-4">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent mb-6">
             Our Programs
           </h2>
@@ -164,10 +164,10 @@ const ProgramsSection = () => {
                 {programs.map((program) => (
                   <div
                     key={program.id}
-                    className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4"
+                    className="flex-shrink-0 w-full md:w-1/2 lg:w-1/4 px-4"
                   >
                     <Card className="group bg-background/60 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] overflow-hidden h-full">
-                      <div className="relative aspect-[4/3] overflow-hidden">
+                      <div className="relative aspect-[3/4] overflow-hidden">
                         <img
                           src={program.image}
                           alt={program.title}
@@ -175,10 +175,10 @@ const ProgramsSection = () => {
                           loading="lazy"
                         />
                         {/* Modern Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent opacity-85 group-hover:opacity-95 transition-all duration-500" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-85 group-hover:opacity-95 transition-all duration-500" />
                         
                         {/* Floating Info */}
-                        <div className="absolute top-4 right-4 flex gap-2">
+                        <div className="absolute top-4 right-4 flex flex-col gap-2">
                           <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-medium">
                             {program.duration}
                           </span>
@@ -187,39 +187,41 @@ const ProgramsSection = () => {
                           </span>
                         </div>
                         
-                        {/* Title Overlay */}
-                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                          <h3 className="text-xl font-bold mb-2 leading-tight">
-                            {program.title}
-                          </h3>
-                          <p className="text-sm opacity-90 line-clamp-2">
-                            {program.shortDescription}
-                          </p>
-                        </div>
-                      </div>
-                      
-                      <CardContent className="p-6">
-                        <div className="space-y-3 mb-6">
-                          {program.features.slice(0, 3).map((feature, index) => (
-                            <div key={index} className="flex items-center text-sm text-muted-foreground">
-                              <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0" />
-                              {feature}
+                        {/* All Content Overlay */}
+                        <div className="absolute inset-0 p-6 text-white flex flex-col justify-between">
+                          <div className="flex-1" />
+                          
+                          <div className="space-y-4">
+                            <div>
+                              <h3 className="text-xl font-bold mb-2 leading-tight">
+                                {program.title}
+                              </h3>
+                              <p className="text-sm opacity-90 line-clamp-2 mb-4">
+                                {program.shortDescription}
+                              </p>
                             </div>
-                          ))}
-                        </div>
+                            
+                            <div className="space-y-2">
+                              {program.features.slice(0, 3).map((feature, index) => (
+                                <div key={index} className="flex items-center text-xs">
+                                  <div className="w-1.5 h-1.5 bg-white rounded-full mr-2 flex-shrink-0" />
+                                  {feature}
+                                </div>
+                              ))}
+                            </div>
 
-                        <Dialog>
-                          <DialogTrigger asChild>
-                            <Button 
-                              className="w-full group hover-lift bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white border-0 rounded-xl py-3 font-semibold"
-                              tabIndex={0}
-                              aria-label={`Learn more about ${program.title}`}
-                            >
-                              <BookOpen className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                              Explore Program
-                              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                            </Button>
-                          </DialogTrigger>
+                            <Dialog>
+                              <DialogTrigger asChild>
+                                <Button 
+                                  className="w-full group hover-lift bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30 hover:border-white/50 rounded-xl py-2 text-sm font-semibold mt-4"
+                                  tabIndex={0}
+                                  aria-label={`Learn more about ${program.title}`}
+                                >
+                                  <BookOpen className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                                  Explore Program
+                                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                                </Button>
+                              </DialogTrigger>
                           <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto">
                             <DialogHeader>
                               <DialogTitle className="text-2xl md:text-3xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -259,9 +261,11 @@ const ProgramsSection = () => {
                                 </Button>
                               </div>
                             </div>
-                          </DialogContent>
-                        </Dialog>
-                      </CardContent>
+                              </DialogContent>
+                            </Dialog>
+                          </div>
+                        </div>
+                      </div>
                     </Card>
                   </div>
                 ))}
@@ -287,17 +291,17 @@ const ProgramsSection = () => {
         </div>
 
         {/* Mobile View - Grid Layout */}
-        <div className="md:hidden grid gap-6">
+        <div className="md:hidden grid grid-cols-1 sm:grid-cols-2 gap-6 px-4">
           {programs.map((program) => (
             <Card key={program.id} className="group bg-background/80 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-xl overflow-hidden">
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="relative aspect-[3/4] overflow-hidden">
                 <img
                   src={program.image}
                   alt={program.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent opacity-85" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-85" />
                 
                 <div className="absolute top-3 right-3 flex flex-col gap-2">
                   <span className="px-2 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-medium">
@@ -308,36 +312,38 @@ const ProgramsSection = () => {
                   </span>
                 </div>
                 
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                  <h3 className="text-lg font-bold mb-1">
-                    {program.title}
-                  </h3>
-                  <p className="text-sm opacity-90">
-                    {program.shortDescription}
-                  </p>
-                </div>
-              </div>
-              
-              <CardContent className="p-4">
-                <div className="space-y-2 mb-4">
-                  {program.features.slice(0, 3).map((feature, index) => (
-                    <div key={index} className="flex items-center text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2 flex-shrink-0" />
-                      {feature}
+                <div className="absolute inset-0 p-4 text-white flex flex-col justify-between">
+                  <div className="flex-1" />
+                  
+                  <div className="space-y-3">
+                    <div>
+                      <h3 className="text-lg font-bold mb-1">
+                        {program.title}
+                      </h3>
+                      <p className="text-sm opacity-90 mb-3">
+                        {program.shortDescription}
+                      </p>
                     </div>
-                  ))}
-                </div>
+                    
+                    <div className="space-y-1">
+                      {program.features.slice(0, 3).map((feature, index) => (
+                        <div key={index} className="flex items-center text-xs">
+                          <div className="w-1.5 h-1.5 bg-white rounded-full mr-2 flex-shrink-0" />
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
 
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button 
-                      className="w-full bg-gradient-to-r from-primary to-primary/80 text-white border-0 rounded-lg"
-                      size="sm"
-                    >
-                      <BookOpen className="w-4 h-4 mr-2" />
-                      Learn More
-                    </Button>
-                  </DialogTrigger>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button 
+                          className="w-full bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30 hover:border-white/50 rounded-lg text-sm mt-3"
+                          size="sm"
+                        >
+                          <BookOpen className="w-4 h-4 mr-2" />
+                          Learn More
+                        </Button>
+                      </DialogTrigger>
                   <DialogContent className="max-w-[95vw] max-h-[85vh] overflow-y-auto">
                     <DialogHeader>
                       <DialogTitle className="text-xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -377,9 +383,11 @@ const ProgramsSection = () => {
                         </Button>
                       </div>
                     </div>
-                  </DialogContent>
-                </Dialog>
-              </CardContent>
+                      </DialogContent>
+                    </Dialog>
+                  </div>
+                </div>
+              </div>
             </Card>
           ))}
         </div>
