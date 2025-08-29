@@ -575,5 +575,98 @@ export const programsData: Program[] = [
       }
     ],
     category: "Psychology"
+  },
+  {
+    id: "diploma-entrepreneurship-001",
+    slug: "diploma-entrepreneurship-management",
+    title: "Diploma in Entrepreneurship and Management",
+    level: "Diploma",
+    shortSummary: "Comprehensive program equipping aspiring entrepreneurs with essential business skills, market analysis, and leadership capabilities for successful venture creation.",
+    longDescription: `
+      <p>The Diploma in Entrepreneurship equips aspiring business owners and innovators with the essential knowledge and skills to launch, manage, and grow successful ventures.</p>
+      <p>Covering business fundamentals, market analysis, financial management, leadership, and marketing strategies, this program is ideal for individuals seeking to develop entrepreneurial mindsets and practical capabilities.</p>
+    `,
+    modules: [
+      {
+        title: "Introduction to Entrepreneurship",
+        description: "Understanding entrepreneurship and its role in the economy, characteristics of successful entrepreneurs, identifying opportunities and innovation processes"
+      },
+      {
+        title: "Business Environment and Market Analysis",
+        description: "Assessing business environments and trends, conducting market research and competitor analysis, understanding legal and ethical business considerations"
+      },
+      {
+        title: "Financial Management for Entrepreneurs",
+        description: "Basics of financial planning and budgeting, understanding cash flow, profit, and loss, raising capital and managing investments"
+      },
+      {
+        title: "Operations and Project Management",
+        description: "Key principles of operations management, planning and executing projects effectively, tools for project monitoring and evaluation"
+      },
+      {
+        title: "Marketing for Entrepreneurs",
+        description: "Building a marketing plan for startups, branding, digital marketing, and customer acquisition, leveraging social media for business growth"
+      },
+      {
+        title: "Leadership and People Management",
+        description: "Developing leadership qualities, managing teams and building organizational culture, conflict resolution and motivating employees"
+      }
+    ],
+    learningOutcomes: [
+      "Create and evaluate business plans for new ventures",
+      "Analyze markets and identify business opportunities",
+      "Manage finances and operations effectively",
+      "Apply leadership skills to guide small teams or start-up operations",
+      "Understand core entrepreneurial concepts and business fundamentals",
+      "Develop skills in market research, financial planning, and operational management"
+    ],
+    careerPaths: [
+      "Startup Founder / Small Business Owner",
+      "Business Development Executive",
+      "Marketing Coordinator for SMEs",
+      "Project or Operations Assistant",
+      "Corporate Entrepreneurship roles",
+      "Family Business Manager"
+    ],
+    duration: "15 months",
+    fees: {
+      total: 195000,
+      currency: "LKR",
+      installments: {
+        count: 15,
+        amount: 13000
+      }
+    },
+    entryRequirements: [
+      "Age limit: 16+",
+      "Pass EDEXCEL or G.C.E O/L with 6 Credits",
+      "Any other qualification approved by the Academic Administration of Amazon College"
+    ],
+    images: [
+      "/src/assets/business-class.jpg",
+      "/src/assets/student-lounge.jpg"
+    ],
+    documents: [
+      "/documents/diploma-entrepreneurship-brochure.pdf"
+    ],
+    accreditation: [
+      {
+        body: "University Grants Commission (UGC) Sri Lanka",
+        type: "Recognition"
+      },
+      {
+        body: "World Higher Education Database (WHED)",
+        type: "Listing"
+      }
+    ],
+    contacts: [
+      {
+        type: "admissions",
+        email: "info@amazoncollege.lk",
+        phone: "+94 114-386-126"
+      }
+    ],
+    featured: true,
+    category: "Business Management"
   }
 ];

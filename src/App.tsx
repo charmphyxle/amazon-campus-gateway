@@ -10,6 +10,7 @@ import Accreditations from "./pages/Accreditations";
 import Gallery from "./pages/Gallery";
 import ContactUs from "./pages/ContactUs";
 import NotFound from "./pages/NotFound";
+import ProgramsListing from "./pages/ProgramsListing";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/accreditations" element={<Accreditations />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/programs-listing" element={<ProgramsListing />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
