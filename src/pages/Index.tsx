@@ -15,6 +15,7 @@ import AccreditationsSection from "@/components/AccreditationsSection";
 import NewsEventsSection from "@/components/NewsEventsSection";
 import InternationalSection from "@/components/InternationalSection";
 import CTASection from "@/components/CTASection";
+import InstitutionalInfo from "@/components/InstitutionalInfo";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -35,6 +36,7 @@ const Index = () => {
       <TestimonialsSection />
       <NewsEventsSection />
       <InternationalSection />
+      <InstitutionalInfo />
       <CTASection />
       <Footer />
     </div>
