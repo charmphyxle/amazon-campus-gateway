@@ -71,8 +71,8 @@ const AboutUs = () => {
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative container mx-auto px-4 h-full flex items-center justify-center">
           <div className="text-center text-white animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">About Amazon College</h1>
-            <p className="text-xl md:text-2xl opacity-90">15+ Years of Educational Excellence</p>
+                <h1 className="text-5xl md:text-6xl font-bold mb-4">About Amazon College</h1>
+                <p className="text-xl md:text-2xl opacity-90">Cost-Effective, Internationally Recognised Education</p>
           </div>
         </div>
       </section>

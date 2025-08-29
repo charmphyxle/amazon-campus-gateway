@@ -39,7 +39,7 @@ const ContactUs = () => {
     {
       icon: MapPin,
       title: "Address",
-      details: ["294, 2nd Floor Galle Road", "Colombo-4, Sri Lanka"],
+      details: ["294, 2nd Floor, Galle Road", "Colombo 4, Sri Lanka"],
       color: "text-trust"
     },
     {
