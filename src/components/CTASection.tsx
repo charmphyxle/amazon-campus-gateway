@@ -55,8 +55,14 @@ const CTASection = () => {
               Apply Now
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="xl" variant="outline" className="bg-white/10 border-white text-white hover:bg-white hover:text-primary hover-lift">
-              Schedule Campus Tour
+            <Button 
+              size="xl" 
+              variant="outline" 
+              className="bg-white/10 border-white text-white hover:bg-white hover:text-primary hover-lift"
+              onClick={() => window.open('/amazon-college-brochure.pdf', '_blank')}
+            >
+              <Download className="w-5 h-5 mr-2" />
+              Download Brochure
             </Button>
           </div>
         </div>
@@ -89,6 +95,7 @@ const CTASection = () => {
                   <Button 
                     variant={action.variant}
                     className="w-full group-hover:scale-105 transition-transform duration-300 hover-glow"
+                    onClick={action.title === "Download Brochure" ? () => window.open('/amazon-college-brochure.pdf', '_blank') : undefined}
                   >
                     {action.button}
                   </Button>
@@ -103,12 +110,12 @@ const CTASection = () => {
           <div className="inline-block bg-white/10 backdrop-blur-sm rounded-lg p-6">
             <p className="text-white/90 mb-2">Need immediate assistance?</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="tel:+1234567890" className="text-secondary font-bold text-lg hover:text-white transition-colors">
-                📞 +1 (234) 567-8900
+              <a href="tel:+94114386126" className="text-secondary font-bold text-lg hover:text-white transition-colors">
+                📞 +94 114-386-126
               </a>
               <span className="hidden sm:inline text-white/50">|</span>
-              <a href="mailto:info@amazoncollege.edu" className="text-secondary font-bold text-lg hover:text-white transition-colors">
-                ✉️ info@amazoncollege.edu
+              <a href="mailto:info@amazoncollege.lk" className="text-secondary font-bold text-lg hover:text-white transition-colors">
+                ✉️ info@amazoncollege.lk
               </a>
             </div>
           </div>

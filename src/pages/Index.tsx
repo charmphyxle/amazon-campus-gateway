@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import PartnersSlideshow from "@/components/PartnersSlideshow";
 import WelcomeVisionSection from "@/components/WelcomeVisionSection";
+import ProgramCategoriesSection from "@/components/ProgramCategoriesSection";
 import ProgramsSection from "@/components/ProgramsSection";
 import EventsCalendar from "@/components/EventsCalendar";
 import WhyChooseSection from "@/components/WhyChooseSection";
@@ -26,6 +27,7 @@ const Index = () => {
       <HeroSection />
       <PartnersSlideshow />
       <WelcomeVisionSection />
+      <ProgramCategoriesSection />
       <ProgramsSection />
       <WhyChooseSection />
       <StatsSection />
