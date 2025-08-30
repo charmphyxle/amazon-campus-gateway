@@ -114,9 +114,12 @@ const ProgramCategoriesSection = () => {
                     <Button 
                       variant="outline"
                       className="w-full group-hover:scale-105 transition-transform duration-300 hover-glow group"
+                      asChild
                     >
-                      View Programs
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      <a href={`/${category.id}-programs`}>
+                        View Programs
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </a>
                     </Button>
                   </div>
                 </CardContent>
@@ -126,10 +129,12 @@ const ProgramCategoriesSection = () => {
         </div>
 
         <div className="text-center mt-12 animate-slide-up" style={{ animationDelay: '0.6s' }}>
-          <Button size="lg" variant="default" className="hover-lift hover-glow">
-            View All Programs
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
+            <Button size="lg" variant="default" className="hover-lift hover-glow" asChild>
+              <a href="/programs">
+                View All Programs
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
+            </Button>
         </div>
       </div>
     </section>
