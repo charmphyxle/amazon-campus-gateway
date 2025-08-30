@@ -25,14 +25,11 @@ const Navigation = () => {
   }, []);
 
   const programs = [
-    { name: "Diploma Programs", description: "Professional diploma courses" },
-    { name: "Language Courses", description: "English & international languages" },
-    { name: "Kids Programs", description: "Educational programs for children" },
-    { name: "Teacher Training", description: "Professional development courses" },
-    { name: "Business Administration", description: "MBA and business management courses" },
-    { name: "Computer Science", description: "IT and programming courses" },
-    { name: "Healthcare Programs", description: "Medical and nursing certifications" },
-    { name: "Engineering", description: "Technical and engineering diplomas" }
+    { name: "TVEC & Short Courses", description: "6-month practical certificates", href: "/tvec-programs" },
+    { name: "Diploma Programs", description: "Professional diploma courses", href: "/diploma-programs" },
+    { name: "HND Programs", description: "Higher National Diplomas", href: "/hnd-programs" },
+    { name: "Degree Programs", description: "Bachelor's and top-up degrees", href: "/degree-programs" },
+    { name: "Masters & PhD", description: "Postgraduate research programs", href: "/masters-phd-programs" }
   ];
 
   return (
@@ -79,6 +76,7 @@ const Navigation = () => {
                       {programs.map((program) => (
                         <NavigationMenuLink
                           key={program.name}
+                          href={program.href}
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer"
                         >
                           <div className="text-sm font-medium leading-none">{program.name}</div>
@@ -113,7 +111,7 @@ const Navigation = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/#news" className="px-4 py-3 text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/news-events" className="px-4 py-3 text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
                     News & Events
                   </NavigationMenuLink>
                 </NavigationMenuItem>
@@ -154,7 +152,7 @@ const Navigation = () => {
               <a href="/programs" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Our Programs</a>
               <a href="/accreditations" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Accreditations</a>
               <a href="/gallery" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Gallery</a>
-              <a href="/#news" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">News & Events</a>
+              <a href="/news-events" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">News & Events</a>
               <a href="/#testimonials" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Testimonials</a>
               <a href="/contact" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Contact Us</a>
             </div>
