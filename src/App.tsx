@@ -24,6 +24,7 @@ import Testimonials from "./pages/Testimonials";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NewsEvents from "./pages/NewsEvents";
+import EventDetail from "./pages/EventDetail";
 import OurPrograms from "./pages/OurPrograms";
 import DiplomaPrograms from "./pages/DiplomaPrograms";
 import HNDPrograms from "./pages/HNDPrograms";
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/programs-listing" element={<ProgramsListing />} />
           <Route path="/news-events" element={<NewsEvents />} />
+          <Route path="/events/:id" element={<EventDetail />} />
           <Route path="/diploma-programs" element={<DiplomaPrograms />} />
           <Route path="/hnd-programs" element={<HNDPrograms />} />
           <Route path="/degree-programs" element={<DegreePrograms />} />
