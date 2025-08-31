@@ -1,108 +1,225 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { ChevronLeft, ChevronRight, X, Camera } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, Camera, Play, Search, Filter, Calendar, Tag } from "lucide-react";
 
 const Gallery = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [lightboxImage, setLightboxImage] = useState<number | null>(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sortBy, setSortBy] = useState("newest");
 
-  const categories = ["All", "Graduation", "Events", "Campus", "International", "Classes"];
+  const categories = ["All", "Graduation", "Events", "Campus", "International"];
 
   const galleryItems = [
     {
       id: 1,
       category: "Graduation",
-      title: "Spring 2023 Graduation Ceremony",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop",
-      description: "Celebrating our graduates' achievements at the annual ceremony"
+      title: "Spring 2024 Graduation Ceremony",
+      type: "image",
+      image: "/src/assets/hero-graduation.jpg",
+      thumbnail: "/src/assets/hero-graduation.jpg",
+      description: "Celebrating our graduates' achievements at the annual ceremony",
+      date: "2024-05-15",
+      event: "Graduation Ceremony",
+      tags: ["graduation", "ceremony", "achievement"]
     },
     {
       id: 2,
       category: "Campus",
       title: "Modern Learning Facilities",
-      image: "https://images.unsplash.com/photo-1562774053-701939374585?w=600&h=400&fit=crop",
-      description: "State-of-the-art classrooms equipped with latest technology"
+      type: "image",
+      image: "/src/assets/campus-exterior.jpg",
+      thumbnail: "/src/assets/campus-exterior.jpg",
+      description: "State-of-the-art classrooms equipped with latest technology",
+      date: "2024-03-20",
+      event: "Campus Tour",
+      tags: ["campus", "facilities", "modern"]
     },
     {
       id: 3,
       category: "Events",
       title: "International Cultural Day",
+      type: "video",
       image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&h=400&fit=crop",
-      description: "Students celebrating diversity and cultural exchange"
+      thumbnail: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&h=400&fit=crop",
+      videoUrl: "https://www.youtube.com/watch?v=sample",
+      description: "Students celebrating diversity and cultural exchange",
+      date: "2024-04-10",
+      event: "Cultural Day",
+      tags: ["cultural", "international", "diversity"]
     },
     {
       id: 4,
-      category: "Classes",
+      category: "Campus",
       title: "Interactive Learning Session",
-      image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600&h=400&fit=crop",
-      description: "Engaging classroom discussions and collaborative learning"
+      type: "image",
+      image: "/src/assets/hero-classroom.jpg",
+      thumbnail: "/src/assets/hero-classroom.jpg",
+      description: "Engaging classroom discussions and collaborative learning",
+      date: "2024-03-15",
+      event: "Class Session",
+      tags: ["learning", "interactive", "classroom"]
     },
     {
       id: 5,
       category: "International",
       title: "Global Partner University Visit",
-      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=400&fit=crop",
-      description: "Representatives from partner universities visiting our campus"
+      type: "image",
+      image: "/src/assets/teacher-training.jpg",
+      thumbnail: "/src/assets/teacher-training.jpg",
+      description: "Representatives from partner universities visiting our campus",
+      date: "2024-04-05",
+      event: "Partnership Meeting",
+      tags: ["international", "partnership", "collaboration"]
     },
     {
       id: 6,
       category: "Campus",
       title: "Student Common Area",
-      image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=600&h=400&fit=crop",
-      description: "Comfortable spaces for students to relax and socialize"
+      type: "image",
+      image: "/src/assets/student-lounge.jpg",
+      thumbnail: "/src/assets/student-lounge.jpg",
+      description: "Comfortable spaces for students to relax and socialize",
+      date: "2024-03-10",
+      event: "Campus Life",
+      tags: ["student-life", "lounge", "social"]
     },
     {
       id: 7,
       category: "Events",
       title: "Science & Innovation Fair",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
-      description: "Students showcasing their innovative projects and research"
+      type: "video",
+      image: "/src/assets/science-lab.jpg",
+      thumbnail: "/src/assets/science-lab.jpg",
+      videoUrl: "https://www.youtube.com/watch?v=sample2",
+      description: "Students showcasing their innovative projects and research",
+      date: "2024-04-20",
+      event: "Innovation Fair",
+      tags: ["science", "innovation", "projects"]
     },
     {
       id: 8,
       category: "Graduation",
       title: "Academic Excellence Awards",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop",
-      description: "Recognizing outstanding academic achievements"
+      type: "image",
+      image: "/src/assets/certificate-ceremony.jpg",
+      thumbnail: "/src/assets/certificate-ceremony.jpg",
+      description: "Recognizing outstanding academic achievements",
+      date: "2024-05-10",
+      event: "Awards Ceremony",
+      tags: ["awards", "excellence", "achievement"]
     },
     {
       id: 9,
-      category: "Classes",
+      category: "Campus",
       title: "Computer Lab Session",
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop",
-      description: "Hands-on learning in our modern computer laboratories"
+      type: "image",
+      image: "/src/assets/computer-lab.jpg",
+      thumbnail: "/src/assets/computer-lab.jpg",
+      description: "Hands-on learning in our modern computer laboratories",
+      date: "2024-03-25",
+      event: "Lab Session",
+      tags: ["computer", "lab", "technology"]
     },
     {
       id: 10,
       category: "International",
       title: "Study Abroad Program",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
-      description: "Students participating in international exchange programs"
+      type: "video",
+      image: "/src/assets/language-class.jpg",
+      thumbnail: "/src/assets/language-class.jpg",
+      videoUrl: "https://www.youtube.com/watch?v=sample3",
+      description: "Students participating in international exchange programs",
+      date: "2024-04-15",
+      event: "Study Abroad",
+      tags: ["study-abroad", "exchange", "international"]
     },
     {
       id: 11,
       category: "Events",
       title: "Annual Sports Day",
-      image: "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&h=400&fit=crop",
-      description: "Promoting health and teamwork through sports activities"
+      type: "image",
+      image: "/src/assets/campus-walkway.jpg",
+      thumbnail: "/src/assets/campus-walkway.jpg",
+      description: "Promoting health and teamwork through sports activities",
+      date: "2024-04-25",
+      event: "Sports Day",
+      tags: ["sports", "teamwork", "health"]
     },
     {
       id: 12,
       category: "Campus",
       title: "Library & Study Areas",
-      image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop",
-      description: "Quiet study spaces with extensive learning resources"
+      type: "image",
+      image: "/src/assets/library-study.jpg",
+      thumbnail: "/src/assets/library-study.jpg",
+      description: "Quiet study spaces with extensive learning resources",
+      date: "2024-03-05",
+      event: "Study Session",
+      tags: ["library", "study", "resources"]
+    },
+    {
+      id: 13,
+      category: "Events",
+      title: "Kids Program Workshop",
+      type: "video",
+      image: "/src/assets/kids-program.jpg",
+      thumbnail: "/src/assets/kids-program.jpg",
+      videoUrl: "https://www.youtube.com/watch?v=sample4",
+      description: "Special educational programs for young learners",
+      date: "2024-04-30",
+      event: "Kids Workshop",
+      tags: ["kids", "workshop", "education"]
+    },
+    {
+      id: 14,
+      category: "Campus",
+      title: "Business Class Presentation",
+      type: "image",
+      image: "/src/assets/business-class.jpg",
+      thumbnail: "/src/assets/business-class.jpg",
+      description: "Students presenting their business projects",
+      date: "2024-04-12",
+      event: "Business Presentation",
+      tags: ["business", "presentation", "projects"]
+    },
+    {
+      id: 15,
+      category: "Campus",
+      title: "Welcome Vision Building",
+      type: "image",
+      image: "/src/assets/welcome-vision-bg.jpg",
+      thumbnail: "/src/assets/welcome-vision-bg.jpg",
+      description: "Our welcoming campus environment",
+      date: "2024-03-01",
+      event: "Campus Overview",
+      tags: ["welcome", "campus", "vision"]
     }
   ];
 
-  const filteredItems = activeFilter === "All" 
-    ? galleryItems 
-    : galleryItems.filter(item => item.category === activeFilter);
+  const filteredItems = galleryItems.filter(item => {
+    const matchesCategory = activeFilter === "All" || item.category === activeFilter;
+    const matchesSearch = searchTerm === "" || 
+      item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    return matchesCategory && matchesSearch;
+  }).sort((a, b) => {
+    if (sortBy === "newest") {
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    } else if (sortBy === "oldest") {
+      return new Date(a.date).getTime() - new Date(b.date).getTime();
+    } else {
+      return a.title.localeCompare(b.title);
+    }
+  });
 
   const nextImage = () => {
     if (lightboxImage !== null) {
@@ -139,20 +256,56 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* Filter Tabs */}
+      {/* Search and Filter Section */}
       <section className="py-8 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={activeFilter === category ? "default" : "outline"}
-                onClick={() => setActiveFilter(category)}
-                className="transition-all duration-300"
-              >
-                {category}
-              </Button>
-            ))}
+          <div className="max-w-6xl mx-auto">
+            {/* Search Bar */}
+            <div className="flex flex-col lg:flex-row gap-4 mb-6">
+              <div className="flex-1">
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+                  <Input
+                    placeholder="Search photos, videos, events..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="pl-10"
+                  />
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <Select value={sortBy} onValueChange={setSortBy}>
+                  <SelectTrigger className="w-40">
+                    <SelectValue placeholder="Sort by" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="newest">Newest First</SelectItem>
+                    <SelectItem value="oldest">Oldest First</SelectItem>
+                    <SelectItem value="alphabetical">A-Z</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+
+            {/* Category Filter Tabs */}
+            <div className="flex flex-wrap justify-center gap-4">
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  variant={activeFilter === category ? "default" : "outline"}
+                  onClick={() => setActiveFilter(category)}
+                  className="transition-all duration-300"
+                >
+                  {category}
+                  <Badge variant="secondary" className="ml-2">
+                    {category === "All" 
+                      ? galleryItems.length 
+                      : galleryItems.filter(item => item.category === category).length
+                    }
+                  </Badge>
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -167,21 +320,33 @@ const Gallery = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {/* Masonry Grid */}
+          <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
             {filteredItems.map((item, index) => (
               <div
                 key={item.id}
-                className="group relative overflow-hidden rounded-lg cursor-pointer animate-fade-in hover:scale-105 transition-all duration-300"
+                className="group relative overflow-hidden rounded-lg cursor-pointer animate-fade-in hover:scale-105 transition-all duration-300 break-inside-avoid mb-6"
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => setLightboxImage(item.id)}
               >
-                <div className="aspect-square relative">
+                <div className="relative">
                   <img
-                    src={item.image}
+                    src={item.thumbnail}
                     alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full object-cover transition-transform duration-300 group-hover:scale-110"
                     loading="lazy"
+                    style={{ height: 'auto' }}
                   />
+                  
+                  {/* Video Play Button */}
+                  {item.type === "video" && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="bg-black/50 rounded-full p-4 group-hover:bg-black/70 transition-colors">
+                        <Play className="w-8 h-8 text-white fill-white" />
+                      </div>
+                    </div>
+                  )}
+                  
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
                   
                   {/* Category Badge */}
@@ -190,12 +355,29 @@ const Gallery = () => {
                       {item.category}
                     </Badge>
                   </div>
+
+                  {/* Type Badge */}
+                  {item.type === "video" && (
+                    <div className="absolute top-3 right-3">
+                      <Badge variant="default" className="shadow-md bg-primary/80 backdrop-blur-sm">
+                        <Play className="w-3 h-3 mr-1" />
+                        Video
+                      </Badge>
+                    </div>
+                  )}
                   
                   {/* Overlay Content */}
                   <div className="absolute inset-0 p-4 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="text-white">
                       <h3 className="font-semibold text-lg mb-1 line-clamp-2">{item.title}</h3>
-                      <p className="text-sm opacity-90 line-clamp-2">{item.description}</p>
+                      <p className="text-sm opacity-90 line-clamp-2 mb-2">{item.description}</p>
+                      <div className="flex items-center gap-2 text-xs opacity-75">
+                        <Calendar className="w-3 h-3" />
+                        {new Date(item.date).toLocaleDateString()}
+                        <span>•</span>
+                        <Tag className="w-3 h-3" />
+                        {item.event}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -245,21 +427,63 @@ const Gallery = () => {
                 <ChevronRight className="w-4 h-4" />
               </Button>
 
-              {/* Image */}
+              {/* Media Content */}
               <div className="flex flex-col items-center justify-center h-full p-8">
-                <img
-                  src={currentImage.image}
-                  alt={currentImage.title}
-                  className="max-w-full max-h-[70vh] object-contain"
-                />
+                {currentImage.type === "video" ? (
+                  <div className="w-full max-w-4xl">
+                    <div className="aspect-video bg-black rounded-lg flex items-center justify-center">
+                      <div className="text-center text-white">
+                        <Play className="w-16 h-16 mx-auto mb-4" />
+                        <p className="text-lg">Video Player</p>
+                        <p className="text-sm opacity-75">Video URL: {currentImage.videoUrl}</p>
+                        <Button 
+                          variant="secondary" 
+                          className="mt-4"
+                          onClick={() => window.open(currentImage.videoUrl, '_blank')}
+                        >
+                          Open Video
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <img
+                    src={currentImage.image}
+                    alt={currentImage.title}
+                    className="max-w-full max-h-[70vh] object-contain"
+                  />
+                )}
                 
-                {/* Image Info */}
-                <div className="mt-6 text-center text-white">
+                {/* Media Info */}
+                <div className="mt-6 text-center text-white max-w-4xl">
+                  <div className="flex justify-center items-center gap-4 mb-4">
+                    <Badge variant="secondary">{currentImage.category}</Badge>
+                    {currentImage.type === "video" && (
+                      <Badge variant="default">
+                        <Play className="w-3 h-3 mr-1" />
+                        Video
+                      </Badge>
+                    )}
+                  </div>
                   <h3 className="text-2xl font-bold mb-2">{currentImage.title}</h3>
-                  <p className="text-lg opacity-80 max-w-2xl">{currentImage.description}</p>
-                  <Badge variant="secondary" className="mt-3">
-                    {currentImage.category}
-                  </Badge>
+                  <p className="text-lg opacity-80 mb-4">{currentImage.description}</p>
+                  <div className="flex justify-center items-center gap-6 text-sm opacity-75">
+                    <div className="flex items-center gap-1">
+                      <Calendar className="w-4 h-4" />
+                      {new Date(currentImage.date).toLocaleDateString()}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Tag className="w-4 h-4" />
+                      {currentImage.event}
+                    </div>
+                  </div>
+                  <div className="flex justify-center gap-2 mt-4">
+                    {currentImage.tags.map((tag, index) => (
+                      <Badge key={index} variant="outline" className="text-xs bg-white/10 border-white/20">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
