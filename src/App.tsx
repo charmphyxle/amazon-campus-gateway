@@ -11,7 +11,7 @@ import Gallery from "./pages/Gallery";
 import ContactUs from "./pages/ContactUs";
 import NotFound from "./pages/NotFound";
 import ProgramsListing from "./pages/ProgramsListing";
-import CourseDetail from "./pages/CourseDetail";
+import ProgramDetail from "./pages/ProgramDetail";
 import AdmissionsFees from "./pages/AdmissionsFees";
 import ShortCourses from "./pages/ShortCourses";
 import Faculty from "./pages/Faculty";
@@ -43,7 +43,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/programs" element={<OurPrograms />} />
-          <Route path="/programs/:slug" element={<CourseDetail />} />
+          <Route path="/programs/:slug" element={<ProgramDetail />} />
           <Route path="/accreditations" element={<Accreditations />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<ContactUs />} />
