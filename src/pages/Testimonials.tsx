@@ -6,10 +6,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Star, Quote, Play, Award, Briefcase, GraduationCap } from "lucide-react";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
+import VideoTestimonialModal from "@/components/VideoTestimonialModal";
+import { Star, Quote, Play, Award, Briefcase, GraduationCap, Users, Video, ExternalLink } from "lucide-react";
 
 const Testimonials = () => {
   const [filterProgram, setFilterProgram] = useState("all");
+  const [selectedVideo, setSelectedVideo] = useState<any>(null);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   const testimonials = [
     {
@@ -94,6 +98,49 @@ const Testimonials = () => {
     }
   ];
 
+  const videoTestimonials = [
+    {
+      id: 1,
+      title: "From Student to Software Developer",
+      studentName: "Ravindu Perera",
+      program: "Diploma in Information Technology",
+      year: "2023",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      thumbnail: "/src/assets/computer-lab.jpg",
+      description: "Ravindu shares his journey from a complete beginner to landing his dream job as a software developer at a leading tech company."
+    },
+    {
+      id: 2,
+      title: "International Success Story",
+      studentName: "Amara Hassan",
+      program: "Advanced English Language Course",
+      year: "2022",
+      videoUrl: "https://www.youtube.com/embed/M7lc1UVf-VE",
+      thumbnail: "/src/assets/language-class.jpg",
+      description: "Amara talks about how the English program helped her secure a scholarship for her Master's degree in the UK."
+    },
+    {
+      id: 3,
+      title: "Career Change at 35",
+      studentName: "Priya Jayasinghe",
+      program: "Diploma in Psychology & Counselling",
+      year: "2023",
+      videoUrl: "https://www.youtube.com/embed/oHg5SJYRHA0",
+      thumbnail: "/src/assets/teacher-training.jpg",
+      description: "Priya's inspiring story of how she changed careers at 35 and became a certified mental health counselor."
+    },
+    {
+      id: 4,
+      title: "From Housewife to Entrepreneur",
+      studentName: "Nilmini Rodrigo",
+      program: "Diploma in Early Childhood Education",
+      year: "2023",
+      videoUrl: "https://www.youtube.com/embed/9bZkp7q19f0",
+      thumbnail: "/src/assets/kids-program.jpg",
+      description: "Nilmini shares how she started her own preschool after completing her early childhood education diploma."
+    }
+  ];
+
   const successStats = [
     { number: "95%", label: "Job Placement Rate", icon: Briefcase },
     { number: "2,500+", label: "Successful Graduates", icon: GraduationCap },
@@ -106,6 +153,11 @@ const Testimonials = () => {
   const filteredTestimonials = testimonials.filter(testimonial => 
     filterProgram === "all" || testimonial.program.includes(filterProgram)
   );
+
+  const handleVideoClick = (video: any) => {
+    setSelectedVideo(video);
+    setIsVideoModalOpen(true);
+  };
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
@@ -183,59 +235,111 @@ const Testimonials = () => {
         </div>
       </section>
 
-      {/* Featured Testimonial */}
-      {testimonials.find(t => t.featured) && (
-        <section className="py-12">
-          <div className="container mx-auto px-4">
-            {(() => {
-              const featured = testimonials.find(t => t.featured);
-              return (
-                <Card className="max-w-6xl mx-auto overflow-hidden shadow-elegant-lg">
-                  <div className="grid md:grid-cols-2 gap-0">
-                    <div className="h-64 md:h-auto bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                      <div className="text-center p-8">
-                        <GraduationCap className="w-16 h-16 text-primary mx-auto mb-4" />
-                        <Badge variant="secondary" className="mb-4">Featured Success Story</Badge>
-                        <p className="text-muted-foreground">Graduate Success Image</p>
-                      </div>
-                    </div>
-                    <div className="p-8">
-                      <Badge variant="outline" className="mb-4">{featured?.program}</Badge>
-                      <Quote className="w-8 h-8 text-primary mb-4" />
-                      <blockquote className="text-lg text-foreground mb-6 italic">
-                        "{featured?.quote}"
-                      </blockquote>
-                      <div className="flex items-center gap-2 mb-4">
-                        {renderStars(featured?.rating || 5)}
-                      </div>
-                      <div className="mb-6">
-                        <h4 className="font-semibold text-foreground">{featured?.name}</h4>
-                        <p className="text-muted-foreground">{featured?.currentRole}</p>
-                        <p className="text-sm text-muted-foreground">Class of {featured?.year}</p>
-                      </div>
-                      <div className="bg-muted/50 rounded-lg p-4">
-                        <h5 className="font-semibold text-foreground mb-2">Career Transformation</h5>
-                        <div className="space-y-2 text-sm">
-                          <div>
-                            <span className="text-muted-foreground">Before:</span> {featured?.beforeAfter.before}
-                          </div>
-                          <div>
-                            <span className="text-muted-foreground">After:</span> {featured?.beforeAfter.after}
-                          </div>
-                        </div>
-                      </div>
+      {/* Main Testimonials Carousel */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Featured Success Stories</h2>
+            <p className="text-lg text-muted-foreground">
+              Discover how our graduates transformed their careers and lives
+            </p>
+          </div>
+          
+          <TestimonialCarousel testimonials={filteredTestimonials.slice(0, 5)} />
+        </div>
+      </section>
+
+      {/* Video Testimonials */}
+      <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="flex justify-center mb-4">
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center">
+                <Video className="w-8 h-8 text-white" />
+              </div>
+            </div>
+            <h2 className="text-3xl font-bold text-foreground mb-4">Video Testimonials</h2>
+            <p className="text-lg text-muted-foreground">
+              Watch our graduates share their success stories in their own words
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {videoTestimonials.map((video) => (
+              <Card 
+                key={video.id} 
+                className="overflow-hidden hover:shadow-elegant-lg transition-all duration-300 group cursor-pointer"
+                onClick={() => handleVideoClick(video)}
+              >
+                <div className="h-48 relative bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                  <img 
+                    src={video.thumbnail} 
+                    alt={video.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Play className="w-8 h-8 text-white ml-1" />
                     </div>
                   </div>
-                </Card>
-              );
-            })()}
+                  <div className="absolute top-4 left-4">
+                    <Badge variant="secondary" className="flex items-center gap-1">
+                      <Video className="w-3 h-3" />
+                      Video
+                    </Badge>
+                  </div>
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-foreground mb-2 line-clamp-2">
+                    {video.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    {video.studentName}
+                  </p>
+                  <Badge variant="outline" className="text-xs">
+                    {video.program}
+                  </Badge>
+                </CardContent>
+              </Card>
+            ))}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
-      {/* All Testimonials */}
-      <section className="py-12">
+      {/* Alumni Network & Success Metrics */}
+      <section className="py-16">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Join Our Alumni Network</h2>
+            <p className="text-lg text-muted-foreground">
+              Connect with over 2,500 successful graduates worldwide
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <Card className="text-center p-6 hover:shadow-elegant-lg transition-all duration-300">
+              <Users className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-foreground mb-2">2,500+</h3>
+              <p className="text-muted-foreground">Alumni Worldwide</p>
+            </Card>
+            <Card className="text-center p-6 hover:shadow-elegant-lg transition-all duration-300">
+              <Briefcase className="w-12 h-12 text-success mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-foreground mb-2">95%</h3>
+              <p className="text-muted-foreground">Employment Rate</p>
+            </Card>
+            <Card className="text-center p-6 hover:shadow-elegant-lg transition-all duration-300">
+              <Award className="w-12 h-12 text-secondary mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-foreground mb-2">50+</h3>
+              <p className="text-muted-foreground">Countries Represented</p>
+            </Card>
+            <Card className="text-center p-6 hover:shadow-elegant-lg transition-all duration-300">
+              <Star className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-foreground mb-2">4.9/5</h3>
+              <p className="text-muted-foreground">Graduate Satisfaction</p>
+            </Card>
+          </div>
+
+          {/* All Testimonials Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredTestimonials.filter(t => !t.featured).map((testimonial) => (
               <Card key={testimonial.id} className="hover:shadow-elegant-lg transition-all duration-300 group">
@@ -275,63 +379,60 @@ const Testimonials = () => {
         </div>
       </section>
 
-      {/* Video Testimonials */}
-      <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Video Testimonials</h2>
-            <p className="text-lg text-muted-foreground">
-              Hear directly from our graduates about their experiences
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((video) => (
-              <Card key={video} className="overflow-hidden hover:shadow-elegant-lg transition-all duration-300 group">
-                <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative cursor-pointer">
-                  <Play className="w-16 h-16 text-primary group-hover:scale-110 transition-transform" />
-                  <div className="absolute top-4 left-4">
-                    <Badge variant="secondary">Video</Badge>
-                  </div>
-                </div>
-                <CardContent className="p-4">
-                  <h4 className="font-semibold text-foreground mb-2">Graduate Interview {video}</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Watch how our alumni achieved success after graduation
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Share Your Story */}
-      <section className="py-16">
+      {/* CTA Section - Read More Stories */}
+      <section className="py-16 bg-gradient-to-br from-primary/10 to-secondary/10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-6">Share Your Success Story</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-6">Read More Alumni Stories</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Are you an Amazon College graduate? We'd love to hear about your journey and success!
+              Discover hundreds of success stories from our graduates around the world
             </p>
             
-            <Card className="p-8 bg-gradient-to-br from-primary/5 to-secondary/5">
+            <Card className="p-8 bg-gradient-to-br from-background to-muted/50 shadow-elegant">
               <div className="mb-6">
-                <Award className="w-16 h-16 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-foreground mb-2">Join Our Success Stories</h3>
+                <Quote className="w-16 h-16 text-primary mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-foreground mb-2">Explore Success Stories</h3>
                 <p className="text-muted-foreground">
-                  Help inspire future students by sharing your achievements
+                  Get inspired by reading detailed success stories, career journeys, and achievements of our alumni
                 </p>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg">Submit Your Story</Button>
-                <Button variant="outline" size="lg">Record Video Testimonial</Button>
+                <Button size="lg" className="flex items-center gap-2">
+                  <ExternalLink className="w-4 h-4" />
+                  View All Alumni Stories
+                </Button>
+                <Button variant="outline" size="lg" className="flex items-center gap-2">
+                  <Users className="w-4 h-4" />
+                  Join Alumni Network
+                </Button>
+              </div>
+
+              <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                  <Award className="w-4 h-4" />
+                  <span>500+ Success Stories</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                  <GraduationCap className="w-4 h-4" />
+                  <span>Global Alumni Network</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                  <Star className="w-4 h-4" />
+                  <span>Verified Achievements</span>
+                </div>
               </div>
             </Card>
           </div>
         </div>
       </section>
+
+      {/* Video Modal */}
+      <VideoTestimonialModal
+        video={selectedVideo}
+        isOpen={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
+      />
 
       <Footer />
     </div>
