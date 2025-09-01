@@ -52,18 +52,21 @@ const VerificationSection = () => {
               </div>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Student Verification
+              Official Student Verification
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Verify academic credentials instantly for employers, universities, and institutions
+              Instant credential verification for employers, universities, and institutions worldwide
             </p>
           </div>
 
-          <Card className="shadow-elegant-lg border-0">
+          <Card className="shadow-elegant-lg border-0 bg-gradient-to-br from-background to-muted/30">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl">Credential Verification System</CardTitle>
-              <CardDescription>
-                Enter a student ID to verify enrollment or graduation status
+              <CardTitle className="text-2xl flex items-center justify-center gap-2">
+                <Shield className="w-6 h-6 text-primary" />
+                Credential Verification System
+              </CardTitle>
+              <CardDescription className="text-base">
+                Enter a student ID to verify enrollment or graduation status instantly
               </CardDescription>
             </CardHeader>
             
@@ -102,9 +105,21 @@ const VerificationSection = () => {
                 isError={isError}
               />
 
-              <div className="text-center text-sm text-muted-foreground">
-                <p>This verification system is provided for transparency and credential authentication.</p>
-                <p>For assistance, contact our admissions office.</p>
+              <div className="text-center space-y-3">
+                <div className="text-sm text-muted-foreground">
+                  <p>🛡️ Secure verification system for credential authentication</p>
+                  <p>📞 For assistance, contact our admissions office at +1 (555) 123-4567</p>
+                </div>
+                
+                <div className="bg-muted/50 rounded-lg p-4">
+                  <h4 className="font-semibold mb-2">Sample IDs to Test:</h4>
+                  <div className="flex flex-wrap gap-2 justify-center text-xs">
+                    <code className="bg-background px-2 py-1 rounded">AMZ/A001</code>
+                    <code className="bg-background px-2 py-1 rounded">AMZ/A005</code>
+                    <code className="bg-background px-2 py-1 rounded">AMZ/A010</code>
+                    <code className="bg-background px-2 py-1 rounded">AMZ/A015</code>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
