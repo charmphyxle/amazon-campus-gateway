@@ -35,44 +35,45 @@ const Navigation = () => {
   return (
     <nav className={`${isScrolled ? 'bg-background/30' : 'bg-background/90'} backdrop-blur-md border-b border-border/50 sticky top-0 z-50 shadow-elegant transition-all duration-300`}>
       <div className="container mx-auto px-4 py-2">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center">
-            <a href="/" className="flex items-center space-x-3 group transition-transform hover:scale-105">
+          <div className="flex items-center flex-shrink-0">
+            <a href="/" className="flex items-center space-x-2 lg:space-x-3 group transition-transform hover:scale-105">
               <img 
                 src="/lovable-uploads/04d74a51-2d96-43ee-b40d-8cf6fa3c32fe.png" 
                 alt="Amazon College Logo"
-                className="h-16 w-auto object-contain drop-shadow-md"
+                className="h-12 lg:h-16 w-auto object-contain drop-shadow-md"
               />
-              {/* <div className="text-xl font-bold text-primary group-hover:text-primary/80 transition-colors">
+              {/* Logo text can be hidden on smaller screens if needed */}
+              {/* <div className="hidden md:block text-lg lg:text-xl font-bold text-primary group-hover:text-primary/80 transition-colors">
                 Amazon College
-                <span className="block text-sm font-normal text-muted-foreground">International Campus</span>
+                <span className="block text-xs lg:text-sm font-normal text-muted-foreground">International Campus</span>
               </div> */}
             </a>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/" className="px-4 py-3 text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/" className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
                     Home
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/about" className="px-4 py-3 text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/about" className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
                     About Us
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="px-4 py-3 text-lg font-semibold">
+                  <NavigationMenuTrigger className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold">
                     Our Programs
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid w-[450px] gap-3 p-4 bg-background/95 backdrop-blur-sm border border-border/50">
+                    <div className="grid w-[400px] xl:w-[450px] gap-3 p-4 bg-background/95 backdrop-blur-sm border border-border/50">
                       {programs.map((program) => (
                         <NavigationMenuLink
                           key={program.name}
@@ -99,31 +100,31 @@ const Navigation = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/accreditations" className="px-4 py-3 text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/accreditations" className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
                     Accreditations
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/gallery" className="px-4 py-3 text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/gallery" className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
                     Gallery
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/news-events" className="px-4 py-3 text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/news-events" className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
                     News & Events
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/testimonials" className="px-4 py-3 text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/testimonials" className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
                     Testimonials
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/contact" className="px-4 py-3 text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
+                  <NavigationMenuLink href="/contact" className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
                     Contact Us
                   </NavigationMenuLink>
                 </NavigationMenuItem>
@@ -145,16 +146,16 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-border">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="/" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Home</a>
-              <a href="/about" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">About Us</a>
-              <a href="/programs" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Our Programs</a>
-              <a href="/accreditations" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Accreditations</a>
-              <a href="/gallery" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Gallery</a>
-              <a href="/news-events" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">News & Events</a>
-              <a href="/testimonials" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Testimonials</a>
-              <a href="/contact" className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors">Contact Us</a>
+          <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-sm">
+            <div className="px-2 pt-2 pb-3 space-y-1 max-h-[80vh] overflow-y-auto">
+              <a href="/" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Home</a>
+              <a href="/about" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">About Us</a>
+              <a href="/programs" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Our Programs</a>
+              <a href="/accreditations" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Accreditations</a>
+              <a href="/gallery" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Gallery</a>
+              <a href="/news-events" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">News & Events</a>
+              <a href="/testimonials" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Testimonials</a>
+              <a href="/contact" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors">Contact Us</a>
             </div>
           </div>
         )}

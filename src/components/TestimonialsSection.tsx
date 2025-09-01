@@ -80,20 +80,20 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto relative animate-zoom-in" style={{ animationDelay: '0.4s' }}>
+        <div className="max-w-5xl mx-auto relative animate-zoom-in" style={{ animationDelay: '0.4s' }}>
           <Card className="shadow-elegant-xl border-0 overflow-hidden bg-white/10 backdrop-blur-sm hover-lift">
             <CardContent className="p-0">
-              <div className="relative h-96 flex items-center">
+              <div className="relative h-auto md:h-96 flex items-center">
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={index}
-                    className={`absolute inset-0 p-8 md:p-12 transition-all duration-500 ${
+                    className={`absolute inset-0 p-4 sm:p-6 md:p-8 lg:p-12 transition-all duration-500 ${
                       index === currentTestimonial 
                         ? 'opacity-100 transform translate-x-0' 
                         : 'opacity-0 transform translate-x-full'
                     }`}
                   >
-                    <div className="flex flex-col md:flex-row items-center gap-8 h-full">
+                    <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 h-full min-h-[300px] md:min-h-0">
                       <div className="flex-shrink-0">
                         <div className="relative">
                           <img
@@ -110,22 +110,22 @@ const TestimonialsSection = () => {
                       <div className="flex-1 text-center md:text-left">
                         <div className="flex justify-center md:justify-start mb-4">
                           {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="w-5 h-5 fill-secondary text-secondary animate-glow" style={{ animationDelay: `${i * 0.1}s` }} />
+                            <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-secondary text-secondary animate-glow" style={{ animationDelay: `${i * 0.1}s` }} />
                           ))}
                         </div>
                         
-                        <blockquote className="text-lg md:text-xl text-white mb-6 italic leading-relaxed">
+                        <blockquote className="text-base md:text-lg lg:text-xl text-white mb-4 md:mb-6 italic leading-relaxed">
                           "{testimonial.text}"
                         </blockquote>
                         
                         <div>
-                          <h4 className="text-xl font-bold text-secondary mb-1">
+                          <h4 className="text-lg md:text-xl font-bold text-secondary mb-1">
                             {testimonial.name}
                           </h4>
-                          <p className="text-white/80 mb-1">
+                          <p className="text-white/80 mb-1 text-sm md:text-base">
                             {testimonial.country}
                           </p>
-                          <p className="text-sm font-medium text-white/70">
+                          <p className="text-xs md:text-sm font-medium text-white/70">
                             {testimonial.course}
                           </p>
                         </div>
@@ -142,7 +142,7 @@ const TestimonialsSection = () => {
             variant="outline"
             size="icon"
             onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-white/30 hover:scale-110 transition-all duration-300 hover-glow"
+            className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-white/30 hover:scale-110 transition-all duration-300 hover-glow z-10"
           >
             <ChevronLeft className="w-4 h-4" />
           </Button>
@@ -151,18 +151,18 @@ const TestimonialsSection = () => {
             variant="outline"
             size="icon"
             onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-white/30 hover:scale-110 transition-all duration-300 hover-glow"
+            className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-white/30 hover:scale-110 transition-all duration-300 hover-glow z-10"
           >
             <ChevronRight className="w-4 h-4" />
           </Button>
 
           {/* Indicators */}
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-6 md:mt-8 space-x-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentTestimonial(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${
+                className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-all duration-300 hover:scale-125 ${
                   index === currentTestimonial
                     ? 'bg-secondary scale-125 animate-glow'
                     : 'bg-white/50 hover:bg-white/75'

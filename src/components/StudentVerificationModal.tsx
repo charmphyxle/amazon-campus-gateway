@@ -50,7 +50,7 @@ const StudentVerificationModal = ({
   if (isError) {
     return (
       <Dialog open={isOpen} onOpenChange={onClose}>
-        <DialogContent className="sm:max-w-md animate-fade-in">
+        <DialogContent className="sm:max-w-md max-w-[95vw] animate-fade-in mx-4">
           <div className="animate-[shake_0.5s_ease-in-out]">
             <DialogHeader className="text-center">
               <div className="flex justify-center mb-4">
@@ -75,16 +75,16 @@ const StudentVerificationModal = ({
                 <CardContent className="pt-4">
                   <h4 className="font-semibold mb-3 text-center">Need Assistance?</h4>
                   <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2">
-                      <Phone className="w-4 h-4 text-primary" />
-                      <span>+1 (555) 123-4567</span>
+                    <div className="flex items-center gap-2 justify-center sm:justify-start">
+                      <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                      <span className="break-all">+1 (555) 123-4567</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Mail className="w-4 h-4 text-primary" />
-                      <span>admissions@amazon-college.edu</span>
+                    <div className="flex items-center gap-2 justify-center sm:justify-start">
+                      <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+                      <span className="break-all">admissions@amazon-college.edu</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-primary" />
+                    <div className="flex items-center gap-2 justify-center sm:justify-start">
+                      <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
                       <span>Visit our admissions office</span>
                     </div>
                   </div>
@@ -101,7 +101,7 @@ const StudentVerificationModal = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-2xl animate-fade-in">
+      <DialogContent className="sm:max-w-4xl max-w-[95vw] animate-fade-in mx-4 max-h-[90vh] overflow-y-auto">
         <DialogHeader className="text-center">
           <div className="flex justify-center mb-4">
             <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center animate-pulse">
