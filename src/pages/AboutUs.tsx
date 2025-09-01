@@ -84,45 +84,6 @@ const AboutUs = () => {
       <WhyChooseAmazonSection />
 
       {/* College History Timeline */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Our Journey</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              From humble beginnings to becoming a leading international education provider
-            </p>
-          </div>
-
-          <div id="timeline" className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary/20" />
-            {timeline.map((item, index) => (
-              <div
-                key={item.year}
-                className={`flex items-center mb-12 ${
-                  index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                } ${timelineInView ? 'animate-fade-in' : 'opacity-0'}`}
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="flex-1" />
-                <div className="relative z-10 bg-primary w-4 h-4 rounded-full mx-8" />
-                <div className="flex-1">
-                  <Card className="max-w-md hover:shadow-elegant-lg transition-all duration-300">
-                    <CardHeader>
-                      <CardTitle className="text-primary text-2xl">{item.year}</CardTitle>
-                      <CardDescription className="text-lg font-semibold text-foreground">
-                        {item.event}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">{item.description}</p>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Founder's Message */}
       <section className="py-20">
