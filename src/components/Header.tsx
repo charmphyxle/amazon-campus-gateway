@@ -1,10 +1,47 @@
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Award, Download, Users, BookOpen, Shield } from "lucide-react";
+import { Award, Download, Users, BookOpen, Shield, Search } from "lucide-react";
+import { findStudentById, StudentRecord } from "@/data/dummyStudents";
+import StudentVerificationModal from "./StudentVerificationModal";
 
 const Header = () => {
+  const [quickVerifyId, setQuickVerifyId] = useState("");
+  const [isQuickLoading, setIsQuickLoading] = useState(false);
+  const [quickModalOpen, setQuickModalOpen] = useState(false);
+  const [quickFoundStudent, setQuickFoundStudent] = useState<StudentRecord | null>(null);
+  const [isQuickError, setIsQuickError] = useState(false);
+
+  const handleQuickVerification = () => {
+    if (!quickVerifyId.trim()) return;
+    
+    setIsQuickLoading(true);
+    
+    // Simulate API call delay
+    setTimeout(() => {
+      const student = findStudentById(quickVerifyId.trim());
+      
+      if (student) {
+        setQuickFoundStudent(student);
+        setIsQuickError(false);
+      } else {
+        setQuickFoundStudent(null);
+        setIsQuickError(true);
+      }
+      
+      setIsQuickLoading(false);
+      setQuickModalOpen(true);
+    }, 800);
+  };
+
+  const handleQuickCloseModal = () => {
+    setQuickModalOpen(false);
+    setQuickFoundStudent(null);
+    setIsQuickError(false);
+  };
+
   return (
     <div className="bg-gradient-primary text-primary-foreground">
       {/* Top Quick Access Bar */}
@@ -53,24 +90,51 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <span className="text-sm font-medium">Quick Verification:</span>
+              <div className="flex items-center gap-1 mr-2">
+                <Shield className="w-4 h-4" />
+                <span className="text-sm font-medium">Quick Verification:</span>
+              </div>
               <div className="flex items-center gap-2">
                 <Input
-                  placeholder="Enter Student ID (e.g., amz/a0007)"
-                  className="w-64 bg-white/10 border-white/20 text-white placeholder:text-white/70"
+                  placeholder="Enter Student ID (e.g., AMZ/A001)"
+                  value={quickVerifyId}
+                  onChange={(e) => setQuickVerifyId(e.target.value)}
+                  className="w-64 bg-white/10 border-white/20 text-white placeholder:text-white/70 focus:bg-white/20"
+                  onKeyPress={(e) => e.key === 'Enter' && handleQuickVerification()}
                 />
-                <Button variant="secondary" size="sm">
-                  Verify Now
+                <Button 
+                  variant="secondary" 
+                  size="sm"
+                  onClick={handleQuickVerification}
+                  disabled={!quickVerifyId.trim() || isQuickLoading}
+                  className="bg-white/20 hover:bg-white/30"
+                >
+                  {isQuickLoading ? (
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary" />
+                  ) : (
+                    <>
+                      <Search className="w-4 h-4 mr-1" />
+                      Verify
+                    </>
+                  )}
                 </Button>
               </div>
             </div>
             
             <div className="text-sm">
-              <span className="opacity-90">For employers & institutions to verify credentials</span>
+              <span className="opacity-90">🎓 For employers & institutions to verify credentials instantly</span>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Quick Verification Modal */}
+      <StudentVerificationModal
+        isOpen={quickModalOpen}
+        onClose={handleQuickCloseModal}
+        student={quickFoundStudent}
+        isError={isQuickError}
+      />
     </div>
   );
 };
