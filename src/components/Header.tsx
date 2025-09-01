@@ -117,7 +117,7 @@ const Header = () => {
                   ) : (
                     <>
                       <Search className="w-4 h-4 mr-1" />
-                      <span className="hidden sm:inline">Verify</span>
+                      {/* <span className="hidden sm:inline">Verify</span> */}
                       <span className="sm:hidden">✓</span>
                     </>
                   )}
