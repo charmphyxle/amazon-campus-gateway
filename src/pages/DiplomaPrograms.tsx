@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -121,13 +122,13 @@ const DiplomaPrograms = () => {
 
                     <div className="flex items-center justify-between pt-2">
                       <Button variant="outline" size="sm" asChild>
-                        <a href={`/programs/${program.slug}`}>
+                        <Link to={`/programs/${program.slug}`}>
                           Learn More
                           <ArrowRight className="w-4 h-4 ml-1" />
-                        </a>
+                        </Link>
                       </Button>
                       <Button size="sm" asChild>
-                        <a href="/apply">Apply Now</a>
+                        <Link to="/apply">Apply Now</Link>
                       </Button>
                     </div>
                   </CardContent>
@@ -177,10 +178,10 @@ const DiplomaPrograms = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" className="hover-lift hover-glow" asChild>
-                <a href="/apply">Apply Now</a>
+                <Link to="/apply">Apply Now</Link>
               </Button>
               <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-green-600" asChild>
-                <a href="/contact">Get Guidance</a>
+                <Link to="/contact">Get Guidance</Link>
               </Button>
             </div>
           </div>

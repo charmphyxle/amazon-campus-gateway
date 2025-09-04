@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -169,13 +170,13 @@ const TVECPrograms = () => {
 
                     <div className="flex items-center justify-between pt-2">
                       <Button variant="outline" size="sm" asChild>
-                        <a href={`/programs/${program.slug}`}>
+                        <Link to={`/programs/${program.slug}`}>
                           Learn More
                           <ArrowRight className="w-4 h-4 ml-1" />
-                        </a>
+                        </Link>
                       </Button>
                       <Button size="sm" asChild>
-                        <a href="/apply">Reserve Seat</a>
+                        <Link to="/apply">Reserve Seat</Link>
                       </Button>
                     </div>
                   </CardContent>
@@ -277,10 +278,10 @@ const TVECPrograms = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" className="hover-lift hover-glow" asChild>
-                <a href="/apply">Reserve Your Seat</a>
+                <Link to="/apply">Reserve Your Seat</Link>
               </Button>
               <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-blue-600" asChild>
-                <a href="/contact">Get Information</a>
+                <Link to="/contact">Get Information</Link>
               </Button>
             </div>
           </div>

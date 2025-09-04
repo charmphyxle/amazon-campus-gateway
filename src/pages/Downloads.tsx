@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -234,7 +235,7 @@ const Downloads = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild>
-                <a href="/contact">Contact Admissions</a>
+                <Link to="/contact">Contact Admissions</Link>
               </Button>
               <Button variant="outline" asChild>
                 <a href="tel:+94114386126">Call +94 114-386-126</a>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { 
   NavigationMenu, 
@@ -13,6 +14,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +26,11 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
+
   const programs = [
     { name: "TVEC & Short Courses", description: "6-month practical certificates", href: "/tvec-programs" },
     { name: "Diploma Programs", description: "Professional diploma courses", href: "/diploma-programs" },
@@ -33,105 +40,123 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className={`${isScrolled ? 'bg-background/30' : 'bg-background/90'} backdrop-blur-md border-b border-border/50 sticky top-0 z-50 shadow-elegant transition-all duration-300`}>
-      <div className="container mx-auto px-4 py-2">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+    <nav className={`${isScrolled ? 'bg-background/95' : 'bg-background/90'} backdrop-blur-md border-b border-border/50 sticky top-0 z-50 shadow-elegant transition-all duration-300`}>
+      <div className="container mx-auto px-3 sm:px-4 py-2">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
-            <a href="/" className="flex items-center space-x-2 lg:space-x-3 group transition-transform hover:scale-105">
+            <Link to="/" className="flex items-center space-x-2 lg:space-x-3 group transition-transform hover:scale-105">
               <img 
                 src="/lovable-uploads/04d74a51-2d96-43ee-b40d-8cf6fa3c32fe.png" 
                 alt="Amazon College Logo"
-                className="h-12 lg:h-16 w-auto object-contain drop-shadow-md"
+                className="h-10 sm:h-12 lg:h-16 w-auto object-contain drop-shadow-md"
               />
-              {/* Logo text can be hidden on smaller screens if needed */}
-              {/* <div className="hidden md:block text-lg lg:text-xl font-bold text-primary group-hover:text-primary/80 transition-colors">
+              <div className="hidden sm:block text-sm md:text-lg lg:text-xl font-bold text-primary group-hover:text-primary/80 transition-colors">
                 Amazon College
-                <span className="block text-xs lg:text-sm font-normal text-muted-foreground">International Campus</span>
-              </div> */}
-            </a>
+                <span className="block text-xs md:text-sm font-normal text-muted-foreground">International Campus</span>
+              </div>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+          <div className="hidden xl:flex items-center space-x-4 2xl:space-x-6">
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/" className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
-                    Home
+                  <NavigationMenuLink asChild>
+                    <Link to="/" className="px-2 2xl:px-3 py-2 text-sm 2xl:text-base font-semibold hover:text-primary transition-colors cursor-pointer">
+                      Home
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/about" className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
-                    About Us
+                  <NavigationMenuLink asChild>
+                    <Link to="/about" className="px-2 2xl:px-3 py-2 text-sm 2xl:text-base font-semibold hover:text-primary transition-colors cursor-pointer">
+                      About Us
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold">
+                  <NavigationMenuTrigger className="px-2 2xl:px-3 py-2 text-sm 2xl:text-base font-semibold">
                     Our Programs
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid w-[400px] xl:w-[450px] gap-3 p-4 bg-background/95 backdrop-blur-sm border border-border/50">
+                    <div className="grid w-[350px] 2xl:w-[400px] gap-3 p-4 bg-background/95 backdrop-blur-sm border border-border/50">
                       {programs.map((program) => (
-                        <NavigationMenuLink
-                          key={program.name}
-                          href={program.href}
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer"
-                        >
-                          <div className="text-sm font-medium leading-none">{program.name}</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            {program.description}
-                          </p>
+                        <NavigationMenuLink key={program.name} asChild>
+                          <Link
+                            to={program.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer"
+                          >
+                            <div className="text-sm font-medium leading-none">{program.name}</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              {program.description}
+                            </p>
+                          </Link>
                         </NavigationMenuLink>
                       ))}
-                      <NavigationMenuLink
-                        href="/programs"
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer border-t border-border/50 mt-2 pt-3"
-                      >
-                        <div className="text-sm font-medium leading-none text-primary">View All Programs</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Browse our complete program catalog
-                        </p>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/programs"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer border-t border-border/50 mt-2 pt-3"
+                        >
+                          <div className="text-sm font-medium leading-none text-primary">View All Programs</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Browse our complete program catalog
+                          </p>
+                        </Link>
                       </NavigationMenuLink>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/accreditations" className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
-                    Accreditations
+                  <NavigationMenuLink asChild>
+                    <Link to="/accreditations" className="px-2 2xl:px-3 py-2 text-sm 2xl:text-base font-semibold hover:text-primary transition-colors cursor-pointer">
+                      Accreditations
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/gallery" className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
-                    Gallery
+                  <NavigationMenuLink asChild>
+                    <Link to="/gallery" className="px-2 2xl:px-3 py-2 text-sm 2xl:text-base font-semibold hover:text-primary transition-colors cursor-pointer">
+                      Gallery
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/news-events" className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
-                    News & Events
+                  <NavigationMenuLink asChild>
+                    <Link to="/news-events" className="px-2 2xl:px-3 py-2 text-sm 2xl:text-base font-semibold hover:text-primary transition-colors cursor-pointer">
+                      News & Events
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/testimonials" className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
-                    Testimonials
+                  <NavigationMenuLink asChild>
+                    <Link to="/testimonials" className="px-2 2xl:px-3 py-2 text-sm 2xl:text-base font-semibold hover:text-primary transition-colors cursor-pointer">
+                      Testimonials
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/downloads" className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
-                    Downloads
+                  <NavigationMenuLink asChild>
+                    <Link to="/downloads" className="px-2 2xl:px-3 py-2 text-sm 2xl:text-base font-semibold hover:text-primary transition-colors cursor-pointer">
+                      Downloads
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/contact" className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
-                    Contact Us
+                  <NavigationMenuLink asChild>
+                    <Link to="/contact" className="px-2 2xl:px-3 py-2 text-sm 2xl:text-base font-semibold hover:text-primary transition-colors cursor-pointer">
+                      Contact Us
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
@@ -139,30 +164,50 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden">
+          <div className="xl:hidden">
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="h-8 w-8 sm:h-10 sm:w-10"
             >
-              {mobileMenuOpen ? <X /> : <Menu />}
+              {mobileMenuOpen ? <X className="h-4 w-4 sm:h-5 sm:w-5" /> : <Menu className="h-4 w-4 sm:h-5 sm:w-5" />}
             </Button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-sm">
+          <div className="xl:hidden border-t border-border bg-background/95 backdrop-blur-sm">
             <div className="px-2 pt-2 pb-3 space-y-1 max-h-[80vh] overflow-y-auto">
-              <a href="/" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Home</a>
-              <a href="/about" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">About Us</a>
-              <a href="/programs" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Our Programs</a>
-              <a href="/accreditations" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Accreditations</a>
-              <a href="/gallery" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Gallery</a>
-              <a href="/news-events" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">News & Events</a>
-              <a href="/testimonials" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Testimonials</a>
-              <a href="/downloads" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Downloads</a>
-              <a href="/contact" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors">Contact Us</a>
+              <Link to="/" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Home</Link>
+              <Link to="/about" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">About Us</Link>
+              
+              {/* Mobile Programs Submenu */}
+              <div className="border-b border-border/20">
+                <div className="px-3 py-3 text-base font-medium text-muted-foreground">Our Programs</div>
+                <div className="pl-6 space-y-1">
+                  {programs.map((program) => (
+                    <Link 
+                      key={program.name}
+                      to={program.href} 
+                      className="block px-3 py-2 text-sm font-medium hover:text-primary transition-colors"
+                    >
+                      {program.name}
+                    </Link>
+                  ))}
+                  <Link to="/programs" className="block px-3 py-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+                    View All Programs
+                  </Link>
+                </div>
+              </div>
+              
+              <Link to="/accreditations" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Accreditations</Link>
+              <Link to="/gallery" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Gallery</Link>
+              <Link to="/news-events" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">News & Events</Link>
+              <Link to="/testimonials" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Testimonials</Link>
+              <Link to="/downloads" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Downloads</Link>
+              <Link to="/contact" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors">Contact Us</Link>
             </div>
           </div>
         )}

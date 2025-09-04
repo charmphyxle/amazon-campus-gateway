@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -237,10 +238,10 @@ const FAQ = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
-                <a href="/contact">Contact Us</a>
+                <Link to="/contact">Contact Us</Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/apply">Start Application</a>
+                <Link to="/apply">Start Application</Link>
               </Button>
             </div>
           </div>
