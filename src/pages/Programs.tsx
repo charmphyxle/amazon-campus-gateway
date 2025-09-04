@@ -8,6 +8,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ProgramHighlights from "@/components/ProgramHighlights";
 import ProgramSuccessStories from "@/components/ProgramSuccessStories";
+import CampusLifeAchievements from "@/components/CampusLifeAchievements";
 import { GraduationCap, Languages, Baby, Users, Clock, Calendar, Download, CheckCircle, Star, Trophy, Award } from "lucide-react";
 
 const Programs = () => {
@@ -298,6 +299,9 @@ const Programs = () => {
           </Button>
         </div>
       )}
+
+      {/* Campus Life & Achievements */}
+      <CampusLifeAchievements />
 
       {/* Success Stories */}
       <ProgramSuccessStories />
