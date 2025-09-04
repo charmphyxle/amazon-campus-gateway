@@ -31,6 +31,7 @@ import HNDPrograms from "./pages/HNDPrograms";
 import DegreePrograms from "./pages/DegreePrograms";
 import MastersPhDPrograms from "./pages/MastersPhDPrograms";
 import TVECPrograms from "./pages/TVECPrograms";
+import Downloads from "./pages/Downloads";
 
 const queryClient = new QueryClient();
 
@@ -61,6 +62,7 @@ const App = () => (
           <Route path="/faculty" element={<Faculty />} />
           <Route path="/campus" element={<Campus />} />
           <Route path="/resources" element={<StudentResources />} />
+          <Route path="/downloads" element={<Downloads />} />
           <Route path="/apply" element={<Apply />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/news" element={<Blog />} />

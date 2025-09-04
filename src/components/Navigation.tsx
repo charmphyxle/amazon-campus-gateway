@@ -124,6 +124,12 @@ const Navigation = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
+                  <NavigationMenuLink href="/downloads" className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
+                    Downloads
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
                   <NavigationMenuLink href="/contact" className="px-3 xl:px-4 py-3 text-base xl:text-lg font-semibold hover:text-primary transition-colors cursor-pointer">
                     Contact Us
                   </NavigationMenuLink>
@@ -155,6 +161,7 @@ const Navigation = () => {
               <a href="/gallery" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Gallery</a>
               <a href="/news-events" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">News & Events</a>
               <a href="/testimonials" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Testimonials</a>
+              <a href="/downloads" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors border-b border-border/20">Downloads</a>
               <a href="/contact" className="block px-3 py-3 text-base font-medium hover:text-primary transition-colors">Contact Us</a>
             </div>
           </div>
