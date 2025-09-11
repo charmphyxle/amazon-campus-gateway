@@ -23,21 +23,25 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <Navigation />
-      <HeroSection />
-      <ProgramsSection />
-      <WelcomeVisionSection />
-      <PartnersSlideshow />
-      <ProgramCategoriesSection />
-      <WhyChooseSection />
-      <StatsSection />
-      <FeaturesSection />
-      <VerificationSection />
-      <GalleryPreview />
-      <EventsCalendar />
-      <TestimonialsSection />
-      <NewsEventsSection />
-      <InternationalSection />
-      <CTASection />
+      <main className="w-full">
+        <HeroSection />
+        <div className="space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-20">
+          <ProgramsSection />
+          <WelcomeVisionSection />
+          <PartnersSlideshow />
+          <ProgramCategoriesSection />
+          <WhyChooseSection />
+          <StatsSection />
+          <FeaturesSection />
+          <VerificationSection />
+          <GalleryPreview />
+          <EventsCalendar />
+          <TestimonialsSection />
+          <NewsEventsSection />
+          <InternationalSection />
+          <CTASection />
+        </div>
+      </main>
       <Footer />
     </div>
   );
