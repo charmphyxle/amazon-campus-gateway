@@ -26,23 +26,33 @@ const PartnersSlideshow = () => {
     { logo: accreditation3, name: "Standards Organization", type: "Accreditation Body" },
   ];
 
-  // Auto-slide functionality
+  // Auto-slide functionality - responsive
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % Math.max(1, partners.length - 4));
+      setCurrentIndex((prev) => {
+        const itemsPerView = window.innerWidth >= 1280 ? 5 : window.innerWidth >= 768 ? 3 : 1;
+        return (prev + 1) % Math.max(1, partners.length - itemsPerView + 1);
+      });
     }, 3000);
     return () => clearInterval(timer);
   }, [partners.length]);
 
+  const getItemsPerView = () => {
+    if (typeof window === 'undefined') return 5;
+    if (window.innerWidth >= 1280) return 5; // xl
+    if (window.innerWidth >= 768) return 3;  // md
+    return 1; // mobile
+  };
+
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % Math.max(1, partners.length - 4));
+    const itemsPerView = getItemsPerView();
+    setCurrentIndex((prev) => (prev + 1) % Math.max(1, partners.length - itemsPerView + 1));
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + Math.max(1, partners.length - 4)) % Math.max(1, partners.length - 4));
+    const itemsPerView = getItemsPerView();
+    setCurrentIndex((prev) => (prev - 1 + Math.max(1, partners.length - itemsPerView + 1)) % Math.max(1, partners.length - itemsPerView + 1));
   };
-
-  const visiblePartners = partners.slice(currentIndex, currentIndex + 5);
 
   return (
     <section className="py-12 bg-gradient-to-br from-blue-50 via-orange-50 to-blue-50 dark:from-blue-950/20 dark:via-orange-950/20 dark:to-blue-950/20 relative overflow-hidden">
@@ -68,7 +78,7 @@ const PartnersSlideshow = () => {
             variant="outline"
             size="icon"
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-background/80 hover:bg-background border-muted-foreground/20 hover:border-primary/30 shadow-lg"
+            className="absolute left-0 md:left-0 top-1/2 transform -translate-y-1/2 z-20 bg-background/80 hover:bg-background border-muted-foreground/20 hover:border-primary/30 shadow-lg"
           >
             <ChevronLeft className="w-4 h-4" />
           </Button>
@@ -77,31 +87,33 @@ const PartnersSlideshow = () => {
             variant="outline"
             size="icon"
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-background/80 hover:bg-background border-muted-foreground/20 hover:border-primary/30 shadow-lg"
+            className="absolute right-0 md:right-0 top-1/2 transform -translate-y-1/2 z-20 bg-background/80 hover:bg-background border-muted-foreground/20 hover:border-primary/30 shadow-lg"
           >
             <ChevronRight className="w-4 h-4" />
           </Button>
 
-          {/* Logo Grid */}
-          <div className="mx-12 overflow-hidden">
+          {/* Logo Grid - Responsive */}
+          <div className="mx-8 md:mx-12 overflow-hidden">
             <div 
               className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * (100 / 5)}%)` }}
+              style={{ 
+                transform: `translateX(-${currentIndex * (window.innerWidth >= 1280 ? 100 / 5 : window.innerWidth >= 768 ? 100 / 3 : 100)}%)` 
+              }}
             >
               {partners.map((partner, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 w-1/5 px-4"
+                  className="flex-shrink-0 w-full md:w-1/3 xl:w-1/5 px-2 md:px-4"
                 >
-                   <div className="group bg-gradient-to-br from-white to-blue-50 dark:from-gray-800 dark:to-blue-900/20 rounded-lg p-6 shadow-elegant border-2 border-blue-200 dark:border-blue-800 hover:border-orange-300 dark:hover:border-orange-700 transition-all duration-300 hover:shadow-lg hover:scale-105 hover:rotate-1 h-32 flex items-center justify-center">
+                   <div className="group bg-gradient-to-br from-white to-blue-50 dark:from-gray-800 dark:to-blue-900/20 rounded-lg p-4 md:p-6 shadow-elegant border-2 border-blue-200 dark:border-blue-800 hover:border-orange-300 dark:hover:border-orange-700 transition-all duration-300 hover:shadow-lg hover:scale-105 hover:rotate-1 h-24 md:h-32 flex items-center justify-center">
                      <img
                        src={partner.logo}
                        alt={partner.name}
-                       className="max-w-full max-h-16 object-contain filter brightness-110 contrast-110 hover:brightness-125 transition-all duration-300"
+                       className="max-w-full max-h-12 md:max-h-16 object-contain filter brightness-110 contrast-110 hover:brightness-125 transition-all duration-300"
                      />
                    </div>
-                  <div className="mt-3 text-center">
-                    <p className="text-sm font-medium text-foreground truncate">
+                  <div className="mt-2 md:mt-3 text-center">
+                    <p className="text-xs md:text-sm font-medium text-foreground truncate">
                       {partner.name}
                     </p>
                     <p className="text-xs text-muted-foreground">
@@ -115,8 +127,10 @@ const PartnersSlideshow = () => {
         </div>
 
         {/* Slide Indicators */}
-        <div className="flex justify-center mt-8 space-x-2">
-          {Array.from({ length: Math.max(1, partners.length - 4) }).map((_, index) => (
+        <div className="flex justify-center mt-6 md:mt-8 space-x-2">
+          {Array.from({ 
+            length: Math.max(1, partners.length - (window.innerWidth >= 1280 ? 4 : window.innerWidth >= 768 ? 2 : 0)) 
+          }).map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}

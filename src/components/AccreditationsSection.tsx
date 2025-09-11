@@ -34,20 +34,20 @@ const AccreditationsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {accreditations.map((accreditation, index) => (
             <div 
               key={accreditation.name}
               className="group text-center hover:scale-105 transition-transform duration-300"
             >
-              <div className="bg-background rounded-lg p-6 shadow-elegant hover:shadow-elegant-lg transition-shadow">
+              <div className="bg-background rounded-lg p-4 md:p-6 shadow-elegant hover:shadow-elegant-lg transition-shadow">
                 <img
                   src={accreditation.logo}
                   alt={accreditation.name}
-                  className="w-full h-16 object-contain mb-4 grayscale group-hover:grayscale-0 transition-all duration-300"
+                  className="w-full h-12 md:h-16 object-contain mb-3 md:mb-4 grayscale group-hover:grayscale-0 transition-all duration-300"
                 />
-                <h3 className="font-semibold text-sm mb-2">{accreditation.name}</h3>
-                <p className="text-xs text-muted-foreground">{accreditation.description}</p>
+                <h3 className="font-semibold text-xs md:text-sm mb-2">{accreditation.name}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{accreditation.description}</p>
               </div>
             </div>
           ))}

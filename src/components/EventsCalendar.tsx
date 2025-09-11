@@ -358,11 +358,113 @@ const EventsCalendar = () => {
                   </div>
                 ))}
 
-                <Button variant="outline" className="w-full mt-6 hover-lift bg-gradient-to-r hover:from-primary hover:to-primary/80 hover:text-white transition-all duration-300">
-                  <CalendarDays className="w-4 h-4 mr-2" />
-                  View All Events
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" className="w-full mt-6 hover-lift bg-gradient-to-r hover:from-primary hover:to-primary/80 hover:text-white transition-all duration-300">
+                      <CalendarDays className="w-4 h-4 mr-2" />
+                      View All Events
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                        All Events Calendar
+                      </DialogTitle>
+                    </DialogHeader>
+                    <Tabs defaultValue="upcoming" className="w-full">
+                      <TabsList className="grid w-full grid-cols-3">
+                        <TabsTrigger value="upcoming">Upcoming Events</TabsTrigger>
+                        <TabsTrigger value="all">All Events</TabsTrigger>
+                        <TabsTrigger value="past">Past Events</TabsTrigger>
+                      </TabsList>
+                      <TabsContent value="upcoming" className="space-y-4 mt-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          {upcomingEvents.map((event) => (
+                            <div key={event.id} className="p-4 border border-border/30 rounded-xl hover:border-primary/40 hover:shadow-lg transition-all duration-300 bg-gradient-to-r from-background to-background/80">
+                              <div className="flex items-start justify-between mb-3">
+                                <h4 className="font-semibold text-foreground text-base leading-tight">
+                                  {event.title}
+                                </h4>
+                                <Badge variant="outline" className={getEventTypeColor(event.type) + " ml-3 flex-shrink-0 text-xs"}>
+                                  {event.type}
+                                </Badge>
+                              </div>
+                              
+                              <div className="space-y-2 text-sm text-muted-foreground mb-3">
+                                <div className="flex items-center">
+                                  <CalendarDays className="w-4 h-4 mr-2 text-primary" />
+                                  <span className="font-medium">{formatDate(event.date)}</span>
+                                </div>
+                                <div className="flex items-center">
+                                  <Clock className="w-4 h-4 mr-2 text-primary" />
+                                  <span>{event.time}</span>
+                                </div>
+                                <div className="flex items-center">
+                                  <MapPin className="w-4 h-4 mr-2 text-primary" />
+                                  <span>{event.location}</span>
+                                </div>
+                              </div>
+
+                              <p className="text-sm text-muted-foreground mb-3 line-clamp-2 leading-relaxed">
+                                {event.description}
+                              </p>
+
+                              <div className="flex items-center justify-between">
+                                <span className="text-xs text-muted-foreground flex items-center">
+                                  <Users className="w-3 h-3 mr-1" />
+                                  {event.attendees}
+                                </span>
+                                {event.rsvpRequired && (
+                                  <Button size="sm" className="bg-primary text-white">
+                                    RSVP Now
+                                  </Button>
+                                )}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </TabsContent>
+                      <TabsContent value="all" className="space-y-4 mt-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                          {events.map((event) => (
+                            <div key={event.id} className="p-4 border border-border/30 rounded-xl hover:border-primary/40 hover:shadow-lg transition-all duration-300 bg-gradient-to-r from-background to-background/80">
+                              <div className="flex items-start justify-between mb-3">
+                                <h4 className="font-semibold text-foreground text-sm leading-tight">
+                                  {event.title}
+                                </h4>
+                                <Badge variant="outline" className={getEventTypeColor(event.type) + " text-xs"}>
+                                  {event.type}
+                                </Badge>
+                              </div>
+                              
+                              <div className="space-y-1 text-xs text-muted-foreground mb-2">
+                                <div className="flex items-center">
+                                  <CalendarDays className="w-3 h-3 mr-2 text-primary" />
+                                  <span>{formatDate(event.date)}</span>
+                                </div>
+                                <div className="flex items-center">
+                                  <Clock className="w-3 h-3 mr-2 text-primary" />
+                                  <span>{event.time}</span>
+                                </div>
+                              </div>
+
+                              <p className="text-xs text-muted-foreground line-clamp-2">
+                                {event.description}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </TabsContent>
+                      <TabsContent value="past" className="space-y-4 mt-6">
+                        <div className="text-center text-muted-foreground py-8">
+                          <CalendarDays className="w-12 h-12 mx-auto mb-4 opacity-50" />
+                          <p>Past events will be displayed here once available.</p>
+                        </div>
+                      </TabsContent>
+                    </Tabs>
+                  </DialogContent>
+                </Dialog>
               </CardContent>
             </Card>
           </div>

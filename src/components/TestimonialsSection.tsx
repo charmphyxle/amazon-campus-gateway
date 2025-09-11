@@ -58,7 +58,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-12 md:py-20 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <img 
@@ -71,11 +71,11 @@ const TestimonialsSection = () => {
       </div>
       
       <div className="relative container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-slide-up">
+        <div className="text-center mb-8 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 animate-slide-up">
             Student Testimonials
           </h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.2s' }}>
             Hear from our graduates who have achieved success worldwide
           </p>
         </div>
@@ -99,27 +99,27 @@ const TestimonialsSection = () => {
                           <img
                             src={testimonial.image}
                             alt={testimonial.name}
-                            className="w-32 h-32 rounded-full object-cover shadow-elegant"
+                            className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full object-cover shadow-elegant"
                           />
-                          <div className="absolute -top-2 -right-2 bg-secondary p-2 rounded-full animate-glow">
-                            <Quote className="w-4 h-4 text-secondary-foreground animate-float" />
+                          <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 bg-secondary p-1.5 sm:p-2 rounded-full animate-glow">
+                            <Quote className="w-3 h-3 sm:w-4 sm:h-4 text-secondary-foreground animate-float" />
                           </div>
                         </div>
                       </div>
                       
                       <div className="flex-1 text-center md:text-left">
-                        <div className="flex justify-center md:justify-start mb-4">
+                        <div className="flex justify-center md:justify-start mb-3 md:mb-4">
                           {[...Array(testimonial.rating)].map((_, i) => (
                             <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-secondary text-secondary animate-glow" style={{ animationDelay: `${i * 0.1}s` }} />
                           ))}
                         </div>
                         
-                        <blockquote className="text-base md:text-lg lg:text-xl text-white mb-4 md:mb-6 italic leading-relaxed">
+                        <blockquote className="text-sm sm:text-base md:text-lg lg:text-xl text-white mb-3 sm:mb-4 md:mb-6 italic leading-relaxed">
                           "{testimonial.text}"
                         </blockquote>
                         
                         <div>
-                          <h4 className="text-lg md:text-xl font-bold text-secondary mb-1">
+                          <h4 className="text-base sm:text-lg md:text-xl font-bold text-secondary mb-1">
                             {testimonial.name}
                           </h4>
                           <p className="text-white/80 mb-1 text-sm md:text-base">
