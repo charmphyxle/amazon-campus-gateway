@@ -58,7 +58,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-12 md:py-20 relative overflow-hidden">
+    <section className="py-12 md:py-20 relative overflow-hidden bg-gradient-to-br from-primary/95 to-secondary/95">
       {/* Background */}
       <div className="absolute inset-0">
         <img 
@@ -72,18 +72,18 @@ const TestimonialsSection = () => {
       
       <div className="relative container mx-auto px-4">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 animate-slide-up">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 animate-slide-up">
             Student Testimonials
           </h2>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.2s' }}>
             Hear from our graduates who have achieved success worldwide
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto relative animate-zoom-in" style={{ animationDelay: '0.4s' }}>
-          <Card className="shadow-elegant-xl border-0 overflow-hidden bg-white/10 backdrop-blur-sm hover-lift">
+        <div className="max-w-4xl mx-auto relative animate-zoom-in" style={{ animationDelay: '0.4s' }}>
+          <Card className="shadow-elegant-xl border-0 overflow-visible bg-white/10 backdrop-blur-sm hover-lift">
             <CardContent className="p-0">
-              <div className="relative h-auto md:h-96 flex items-center">
+              <div className="relative min-h-[400px] sm:min-h-[380px] md:min-h-[350px] lg:h-96 flex items-center">
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={index}
@@ -93,13 +93,13 @@ const TestimonialsSection = () => {
                         : 'opacity-0 transform translate-x-full'
                     }`}
                   >
-                    <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 h-full min-h-[300px] md:min-h-0">
-                      <div className="flex-shrink-0">
+                    <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 h-full justify-center">
+                      <div className="flex-shrink-0 mb-4 md:mb-0">
                         <div className="relative">
                           <img
                             src={testimonial.image}
                             alt={testimonial.name}
-                            className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full object-cover shadow-elegant"
+                            className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full object-cover shadow-elegant mx-auto"
                           />
                           <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 bg-secondary p-1.5 sm:p-2 rounded-full animate-glow">
                             <Quote className="w-3 h-3 sm:w-4 sm:h-4 text-secondary-foreground animate-float" />
@@ -107,25 +107,25 @@ const TestimonialsSection = () => {
                         </div>
                       </div>
                       
-                      <div className="flex-1 text-center md:text-left">
+                      <div className="flex-1 text-center md:text-left w-full">
                         <div className="flex justify-center md:justify-start mb-3 md:mb-4">
                           {[...Array(testimonial.rating)].map((_, i) => (
                             <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-secondary text-secondary animate-glow" style={{ animationDelay: `${i * 0.1}s` }} />
                           ))}
                         </div>
                         
-                        <blockquote className="text-sm sm:text-base md:text-lg lg:text-xl text-white mb-3 sm:mb-4 md:mb-6 italic leading-relaxed">
+                        <blockquote className="text-sm sm:text-base md:text-lg lg:text-xl text-white mb-4 sm:mb-5 md:mb-6 italic leading-relaxed font-medium">
                           "{testimonial.text}"
                         </blockquote>
                         
-                        <div>
-                          <h4 className="text-base sm:text-lg md:text-xl font-bold text-secondary mb-1">
+                        <div className="space-y-1">
+                          <h4 className="text-base sm:text-lg md:text-xl font-bold text-secondary">
                             {testimonial.name}
                           </h4>
-                          <p className="text-white/80 mb-1 text-sm md:text-base">
+                          <p className="text-white/90 text-sm md:text-base font-medium">
                             {testimonial.country}
                           </p>
-                          <p className="text-xs md:text-sm font-medium text-white/70">
+                          <p className="text-xs md:text-sm text-white/70">
                             {testimonial.course}
                           </p>
                         </div>
@@ -142,7 +142,7 @@ const TestimonialsSection = () => {
             variant="outline"
             size="icon"
             onClick={prevTestimonial}
-            className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-white/30 hover:scale-110 transition-all duration-300 hover-glow z-10"
+            className="absolute left-1 sm:left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-white/30 hover:scale-110 transition-all duration-300 hover-glow z-20"
           >
             <ChevronLeft className="w-4 h-4" />
           </Button>
@@ -151,7 +151,7 @@ const TestimonialsSection = () => {
             variant="outline"
             size="icon"
             onClick={nextTestimonial}
-            className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-white/30 hover:scale-110 transition-all duration-300 hover-glow z-10"
+            className="absolute right-1 sm:right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-white/30 hover:scale-110 transition-all duration-300 hover-glow z-20"
           >
             <ChevronRight className="w-4 h-4" />
           </Button>
