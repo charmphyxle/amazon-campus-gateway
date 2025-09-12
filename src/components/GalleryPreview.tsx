@@ -18,10 +18,16 @@ const GalleryPreview = () => {
 
   const galleryItems = [
     {
-      image: libraryStudy,
-      title: "Modern Library",
+      image: "/lovable-uploads/a3c4fd88-7f03-4b4b-943f-5abc65f040e4.png",
+      title: "Amazon Campus Reception",
       category: "Campus",
       icon: Building
+    },
+    {
+      image: "/lovable-uploads/32bbdb39-85ba-4776-95f8-a694e1edb8f2.png",
+      title: "Convocation 2024",
+      category: "Graduation",
+      icon: GraduationCap
     },
     {
       image: computerLab,
@@ -30,10 +36,22 @@ const GalleryPreview = () => {
       icon: Camera
     },
     {
+      image: "/lovable-uploads/cf10929c-3c86-4238-8a0e-79bfae4b8104.png",
+      title: "Graduation Ceremony",
+      category: "Graduation",
+      icon: GraduationCap
+    },
+    {
       image: businessClass,
       title: "Business Classes",
       category: "Education",
       icon: Users
+    },
+    {
+      image: "/lovable-uploads/125ef1ea-2dff-493e-8cc2-433477bbff51.png",
+      title: "Traditional Ceremony",
+      category: "Events",
+      icon: GraduationCap
     },
     {
       image: languageClass,
@@ -42,9 +60,9 @@ const GalleryPreview = () => {
       icon: Users
     },
     {
-      image: kidsProgram,
-      title: "Kids Academy",
-      category: "Programs",
+      image: "/lovable-uploads/e6b24cf7-ca06-4592-878b-ece44050f991.png",
+      title: "International Conference",
+      category: "Events",
       icon: Users
     },
     {
@@ -54,9 +72,9 @@ const GalleryPreview = () => {
       icon: Users
     },
     {
-      image: certificateCeremony,
-      title: "Graduation Day",
-      category: "Events",
+      image: "/lovable-uploads/238bf6f4-df9e-4880-a75b-e40dc20f52e9.png",
+      title: "Graduate Audience",
+      category: "Graduation",
       icon: GraduationCap
     },
     {
@@ -66,39 +84,9 @@ const GalleryPreview = () => {
       icon: Building
     },
     {
-      image: "/lovable-uploads/c5f030da-1de3-4718-9bb8-28aa0202fc2d.png",
-      title: "Convocation Hall",
-      category: "Events",
-      icon: GraduationCap
-    },
-    {
-      image: "/lovable-uploads/9d582760-43c8-46e9-aced-388362426376.png",
-      title: "Leadership Meeting",
-      category: "Administration",
-      icon: Users
-    },
-    {
-      image: "/lovable-uploads/b8904295-ef58-4fbb-988f-edf08fa3e282.png",
-      title: "Annual Convocation 2023",
-      category: "Events",
-      icon: GraduationCap
-    },
-    {
-      image: "/lovable-uploads/04ce28db-2913-49bd-9e4a-ffb5f8a671bd.png",
-      title: "Graduation Ceremony",
-      category: "Events",
-      icon: GraduationCap
-    },
-    {
-      image: "/lovable-uploads/170527de-b6c2-4b3d-bb23-6233bb7c662f.png",
-      title: "Student Life",
+      image: libraryStudy,
+      title: "Modern Library",
       category: "Campus",
-      icon: Users
-    },
-    {
-      image: "/lovable-uploads/659f584e-0ae1-422a-a084-0589ac78a66a.png",
-      title: "Campus Interior",
-      category: "Facilities",
       icon: Building
     }
   ];
