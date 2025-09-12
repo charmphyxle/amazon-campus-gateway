@@ -31,6 +31,78 @@ const Gallery = () => {
       tags: ["graduation", "ceremony", "achievement"]
     },
     {
+      id: 181,
+      category: "Events",
+      title: "Traditional Lamp Lighting Ceremony",
+      type: "image",
+      image: "/lovable-uploads/125ef1ea-2dff-493e-8cc2-433477bbff51.png",
+      thumbnail: "/lovable-uploads/125ef1ea-2dff-493e-8cc2-433477bbff51.png",
+      description: "Traditional lamp lighting ceremony with international flags representing our global community",
+      date: "2024-09-10",
+      event: "Cultural Ceremony",
+      tags: ["tradition", "ceremony", "international", "cultural"]
+    },
+    {
+      id: 182,
+      category: "Events",
+      title: "International Conference Speaker",
+      type: "image",
+      image: "/lovable-uploads/e6b24cf7-ca06-4592-878b-ece44050f991.png",
+      thumbnail: "/lovable-uploads/e6b24cf7-ca06-4592-878b-ece44050f991.png",
+      description: "Distinguished speaker addressing the international conference with multiple country flags displayed",
+      date: "2024-09-08",
+      event: "International Conference",
+      tags: ["conference", "speaker", "international", "global"]
+    },
+    {
+      id: 183,
+      category: "Graduation",
+      title: "Convocation 2024 Opening Address",
+      type: "image",
+      image: "/lovable-uploads/32bbdb39-85ba-4776-95f8-a694e1edb8f2.png",
+      thumbnail: "/lovable-uploads/32bbdb39-85ba-4776-95f8-a694e1edb8f2.png",
+      description: "Amazon College & Campus Convocation 2024 ceremony with official opening address",
+      date: "2024-09-05",
+      event: "Convocation 2024",
+      tags: ["convocation", "graduation", "ceremony", "official"]
+    },
+    {
+      id: 184,
+      category: "Graduation",
+      title: "Graduation Ceremony Audience",
+      type: "image",
+      image: "/lovable-uploads/238bf6f4-df9e-4880-a75b-e40dc20f52e9.png",
+      thumbnail: "/lovable-uploads/238bf6f4-df9e-4880-a75b-e40dc20f52e9.png",
+      description: "Proud graduates and faculty seated during the formal graduation ceremony",
+      date: "2024-09-05",
+      event: "Graduation Ceremony",
+      tags: ["graduation", "ceremony", "graduates", "audience"]
+    },
+    {
+      id: 185,
+      category: "Graduation",
+      title: "Graduates in Academic Regalia",
+      type: "image",
+      image: "/lovable-uploads/cf10929c-3c86-4238-8a0e-79bfae4b8104.png",
+      thumbnail: "/lovable-uploads/cf10929c-3c86-4238-8a0e-79bfae4b8104.png",
+      description: "Graduates wearing traditional caps and gowns during the commencement ceremony",
+      date: "2024-09-05",
+      event: "Graduation Ceremony",
+      tags: ["graduation", "regalia", "ceremony", "commencement"]
+    },
+    {
+      id: 186,
+      category: "Campus",
+      title: "Amazon Campus Reception Area",
+      type: "image",
+      image: "/lovable-uploads/a3c4fd88-7f03-4b4b-943f-5abc65f040e4.png",
+      thumbnail: "/lovable-uploads/a3c4fd88-7f03-4b4b-943f-5abc65f040e4.png",
+      description: "Modern reception and meeting area at Amazon Campus with branded displays and comfortable seating",
+      date: "2024-09-01",
+      event: "Campus Tour",
+      tags: ["campus", "reception", "modern", "facilities"]
+    },
+    {
       id: 2,
       category: "Campus",
       title: "Modern Campus Entrance",
