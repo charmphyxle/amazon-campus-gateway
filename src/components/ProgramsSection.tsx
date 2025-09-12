@@ -166,14 +166,20 @@ const ProgramsSection = () => {
                     key={program.id}
                     className="flex-shrink-0 w-full md:w-1/2 lg:w-1/4 px-4"
                   >
-                    <Card className="group bg-background/60 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] overflow-hidden h-full">
-                      <div className="relative aspect-[3/4] overflow-hidden">
-                        <img
-                          src={program.image}
-                          alt={program.title}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                          loading="lazy"
-                        />
+                     <Card className="group bg-background/60 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] overflow-hidden h-full">
+                       <div className="relative aspect-[3/4] overflow-hidden">
+                         {/* Background Image */}
+                         <div 
+                           className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                           style={{ backgroundImage: `url(${program.image})` }}
+                         />
+                         {/* Foreground Image for better layering */}
+                         <img
+                           src={program.image}
+                           alt={program.title}
+                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90"
+                           loading="lazy"
+                         />
                         {/* Modern Gradient Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-85 group-hover:opacity-95 transition-all duration-500" />
                         
@@ -293,14 +299,20 @@ const ProgramsSection = () => {
         {/* Mobile View - Grid Layout */}
         <div className="md:hidden grid grid-cols-1 sm:grid-cols-2 gap-6 px-4">
           {programs.map((program) => (
-            <Card key={program.id} className="group bg-background/80 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-xl overflow-hidden">
-              <div className="relative aspect-[3/4] overflow-hidden">
-                <img
-                  src={program.image}
-                  alt={program.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
+             <Card key={program.id} className="group bg-background/80 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-xl overflow-hidden">
+               <div className="relative aspect-[3/4] overflow-hidden">
+                 {/* Background Image */}
+                 <div 
+                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                   style={{ backgroundImage: `url(${program.image})` }}
+                 />
+                 {/* Foreground Image */}
+                 <img
+                   src={program.image}
+                   alt={program.title}
+                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90"
+                   loading="lazy"
+                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-85" />
                 
                 <div className="absolute top-3 right-3 flex flex-col gap-2">
