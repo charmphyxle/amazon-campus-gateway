@@ -201,6 +201,126 @@ const Gallery = () => {
       date: "2024-03-01",
       event: "Campus Overview",
       tags: ["campus", "exterior", "building"]
+    },
+    {
+      id: 16,
+      category: "Graduation",
+      title: "Annual Convocation 2023",
+      type: "image",
+      image: "/lovable-uploads/5b772aea-b36a-4929-ae8e-f7000219d2c8.png",
+      thumbnail: "/lovable-uploads/5b772aea-b36a-4929-ae8e-f7000219d2c8.png",
+      description: "Annual convocation ceremony at BMICH Main Hall with distinguished guests",
+      date: "2023-12-18",
+      event: "Annual Convocation",
+      tags: ["convocation", "graduation", "ceremony", "2023"]
+    },
+    {
+      id: 17,
+      category: "Graduation",
+      title: "Graduation Ceremony Stage",
+      type: "image",
+      image: "/lovable-uploads/114d4399-3aa6-4de3-8726-b05a041e8093.png",
+      thumbnail: "/lovable-uploads/114d4399-3aa6-4de3-8726-b05a041e8093.png",
+      description: "Academic staff and graduates on stage during graduation ceremony",
+      date: "2023-12-18",
+      event: "Graduation Ceremony",
+      tags: ["graduation", "stage", "academic", "ceremony"]
+    },
+    {
+      id: 18,
+      category: "Events",
+      title: "Student Life - Mid-Year Convocation 2025",
+      type: "image",
+      image: "/lovable-uploads/899349de-fec4-43de-9545-8daa88ad3922.png",
+      thumbnail: "/lovable-uploads/899349de-fec4-43de-9545-8daa88ad3922.png",
+      description: "Students celebrating and taking selfies at the mid-year convocation",
+      date: "2025-08-23",
+      event: "Mid-Year Convocation",
+      tags: ["students", "celebration", "selfie", "convocation"]
+    },
+    {
+      id: 19,
+      category: "Graduation",
+      title: "Convocation Hall Ceremony",
+      type: "image",
+      image: "/lovable-uploads/14cf28a1-bb41-417e-995e-5528de86cce7.png",
+      thumbnail: "/lovable-uploads/14cf28a1-bb41-417e-995e-5528de86cce7.png",
+      description: "Full view of convocation hall during graduation ceremony",
+      date: "2024-05-20",
+      event: "Convocation Ceremony",
+      tags: ["convocation", "hall", "graduation", "ceremony"]
+    },
+    {
+      id: 20,
+      category: "Events",
+      title: "Ribbon Cutting Ceremony",
+      type: "image",
+      image: "/lovable-uploads/07cdbedc-fb10-45eb-86b7-3d479c339a53.png",
+      thumbnail: "/lovable-uploads/07cdbedc-fb10-45eb-86b7-3d479c339a53.png",
+      description: "Official ribbon cutting ceremony with dignitaries and staff",
+      date: "2024-06-15",
+      event: "Opening Ceremony",
+      tags: ["ribbon-cutting", "opening", "ceremony", "officials"]
+    },
+    {
+      id: 21,
+      category: "Events",
+      title: "Official Opening Event",
+      type: "image",
+      image: "/lovable-uploads/956060cc-2ff1-44b7-9dbc-449fa733bee2.png",
+      thumbnail: "/lovable-uploads/956060cc-2ff1-44b7-9dbc-449fa733bee2.png",
+      description: "Distinguished guests at the official opening ceremony",
+      date: "2024-06-15",
+      event: "Opening Ceremony",
+      tags: ["opening", "ceremony", "guests", "officials"]
+    },
+    {
+      id: 22,
+      category: "Events",
+      title: "Inauguration Ceremony",
+      type: "image",
+      image: "/lovable-uploads/dfe7ac19-3a4e-435d-961a-42232bb305e7.png",
+      thumbnail: "/lovable-uploads/dfe7ac19-3a4e-435d-961a-42232bb305e7.png",
+      description: "Formal inauguration ceremony with university officials",
+      date: "2024-06-15",
+      event: "Inauguration",
+      tags: ["inauguration", "ceremony", "formal", "officials"]
+    },
+    {
+      id: 23,
+      category: "Events",
+      title: "Administrative Meeting",
+      type: "image",
+      image: "/lovable-uploads/84a242db-19f1-4468-821d-b3e7394ee725.png",
+      thumbnail: "/lovable-uploads/84a242db-19f1-4468-821d-b3e7394ee725.png",
+      description: "Administrative meeting with college officials and staff",
+      date: "2024-07-10",
+      event: "Administrative Meeting",
+      tags: ["meeting", "administration", "officials", "college"]
+    },
+    {
+      id: 24,
+      category: "Events",
+      title: "College Presentation",
+      type: "image",
+      image: "/lovable-uploads/4d82b9ec-e11f-4899-b5fe-888f4df36924.png",
+      thumbnail: "/lovable-uploads/4d82b9ec-e11f-4899-b5fe-888f4df36924.png",
+      description: "College presentation by administration to stakeholders",
+      date: "2024-07-10",
+      event: "College Presentation",
+      tags: ["presentation", "college", "administration", "stakeholders"]
+    },
+    {
+      id: 25,
+      category: "Events",
+      title: "Staff Meeting Discussion",
+      type: "image",
+      image: "/lovable-uploads/88194faa-3a0c-4932-ae09-e578ea3b9b34.png",
+      thumbnail: "/lovable-uploads/88194faa-3a0c-4932-ae09-e578ea3b9b34.png",
+      description: "Educational discussion during staff meeting session",
+      date: "2024-07-10",
+      event: "Staff Meeting",
+      tags: ["staff", "meeting", "discussion", "education"]
     }
   ];
 
