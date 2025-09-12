@@ -29,7 +29,7 @@ const Index = () => {
           <ProgramsSection />
           <WelcomeVisionSection />
           <PartnersSlideshow />
-          <ProgramCategoriesSection />
+          {/* <ProgramCategoriesSection /> */}
           <WhyChooseSection />
           <StatsSection />
           <FeaturesSection />
