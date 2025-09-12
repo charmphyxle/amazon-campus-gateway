@@ -64,6 +64,42 @@ const GalleryPreview = () => {
       title: "Campus Exterior",
       category: "Campus",
       icon: Building
+    },
+    {
+      image: "/lovable-uploads/c5f030da-1de3-4718-9bb8-28aa0202fc2d.png",
+      title: "Convocation Hall",
+      category: "Events",
+      icon: GraduationCap
+    },
+    {
+      image: "/lovable-uploads/9d582760-43c8-46e9-aced-388362426376.png",
+      title: "Leadership Meeting",
+      category: "Administration",
+      icon: Users
+    },
+    {
+      image: "/lovable-uploads/b8904295-ef58-4fbb-988f-edf08fa3e282.png",
+      title: "Annual Convocation 2023",
+      category: "Events",
+      icon: GraduationCap
+    },
+    {
+      image: "/lovable-uploads/04ce28db-2913-49bd-9e4a-ffb5f8a671bd.png",
+      title: "Graduation Ceremony",
+      category: "Events",
+      icon: GraduationCap
+    },
+    {
+      image: "/lovable-uploads/170527de-b6c2-4b3d-bb23-6233bb7c662f.png",
+      title: "Student Life",
+      category: "Campus",
+      icon: Users
+    },
+    {
+      image: "/lovable-uploads/659f584e-0ae1-422a-a084-0589ac78a66a.png",
+      title: "Campus Interior",
+      category: "Facilities",
+      icon: Building
     }
   ];
 
