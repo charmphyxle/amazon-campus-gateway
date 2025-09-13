@@ -393,6 +393,137 @@ const Gallery = () => {
       date: "2024-07-10",
       event: "Staff Meeting",
       tags: ["staff", "meeting", "discussion", "education"]
+    },
+    // YouTube Videos
+    {
+      id: 301,
+      category: "Events",
+      title: "Amazon College Video 1",
+      type: "video",
+      image: "https://img.youtube.com/vi/0whVZ7yi29Y/maxresdefault.jpg",
+      thumbnail: "https://img.youtube.com/vi/0whVZ7yi29Y/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/0whVZ7yi29Y",
+      description: "Amazon College promotional and educational video content",
+      date: "2024-09-12",
+      event: "Video Content",
+      tags: ["video", "amazon", "college", "educational"]
+    },
+    {
+      id: 302,
+      category: "Events",
+      title: "Amazon College Video 2",
+      type: "video",
+      image: "https://img.youtube.com/vi/bhGc583XSD4/maxresdefault.jpg",
+      thumbnail: "https://img.youtube.com/vi/bhGc583XSD4/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/bhGc583XSD4",
+      description: "Amazon College promotional and educational video content",
+      date: "2024-09-12",
+      event: "Video Content",
+      tags: ["video", "amazon", "college", "educational"]
+    },
+    {
+      id: 303,
+      category: "Campus",
+      title: "Amazon College Video 3",
+      type: "video",
+      image: "https://img.youtube.com/vi/FZaJUlL8_i0/maxresdefault.jpg",
+      thumbnail: "https://img.youtube.com/vi/FZaJUlL8_i0/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/FZaJUlL8_i0",
+      description: "Amazon College promotional and educational video content",
+      date: "2024-09-12",
+      event: "Video Content",
+      tags: ["video", "amazon", "college", "campus"]
+    },
+    {
+      id: 304,
+      category: "International",
+      title: "Amazon College Video 4",
+      type: "video",
+      image: "https://img.youtube.com/vi/npwxjczPoiU/maxresdefault.jpg",
+      thumbnail: "https://img.youtube.com/vi/npwxjczPoiU/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/npwxjczPoiU",
+      description: "Amazon College promotional and educational video content",
+      date: "2024-09-12",
+      event: "Video Content",
+      tags: ["video", "amazon", "college", "international"]
+    },
+    {
+      id: 305,
+      category: "Events",
+      title: "Amazon College Video 5",
+      type: "video",
+      image: "https://img.youtube.com/vi/3q5rLDSBQJM/maxresdefault.jpg",
+      thumbnail: "https://img.youtube.com/vi/3q5rLDSBQJM/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/3q5rLDSBQJM",
+      description: "Amazon College promotional and educational video content",
+      date: "2024-09-12",
+      event: "Video Content",
+      tags: ["video", "amazon", "college", "events"]
+    },
+    {
+      id: 306,
+      category: "Campus",
+      title: "Amazon College Video 6",
+      type: "video",
+      image: "https://img.youtube.com/vi/c2pA0PkCPxk/maxresdefault.jpg",
+      thumbnail: "https://img.youtube.com/vi/c2pA0PkCPxk/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/c2pA0PkCPxk",
+      description: "Amazon College promotional and educational video content",
+      date: "2024-09-12",
+      event: "Video Content",
+      tags: ["video", "amazon", "college", "campus"]
+    },
+    {
+      id: 307,
+      category: "Events",
+      title: "Amazon College Video 7",
+      type: "video",
+      image: "https://img.youtube.com/vi/88zPtW8HzCo/maxresdefault.jpg",
+      thumbnail: "https://img.youtube.com/vi/88zPtW8HzCo/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/88zPtW8HzCo",
+      description: "Amazon College promotional and educational video content",
+      date: "2024-09-12",
+      event: "Video Content",
+      tags: ["video", "amazon", "college", "events"]
+    },
+    {
+      id: 308,
+      category: "Graduation",
+      title: "Amazon College Video 8",
+      type: "video",
+      image: "https://img.youtube.com/vi/1JwhYPrQ_gQ/maxresdefault.jpg",
+      thumbnail: "https://img.youtube.com/vi/1JwhYPrQ_gQ/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/1JwhYPrQ_gQ",
+      description: "Amazon College promotional and educational video content",
+      date: "2024-09-12",
+      event: "Video Content",
+      tags: ["video", "amazon", "college", "graduation"]
+    },
+    {
+      id: 309,
+      category: "International",
+      title: "Amazon College Video 9",
+      type: "video",
+      image: "https://img.youtube.com/vi/nNebBp6Gsuc/maxresdefault.jpg",
+      thumbnail: "https://img.youtube.com/vi/nNebBp6Gsuc/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/nNebBp6Gsuc",
+      description: "Amazon College promotional and educational video content",
+      date: "2024-09-12",
+      event: "Video Content",
+      tags: ["video", "amazon", "college", "international"]
+    },
+    {
+      id: 310,
+      category: "Campus",
+      title: "Amazon College Video 10",
+      type: "video",
+      image: "https://img.youtube.com/vi/iP-vcG9pig8/maxresdefault.jpg",
+      thumbnail: "https://img.youtube.com/vi/iP-vcG9pig8/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/iP-vcG9pig8",
+      description: "Amazon College promotional and educational video content",
+      date: "2024-09-12",
+      event: "Video Content",
+      tags: ["video", "amazon", "college", "campus"]
     }
   ];
 
@@ -623,19 +754,15 @@ const Gallery = () => {
               <div className="flex flex-col items-center justify-center h-full p-8">
                 {currentImage.type === "video" ? (
                   <div className="w-full max-w-4xl">
-                    <div className="aspect-video bg-black rounded-lg flex items-center justify-center">
-                      <div className="text-center text-white">
-                        <Play className="w-16 h-16 mx-auto mb-4" />
-                        <p className="text-lg">Video Player</p>
-                        <p className="text-sm opacity-75">Video URL: {currentImage.videoUrl}</p>
-                        <Button 
-                          variant="secondary" 
-                          className="mt-4"
-                          onClick={() => window.open(currentImage.videoUrl, '_blank')}
-                        >
-                          Open Video
-                        </Button>
-                      </div>
+                    <div className="aspect-video bg-black rounded-lg overflow-hidden">
+                      <iframe
+                        src={currentImage.videoUrl}
+                        title={currentImage.title}
+                        className="w-full h-full"
+                        allowFullScreen
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        frameBorder="0"
+                      />
                     </div>
                   </div>
                 ) : (
