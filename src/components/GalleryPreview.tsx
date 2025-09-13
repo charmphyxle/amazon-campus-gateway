@@ -24,70 +24,70 @@ const GalleryPreview = () => {
       icon: Building
     },
     {
-      image: "/lovable-uploads/32bbdb39-85ba-4776-95f8-a694e1edb8f2.png",
-      title: "Convocation 2024",
+      image: "/lovable-uploads/67.jpg",
+      title: "Mid-Year Convocation 2025",
+      category: "Partnership",
+      icon: GraduationCap
+    },
+    {
+      image: "/lovable-uploads/00-32.jpg",
+      title: "Convocation 2024 Panel",
       category: "Graduation",
       icon: GraduationCap
     },
     {
-      image: computerLab,
-      title: "Computer Lab",
-      category: "Facilities",
-      icon: Camera
-    },
-    {
-      image: "/lovable-uploads/cf10929c-3c86-4238-8a0e-79bfae4b8104.png",
-      title: "Graduation Ceremony",
-      category: "Graduation",
-      icon: GraduationCap
-    },
-    {
-      image: businessClass,
-      title: "Business Classes",
-      category: "Education",
-      icon: Users
-    },
-    {
-      image: "/lovable-uploads/125ef1ea-2dff-493e-8cc2-433477bbff51.png",
-      title: "Traditional Ceremony",
+      image: "/lovable-uploads/70.jpg",
+      title: "Student Celebration",
       category: "Events",
-      icon: GraduationCap
-    },
-    {
-      image: languageClass,
-      title: "Language Learning",
-      category: "Programs",
       icon: Users
     },
     {
-      image: "/lovable-uploads/e6b24cf7-ca06-4592-878b-ece44050f991.png",
+      image: "/lovable-uploads/00-24.jpg",
+      title: "Traditional Lamp Lighting",
+      category: "Ceremony",
+      icon: GraduationCap
+    },
+    {
+      image: "/lovable-uploads/68.jpg",
+      title: "Award Ceremony",
+      category: "Achievement",
+      icon: GraduationCap
+    },
+    {
+      image: "/lovable-uploads/00-30.jpg",
       title: "International Conference",
-      category: "Events",
+      category: "Global",
       icon: Users
     },
     {
-      image: teacherTraining,
-      title: "Teacher Training",
-      category: "Professional",
+      image: "/lovable-uploads/71.jpg",
+      title: "Faculty Excellence",
+      category: "Academic",
       icon: Users
     },
     {
-      image: "/lovable-uploads/238bf6f4-df9e-4880-a75b-e40dc20f52e9.png",
-      title: "Graduate Audience",
-      category: "Graduation",
+      image: "/lovable-uploads/00-28.jpg",
+      title: "Chancellor Ceremony",
+      category: "Leadership",
       icon: GraduationCap
     },
     {
-      image: campusExterior,
-      title: "Campus Exterior",
-      category: "Campus",
-      icon: Building
+      image: "/lovable-uploads/72.jpg",
+      title: "Student Achievement",
+      category: "Success",
+      icon: GraduationCap
     },
     {
-      image: libraryStudy,
-      title: "Modern Library",
-      category: "Campus",
-      icon: Building
+      image: "/lovable-uploads/00-33.jpg",
+      title: "Traditional Greeting",
+      category: "Culture",
+      icon: Users
+    },
+    {
+      image: "/lovable-uploads/69.jpg",
+      title: "Leadership Team",
+      category: "Management",
+      icon: Users
     }
   ];
 
