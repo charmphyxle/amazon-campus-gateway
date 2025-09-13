@@ -514,6 +514,102 @@ const Gallery = () => {
       event: "Convocation 2024",
       tags: ["convocation", "traditional-greeting", "faculty", "ceremony"]
     },
+    {
+      id: 36,
+      category: "Events",
+      title: "Mid-Year Convocation 2025 - Partnership Handshake",
+      type: "image",
+      image: "/lovable-uploads/67.jpg",
+      thumbnail: "/lovable-uploads/67.jpg",
+      description: "Official partnership handshake at Mid-Year Convocation 2025 with accreditation partners",
+      date: "2025-08-23",
+      event: "Mid-Year Convocation 2025",
+      tags: ["convocation", "partnership", "handshake", "accreditation"]
+    },
+    {
+      id: 37,
+      category: "Events",
+      title: "Mid-Year Convocation 2025 - Award Ceremony",
+      type: "image",
+      image: "/lovable-uploads/68.jpg",
+      thumbnail: "/lovable-uploads/68.jpg",
+      description: "Award presentation ceremony at Amazon College with distinguished recipients",
+      date: "2025-08-23",
+      event: "Mid-Year Convocation 2025",
+      tags: ["award", "ceremony", "recognition", "achievement"]
+    },
+    {
+      id: 38,
+      category: "Events",
+      title: "Mid-Year Convocation 2025 - Leadership Team",
+      type: "image",
+      image: "/lovable-uploads/69.jpg",
+      thumbnail: "/lovable-uploads/69.jpg",
+      description: "Amazon College leadership team at the Mid-Year Convocation event",
+      date: "2025-08-23",
+      event: "Mid-Year Convocation 2025",
+      tags: ["leadership", "team", "convocation", "management"]
+    },
+    {
+      id: 39,
+      category: "Events",
+      title: "Mid-Year Convocation 2025 - Group Celebration",
+      type: "image",
+      image: "/lovable-uploads/70.jpg",
+      thumbnail: "/lovable-uploads/70.jpg",
+      description: "Students and faculty celebrating together at the Mid-Year Convocation",
+      date: "2025-08-23",
+      event: "Mid-Year Convocation 2025",
+      tags: ["celebration", "students", "faculty", "group"]
+    },
+    {
+      id: 40,
+      category: "Events",
+      title: "Mid-Year Convocation 2025 - Faculty Group",
+      type: "image",
+      image: "/lovable-uploads/71.jpg",
+      thumbnail: "/lovable-uploads/71.jpg",
+      description: "Female faculty members in traditional attire at the convocation",
+      date: "2025-08-23",
+      event: "Mid-Year Convocation 2025",
+      tags: ["faculty", "traditional", "group", "women"]
+    },
+    {
+      id: 41,
+      category: "Graduation",
+      title: "Mid-Year Convocation 2025 - Student Recognition",
+      type: "image",
+      image: "/lovable-uploads/72.jpg",
+      thumbnail: "/lovable-uploads/72.jpg",
+      description: "Student receiving recognition from college administration",
+      date: "2025-08-23",
+      event: "Mid-Year Convocation 2025",
+      tags: ["student", "recognition", "achievement", "handshake"]
+    },
+    {
+      id: 42,
+      category: "Graduation",
+      title: "Mid-Year Convocation 2025 - Graduate Achievement",
+      type: "image",
+      image: "/lovable-uploads/73.jpg",
+      thumbnail: "/lovable-uploads/73.jpg",
+      description: "Graduate being congratulated by college leadership",
+      date: "2025-08-23",
+      event: "Mid-Year Convocation 2025",
+      tags: ["graduate", "achievement", "congratulations", "success"]
+    },
+    {
+      id: 43,
+      category: "Graduation",
+      title: "Mid-Year Convocation 2025 - Student Achievement",
+      type: "image",
+      image: "/lovable-uploads/74.jpg",
+      thumbnail: "/lovable-uploads/74.jpg",
+      description: "Students celebrating their achievements at the convocation",
+      date: "2025-08-23",
+      event: "Mid-Year Convocation 2025",
+      tags: ["students", "achievement", "celebration", "graduation"]
+    },
     // YouTube Videos
     {
       id: 301,
