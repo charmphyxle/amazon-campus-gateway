@@ -118,14 +118,14 @@ const ProgramsSection = () => {
       
       <div className="relative z-10 container mx-auto px-4">
         {/* Section Header */}
-        {/* <div className="text-center mb-16 px-4">
+        <div className="text-center mb-16 px-4">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent mb-6">
             Our Programs
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Discover world-class educational programs designed to unlock your potential and shape your future in today's competitive landscape
           </p>
-        </div> */}
+        </div>
 
         {/* Desktop and Tablet View */}
         <div className="hidden md:block">
