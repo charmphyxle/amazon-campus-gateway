@@ -33,11 +33,12 @@ const Index = () => {
           <WhyChooseSection />
           <StatsSection />
           <FeaturesSection />
+          <NewsEventsSection />
           <VerificationSection />
           <GalleryPreview />
           <EventsCalendar />
           <TestimonialsSection />
-          <NewsEventsSection />
+          
           <InternationalSection />
           <CTASection />
         </div>
