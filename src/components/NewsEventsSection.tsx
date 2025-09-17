@@ -6,39 +6,105 @@ import { Calendar, Clock, ArrowRight } from "lucide-react";
 const NewsEventsSection = () => {
   const newsEvents = [
     {
-      type: "Event",
-      title: "Spring 2024 Intake Now Open",
-      description: "Applications are now being accepted for our Spring 2024 programs. Early bird discounts available.",
-      date: "2024-02-15",
+      type: "Enrollment",
+      title: "After A/L - Plan Your Future!",
+      description: "Invest in education with our best courses including AMI Montessori Teaching, Child Psychology, Counselling & Psychology, IT Program, and English. Quality assured programs.",
+      date: "2025-01-15",
       time: "9:00 AM",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=250&fit=crop",
+      image: "/lovable-uploads/2.jpg",
       badge: "Enrollment"
     },
     {
-      type: "News",
-      title: "New Partnership with Global University",
-      description: "Amazon College announces new transfer pathways to prestigious international universities.",
-      date: "2024-01-20",
+      type: "Program",
+      title: "Top Up Degree - 12 Months Only",
+      description: "Complete your degree in just 12 months with our accelerated programs: BSc Psychology, Bachelors of Education, Business Administration, BSc IT/Computing, and BA in English.",
+      date: "2025-01-10",
       time: "10:00 AM",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop",
-      badge: "Partnership"
+      image: "/lovable-uploads/12.jpg",
+      badge: "Program"
     },
     {
-      type: "Achievement",
-      title: "95% Graduate Employment Rate",
-      description: "Our graduates continue to excel with industry-leading employment rates and career advancement.",
-      date: "2024-01-10",
+      type: "Program",
+      title: "HND (UK) Higher National Diploma",
+      description: "Register now for HND programs in Early Childhood Education, Counselling & Psychology, Business Management, Teacher Training, and IT. Internationally recognized.",
+      date: "2025-01-08",
       time: "2:00 PM",
-      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=250&fit=crop",
-      badge: "Success"
+      image: "/lovable-uploads/11.jpg",
+      badge: "Program"
+    },
+    {
+      type: "Career",
+      title: "After O/L's Job Assured Courses",
+      description: "IPA UK certificates with job assurance. Programs include Teacher Training, AMI Montessori Diploma, Counselling & Psychology, Business Management, Spoken English, Care Giver, and Computer Courses.",
+      date: "2025-01-05",
+      time: "11:00 AM",
+      image: "/lovable-uploads/10.jpg",
+      badge: "Career"
+    },
+    {
+      type: "Program",
+      title: "Diploma in Counselling & Psychology",
+      description: "TVEC approved course with comprehensive training and certification. Register now for this professional development program.",
+      date: "2025-01-03",
+      time: "3:00 PM",
+      image: "/lovable-uploads/8-2.jpg",
+      badge: "Program"
+    },
+    {
+      type: "Program",
+      title: "BBA - Bachelor of Business Administration",
+      description: "One year only program for young entrepreneurs, managers, merchandisers, and marketers. UGC approved with embassy acceptance and migration purpose validity.",
+      date: "2025-01-01",
+      time: "9:30 AM",
+      image: "/lovable-uploads/7.jpg",
+      badge: "Program"
+    },
+    {
+      type: "Education",
+      title: "Diploma in Montessori & Early Childhood Education",
+      description: "TVEC approved course with AMI modules. Online & physical classes available. Suitable for teachers, pre-school teachers, school leavers, house wives, and daycare staff.",
+      date: "2024-12-28",
+      time: "10:30 AM",
+      image: "/lovable-uploads/6.jpg",
+      badge: "Education"
+    },
+    {
+      type: "Education",
+      title: "AMI Diploma in Early Childhood Education",
+      description: "Professional qualification with main modules covering Modern Method of Montessori, Child Psychology, First Aid Training, Art & Craft, and EPL & Sensorial training.",
+      date: "2024-12-25",
+      time: "1:00 PM",
+      image: "/lovable-uploads/5.jpg",
+      badge: "Education"
+    },
+    {
+      type: "Graduation",
+      title: "Be A Graduate in Sri Lanka",
+      description: "Work & Study programs for students with HND, SLIATE Diploma, NCOE qualifications. Final year entry available for Bachelor programs and Master's degrees.",
+      date: "2024-12-22",
+      time: "4:00 PM",
+      image: "/lovable-uploads/4-2.jpg",
+      badge: "Graduation"
+    },
+    {
+      type: "Language",
+      title: "Spoken English Course",
+      description: "4-month duration course with online classes via Zoom. Improve your reading, writing, and speaking skills. International Professional Academy UK approved.",
+      date: "2024-12-20",
+      time: "6:00 PM",
+      image: "/lovable-uploads/3.jpg",
+      badge: "Language"
     }
   ];
 
   const getBadgeVariant = (type: string) => {
     switch (type) {
       case "Enrollment": return "cta";
-      case "Partnership": return "trust";
-      case "Success": return "success";
+      case "Program": return "trust";
+      case "Career": return "success";
+      case "Education": return "default";
+      case "Graduation": return "cta";
+      case "Language": return "trust";
       default: return "default";
     }
   };
