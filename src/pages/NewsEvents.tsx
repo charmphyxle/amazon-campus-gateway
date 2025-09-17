@@ -195,42 +195,6 @@ const NewsEvents = () => {
           </div>
         </section>
 
-        {/* Featured News */}
-        {featuredNews && (
-          <section className="py-16 bg-background">
-            <div className="container mx-auto px-4">
-              <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Featured News</h2>
-              <Card className="max-w-4xl mx-auto overflow-hidden shadow-elegant-xl">
-                <div className="md:flex">
-                  <div className="md:w-1/2">
-                    <img 
-                      src={featuredNews.image} 
-                      alt={featuredNews.title}
-                      className="w-full h-64 md:h-full object-cover"
-                    />
-                  </div>
-                  <div className="md:w-1/2">
-                    <CardHeader>
-                      <div className="flex items-center gap-2 mb-2">
-                        <Badge variant="default">{featuredNews.category}</Badge>
-                        <span className="text-sm text-muted-foreground">{featuredNews.date}</span>
-                      </div>
-                      <CardTitle className="text-2xl">{featuredNews.title}</CardTitle>
-                      <CardDescription className="text-base">{featuredNews.excerpt}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <Button variant="default" className="hover-lift">
-                        Read More
-                        <ExternalLink className="w-4 h-4 ml-2" />
-                      </Button>
-                    </CardContent>
-                  </div>
-                </div>
-              </Card>
-            </div>
-          </section>
-        )}
-
         {/* All News */}
         <section className="py-16 bg-muted/20">
           <div className="container mx-auto px-4">
