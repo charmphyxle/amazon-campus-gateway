@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 
 const NewsEventsSection = () => {
@@ -121,59 +122,70 @@ const NewsEventsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {newsEvents.map((item, index) => (
-            <Card 
-              key={index}
-              className="group hover:shadow-elegant-lg transition-all duration-300 hover:scale-105 border-0 overflow-hidden"
-            >
-              <div className="relative overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute top-4 left-4">
-                  <Badge 
-                    variant={getBadgeVariant(item.badge) as any}
-                    className="shadow-md"
-                  >
-                    {item.badge}
-                  </Badge>
-                </div>
-              </div>
-              
-              <CardHeader className="pb-2">
-                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">
-                  <div className="flex items-center gap-1">
-                    <Calendar className="w-4 h-4" />
-                    {new Date(item.date).toLocaleDateString()}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Clock className="w-4 h-4" />
-                    {item.time}
-                  </div>
-                </div>
-                <CardTitle className="group-hover:text-primary transition-colors">
-                  {item.title}
-                </CardTitle>
-              </CardHeader>
+        <div className="relative max-w-7xl mx-auto mb-12">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {newsEvents.map((item, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="group hover:shadow-elegant-lg transition-all duration-300 hover:scale-105 border-0 overflow-hidden h-full">
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <Badge 
+                          variant={getBadgeVariant(item.badge) as any}
+                          className="shadow-md"
+                        >
+                          {item.badge}
+                        </Badge>
+                      </div>
+                    </div>
+                    
+                    <CardHeader className="pb-2">
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">
+                        <div className="flex items-center gap-1">
+                          <Calendar className="w-4 h-4" />
+                          {new Date(item.date).toLocaleDateString()}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Clock className="w-4 h-4" />
+                          {item.time}
+                        </div>
+                      </div>
+                      <CardTitle className="group-hover:text-primary transition-colors text-lg">
+                        {item.title}
+                      </CardTitle>
+                    </CardHeader>
 
-              <CardContent className="pt-0">
-                <CardDescription className="mb-4 line-clamp-3">
-                  {item.description}
-                </CardDescription>
-                
-                <Button 
-                  variant="outline" 
-                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
-                >
-                  Read More
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+                    <CardContent className="pt-0 flex-1 flex flex-col">
+                      <CardDescription className="mb-4 line-clamp-3 flex-1">
+                        {item.description}
+                      </CardDescription>
+                      
+                      <Button 
+                        variant="outline" 
+                        className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 mt-auto"
+                      >
+                        Read More
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex -left-12 lg:-left-16" />
+            <CarouselNext className="hidden md:flex -right-12 lg:-right-16" />
+          </Carousel>
         </div>
 
         <div className="text-center">
