@@ -20,25 +20,60 @@ export default function HeroSection() {
   const slides = useMemo(
     () => [
       {
-        image: heroGraduation,
-        title: "Welcome to Amazon College International Campus",
-        subtitle: "Where Success Begins",
+        image: "/lovable-uploads/00-112.jpg",
+        title: "Amazon College Convocation 2024",
+        subtitle: "Celebrating Academic Excellence",
         description:
-          "Empowering students worldwide with quality education and international opportunities",
+          "Witnessing the graduation of our outstanding students and their journey to success",
       },
       {
-        image: heroClassroom,
-        title: "World-Class Education",
-        subtitle: "Excellence in Learning",
+        image: "/lovable-uploads/1_1.jpg",
+        title: "Annual Convocation Ceremony",
+        subtitle: "A Tradition of Excellence",
         description:
-          "Modern classrooms with experienced faculty and cutting-edge technology",
+          "Distinguished faculty and leaders celebrating academic achievements in our grand auditorium",
       },
       {
-        image: heroCampus,
-        title: "International Community",
-        subtitle: "Global Connections",
+        image: "/lovable-uploads/00-42.jpg",
+        title: "Graduate Success Stories",
+        subtitle: "Future Leaders Taking the Oath",
         description:
-          "Join students from around the world in our vibrant academic community",
+          "Our graduates ready to make their mark in the professional world with confidence and knowledge",
+      },
+      {
+        image: "/lovable-uploads/8.jpg",
+        title: "Academic Leadership",
+        subtitle: "International Recognition",
+        description:
+          "Amazon Campus Private University Sri Lanka - Building bridges to global education",
+      },
+      {
+        image: "/lovable-uploads/70-2.jpg",
+        title: "Mid-Year Convocation 2025",
+        subtitle: "Continuing Excellence",
+        description:
+          "Celebrating the achievements of our diverse student community from around the world",
+      },
+      {
+        image: "/lovable-uploads/4.jpg",
+        title: "Distinguished Faculty Panel",
+        subtitle: "Academic Excellence",
+        description:
+          "Our world-class faculty committed to providing exceptional education and mentorship",
+      },
+      {
+        image: "/lovable-uploads/00-32-2.jpg",
+        title: "Convocation Panel Discussion",
+        subtitle: "Academic Leadership Summit",
+        description:
+          "Industry leaders and academic experts sharing insights for future educational excellence",
+      },
+      {
+        image: "/lovable-uploads/SEK_6943.JPG",
+        title: "Graduation Ceremony",
+        subtitle: "Dreams Realized",
+        description:
+          "Our proud graduates ready to embark on their professional journey with Amazon College credentials",
       },
     ],
     []
