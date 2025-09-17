@@ -116,50 +116,6 @@ const FeaturesSection = () => {
           })}
         </div>
 
-        {/* Featured Facilities */}
-        <div className="grid lg:grid-cols-2 gap-12">
-          {facilities.map((facility, index) => (
-            <Card 
-              key={facility.title}
-              className="group hover:shadow-elegant-xl transition-all duration-500 border-0 overflow-hidden hover-lift animate-zoom-in"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <div className="relative h-64 overflow-hidden">
-                <img 
-                  src={facility.image} 
-                  alt={facility.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-2xl font-bold text-white mb-2">{facility.title}</h3>
-                </div>
-              </div>
-              
-              <CardContent className="p-6">
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  {facility.description}
-                </p>
-                
-                <div className="grid grid-cols-2 gap-2 mb-6">
-                  {facility.highlights.map((highlight, idx) => (
-                    <div key={idx} className="flex items-center text-sm text-muted-foreground">
-                      <div className="w-2 h-2 bg-success rounded-full mr-2 flex-shrink-0" />
-                      {highlight}
-                    </div>
-                  ))}
-                </div>
-                
-                <Button 
-                  variant="outline" 
-                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 hover-glow"
-                >
-                  Learn More
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
       </div>
     </section>
   );
