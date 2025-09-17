@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Calendar, Clock, ArrowRight } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
+import { ZoomIn, ZoomOut, RotateCcw, X } from "lucide-react";
 
 const NewsEventsSection = () => {
   const newsEvents = [
@@ -110,6 +113,11 @@ const NewsEventsSection = () => {
     }
   };
 
+  // Zoom modal state
+  const [open, setOpen] = useState(false);
+  const [activeImage, setActiveImage] = useState<string | null>(null);
+  const [zoom, setZoom] = useState(1);
+
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
@@ -128,34 +136,65 @@ const NewsEventsSection = () => {
               align: "start",
               loop: true,
             }}
+            plugins={[Autoplay({ delay: 3000, stopOnInteraction: true })]}
             className="w-full"
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {newsEvents.map((item, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-                  <Card className="group hover:shadow-elegant-lg transition-all duration-300 hover:scale-105 border-0 overflow-hidden">
-                    <div className="relative overflow-hidden">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
+                <CarouselItem key={index} className="pl-2 md:pl-4 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                  <Card className="overflow-hidden bg-muted/20 hover:shadow-elegant-lg transition-transform duration-300 hover:scale-[1.01]">
+                    <button
+                      type="button"
+                      className="relative block w-full cursor-zoom-in"
+                      onClick={() => { setActiveImage(item.image); setZoom(1); setOpen(true); }}
+                      aria-label={`View poster: ${item.title}`}
+                    >
+                      <AspectRatio ratio={3/4} className="bg-background">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          loading="lazy"
+                          className="absolute inset-0 w-full h-full object-contain"
+                          draggable={false}
+                        />
+                      </AspectRatio>
+                    </button>
                   </Card>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-12 lg:-left-16" />
-            <CarouselNext className="hidden md:flex -right-12 lg:-right-16" />
+            <CarouselPrevious className="-left-4" />
+            <CarouselNext className="-right-4" />
           </Carousel>
+
+          <Dialog open={open} onOpenChange={setOpen}>
+            <DialogContent className="max-w-5xl bg-background p-0">
+              <div className="absolute top-3 right-3 z-10 flex gap-2">
+                <Button variant="secondary" size="icon" aria-label="Zoom in" onClick={() => setZoom(z => Math.min(3, z + 0.25))}>
+                  <ZoomIn className="w-4 h-4" />
+                </Button>
+                <Button variant="secondary" size="icon" aria-label="Zoom out" onClick={() => setZoom(z => Math.max(1, z - 0.25))}>
+                  <ZoomOut className="w-4 h-4" />
+                </Button>
+                <Button variant="secondary" size="icon" aria-label="Reset zoom" onClick={() => setZoom(1)}>
+                  <RotateCcw className="w-4 h-4" />
+                </Button>
+              </div>
+              <div className="w-full max-h-[85vh] overflow-auto bg-background">
+                {activeImage && (
+                  <img
+                    src={activeImage}
+                    alt="Poster enlarged"
+                    className="block mx-auto max-w-none"
+                    style={{ width: `${zoom * 100}%` }}
+                    draggable={false}
+                  />
+                )}
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
 
-        <div className="text-center">
-          <Button variant="outline" size="lg">
-            View All News & Events
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
-        </div>
       </div>
     </section>
   );
