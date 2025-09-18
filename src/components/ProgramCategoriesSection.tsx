@@ -13,7 +13,8 @@ const ProgramCategoriesSection = () => {
       duration: "6 months",
       level: "Certificate",
       color: "from-blue-500 to-blue-600",
-      bgColor: "bg-blue-50 dark:bg-blue-950/20"
+      bgColor: "bg-blue-50 dark:bg-blue-950/20",
+      bgImage: "/lovable-uploads/00-25.jpg"
     },
     {
       id: "diploma",
@@ -24,7 +25,8 @@ const ProgramCategoriesSection = () => {
       duration: "12 months",
       level: "Diploma",
       color: "from-green-500 to-green-600",
-      bgColor: "bg-green-50 dark:bg-green-950/20"
+      bgColor: "bg-green-50 dark:bg-green-950/20",
+      bgImage: "/lovable-uploads/00-26.jpg"
     },
     {
       id: "hnd",
@@ -35,7 +37,8 @@ const ProgramCategoriesSection = () => {
       duration: "2-3 years",
       level: "Higher Diploma",
       color: "from-purple-500 to-purple-600",
-      bgColor: "bg-purple-50 dark:bg-purple-950/20"
+      bgColor: "bg-purple-50 dark:bg-purple-950/20",
+      bgImage: "/lovable-uploads/00-27.jpg"
     },
     {
       id: "degree",
@@ -46,7 +49,8 @@ const ProgramCategoriesSection = () => {
       duration: "3-4 years",
       level: "Bachelor's",
       color: "from-orange-500 to-orange-600",
-      bgColor: "bg-orange-50 dark:bg-orange-950/20"
+      bgColor: "bg-orange-50 dark:bg-orange-950/20",
+      bgImage: "/lovable-uploads/00-28.jpg"
     },
     {
       id: "masters",
@@ -57,7 +61,8 @@ const ProgramCategoriesSection = () => {
       duration: "1-4 years",
       level: "Postgraduate",
       color: "from-red-500 to-red-600",
-      bgColor: "bg-red-50 dark:bg-red-950/20"
+      bgColor: "bg-red-50 dark:bg-red-950/20",
+      bgImage: "/lovable-uploads/00-29.jpg"
     }
   ];
 
@@ -83,24 +88,29 @@ const ProgramCategoriesSection = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-0">
-                  <div className={`${category.bgColor} p-6 relative overflow-hidden`}>
-                    <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-10 group-hover:opacity-20 transition-opacity`} />
+                  <div className="p-6 relative overflow-hidden h-48" style={{
+                    backgroundImage: `url(${category.bgImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}>
+                    <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors" />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-30 group-hover:opacity-40 transition-opacity`} />
                     <div className="relative">
                       <div className="flex items-center justify-between mb-4">
                         <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${category.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 animate-float shadow-elegant`}>
                           <IconComponent className="w-8 h-8 text-white" />
                         </div>
                         <div className="text-right">
-                          <div className="text-sm font-medium text-muted-foreground">{category.level}</div>
-                          <div className="text-xs text-muted-foreground/70">{category.duration}</div>
+                          <div className="text-sm font-medium text-white/90">{category.level}</div>
+                          <div className="text-xs text-white/70">{category.duration}</div>
                         </div>
                       </div>
                       
-                      <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-white transition-colors">
                         {category.title}
                       </h3>
                       
-                      <p className="text-sm font-medium text-primary mb-3">
+                      <p className="text-sm font-medium text-white/90 mb-3">
                         {category.subtitle}
                       </p>
                     </div>
