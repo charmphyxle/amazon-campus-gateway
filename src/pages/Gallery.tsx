@@ -15,9 +15,114 @@ const Gallery = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("newest");
 
-  const categories = ["All", "Graduation", "Events", "Campus", "International"];
+  const categories = ["All", "Videos", "Graduation", "Events", "Campus", "International"];
 
   const galleryItems = [
+    // YouTube Videos
+    {
+      id: 200,
+      category: "Events",
+      title: "Amazon College Campus Tour",
+      type: "video",
+      image: "/src/assets/campus-exterior.jpg",
+      thumbnail: "/src/assets/campus-exterior.jpg",
+      videoUrl: "https://youtu.be/Ajwn22MeUp4",
+      description: "Complete tour of Amazon College campus facilities and amenities",
+      date: "2024-09-15",
+      event: "Campus Tour",
+      tags: ["campus", "tour", "facilities", "video"]
+    },
+    {
+      id: 201,
+      category: "Events",
+      title: "Student Life & Activities",
+      type: "video",
+      image: "/src/assets/student-lounge.jpg",
+      thumbnail: "/src/assets/student-lounge.jpg",
+      videoUrl: "https://youtu.be/35bBv-82Lxc",
+      description: "Highlights of student life and extracurricular activities",
+      date: "2024-09-14",
+      event: "Student Activities",
+      tags: ["student-life", "activities", "extracurricular", "video"]
+    },
+    {
+      id: 202,
+      category: "International",
+      title: "Academic Programs Overview",
+      type: "video",
+      image: "/src/assets/hero-classroom.jpg",
+      thumbnail: "/src/assets/hero-classroom.jpg",
+      videoUrl: "https://youtu.be/EuQWjA8qSUw",
+      description: "Comprehensive overview of academic programs and courses offered",
+      date: "2024-09-13",
+      event: "Academic Overview",
+      tags: ["academic", "programs", "courses", "video"]
+    },
+    {
+      id: 203,
+      category: "Events",
+      title: "Faculty & Research Excellence",
+      type: "video",
+      image: "/src/assets/teacher-training.jpg",
+      thumbnail: "/src/assets/teacher-training.jpg",
+      videoUrl: "https://youtu.be/g6NO_mhpE2A",
+      description: "Meet our distinguished faculty and their research achievements",
+      date: "2024-09-12",
+      event: "Faculty Showcase",
+      tags: ["faculty", "research", "excellence", "video"]
+    },
+    {
+      id: 204,
+      category: "International",
+      title: "Global Partnerships & Opportunities",
+      type: "video",
+      image: "/src/assets/campus-walkway.jpg",
+      thumbnail: "/src/assets/campus-walkway.jpg",
+      videoUrl: "https://youtu.be/t0cDewL49BE",
+      description: "Exploring international partnerships and study abroad opportunities",
+      date: "2024-09-11",
+      event: "International Relations",
+      tags: ["international", "partnerships", "study-abroad", "video"]
+    },
+    {
+      id: 205,
+      category: "Graduation",
+      title: "Success Stories & Alumni",
+      type: "video",
+      image: "/src/assets/certificate-ceremony.jpg",
+      thumbnail: "/src/assets/certificate-ceremony.jpg",
+      videoUrl: "https://youtu.be/dUqNAyB6B2E",
+      description: "Alumni success stories and career achievements",
+      date: "2024-09-10",
+      event: "Alumni Stories",
+      tags: ["alumni", "success", "careers", "video"]
+    },
+    {
+      id: 206,
+      category: "Events",
+      title: "Innovation & Technology Center",
+      type: "video",
+      image: "/src/assets/computer-lab.jpg",
+      thumbnail: "/src/assets/computer-lab.jpg",
+      videoUrl: "https://youtu.be/67NW6C2ac6I",
+      description: "State-of-the-art technology facilities and innovation labs",
+      date: "2024-09-09",
+      event: "Technology Showcase",
+      tags: ["technology", "innovation", "labs", "video"]
+    },
+    {
+      id: 207,
+      category: "Campus",
+      title: "Modern Learning Environment",
+      type: "video",
+      image: "/src/assets/library-study.jpg",
+      thumbnail: "/src/assets/library-study.jpg",
+      videoUrl: "https://youtu.be/Hyvd2WfpvmU",
+      description: "Modern classrooms and interactive learning environments",
+      date: "2024-09-08",
+      event: "Learning Environment",
+      tags: ["learning", "modern", "classrooms", "video"]
+    },
     {
       id: 1,
       category: "Graduation",
@@ -614,35 +719,35 @@ const Gallery = () => {
     {
       id: 301,
       category: "Events",
-      title: "Amazon College Video 1",
+      title: "Amazon College Campus Tour",
       type: "video",
-      image: "https://img.youtube.com/vi/0whVZ7yi29Y/maxresdefault.jpg",
-      thumbnail: "https://img.youtube.com/vi/0whVZ7yi29Y/maxresdefault.jpg",
-      videoUrl: "https://www.youtube.com/embed/0whVZ7yi29Y",
-      description: "Amazon College promotional and educational video content",
-      date: "2024-09-12",
-      event: "Video Content",
-      tags: ["video", "amazon", "college", "educational"]
+      image: "https://img.youtube.com/vi/Ajwn22MeUp4/maxresdefault.jpg",
+      thumbnail: "https://img.youtube.com/vi/Ajwn22MeUp4/maxresdefault.jpg",
+      videoUrl: "https://youtu.be/Ajwn22MeUp4",
+      description: "Complete tour of Amazon College campus facilities and amenities",
+      date: "2024-09-15",
+      event: "Campus Tour",
+      tags: ["campus", "tour", "facilities", "video"]
     },
     {
       id: 302,
       category: "Events",
-      title: "Amazon College Video 2",
+      title: "Student Life & Activities",
       type: "video",
-      image: "https://img.youtube.com/vi/bhGc583XSD4/maxresdefault.jpg",
-      thumbnail: "https://img.youtube.com/vi/bhGc583XSD4/maxresdefault.jpg",
-      videoUrl: "https://www.youtube.com/embed/bhGc583XSD4",
-      description: "Amazon College promotional and educational video content",
-      date: "2024-09-12",
-      event: "Video Content",
-      tags: ["video", "amazon", "college", "educational"]
+      image: "https://img.youtube.com/vi/35bBv-82Lxc/maxresdefault.jpg",
+      thumbnail: "https://img.youtube.com/vi/35bBv-82Lxc/maxresdefault.jpg",
+      videoUrl: "https://youtu.be/35bBv-82Lxc",
+      description: "Highlights of student life and extracurricular activities",
+      date: "2024-09-14",
+      event: "Student Activities",
+      tags: ["student-life", "activities", "extracurricular", "video"]
     },
     {
       id: 303,
-      category: "Campus",
-      title: "Amazon College Video 3",
+      category: "International",
+      title: "Academic Programs Overview",
       type: "video",
-      image: "https://img.youtube.com/vi/FZaJUlL8_i0/maxresdefault.jpg",
+      image: "https://img.youtube.com/vi/EuQWjA8qSUw/maxresdefault.jpg",
       thumbnail: "https://img.youtube.com/vi/FZaJUlL8_i0/maxresdefault.jpg",
       videoUrl: "https://www.youtube.com/embed/FZaJUlL8_i0",
       description: "Amazon College promotional and educational video content",
@@ -683,36 +788,36 @@ const Gallery = () => {
       type: "video",
       image: "https://img.youtube.com/vi/c2pA0PkCPxk/maxresdefault.jpg",
       thumbnail: "https://img.youtube.com/vi/c2pA0PkCPxk/maxresdefault.jpg",
-      videoUrl: "https://www.youtube.com/embed/c2pA0PkCPxk",
-      description: "Amazon College promotional and educational video content",
-      date: "2024-09-12",
-      event: "Video Content",
-      tags: ["video", "amazon", "college", "campus"]
+      videoUrl: "https://youtu.be/dUqNAyB6B2E",
+      description: "Alumni success stories and career achievements",
+      date: "2024-09-10",
+      event: "Alumni Stories",
+      tags: ["alumni", "success", "careers", "video"]
     },
     {
       id: 307,
       category: "Events",
-      title: "Amazon College Video 7",
+      title: "Innovation & Technology Center",
       type: "video",
-      image: "https://img.youtube.com/vi/88zPtW8HzCo/maxresdefault.jpg",
-      thumbnail: "https://img.youtube.com/vi/88zPtW8HzCo/maxresdefault.jpg",
-      videoUrl: "https://www.youtube.com/embed/88zPtW8HzCo",
-      description: "Amazon College promotional and educational video content",
-      date: "2024-09-12",
-      event: "Video Content",
-      tags: ["video", "amazon", "college", "events"]
+      image: "https://img.youtube.com/vi/67NW6C2ac6I/maxresdefault.jpg",
+      thumbnail: "https://img.youtube.com/vi/67NW6C2ac6I/maxresdefault.jpg",
+      videoUrl: "https://youtu.be/67NW6C2ac6I",
+      description: "State-of-the-art technology facilities and innovation labs",
+      date: "2024-09-09",
+      event: "Technology Showcase",
+      tags: ["technology", "innovation", "labs", "video"]
     },
     {
       id: 308,
-      category: "Graduation",
-      title: "Amazon College Video 8",
+      category: "Campus",
+      title: "Modern Learning Environment",
       type: "video",
-      image: "https://img.youtube.com/vi/1JwhYPrQ_gQ/maxresdefault.jpg",
-      thumbnail: "https://img.youtube.com/vi/1JwhYPrQ_gQ/maxresdefault.jpg",
-      videoUrl: "https://www.youtube.com/embed/1JwhYPrQ_gQ",
-      description: "Amazon College promotional and educational video content",
-      date: "2024-09-12",
-      event: "Video Content",
+      image: "https://img.youtube.com/vi/Hyvd2WfpvmU/maxresdefault.jpg",
+      thumbnail: "https://img.youtube.com/vi/Hyvd2WfpvmU/maxresdefault.jpg",
+      videoUrl: "https://youtu.be/Hyvd2WfpvmU",
+      description: "Modern classrooms and interactive learning environments",
+      date: "2024-09-08",
+      event: "Learning Environment",
       tags: ["video", "amazon", "college", "graduation"]
     },
     {
@@ -744,7 +849,9 @@ const Gallery = () => {
   ];
 
   const filteredItems = galleryItems.filter(item => {
-    const matchesCategory = activeFilter === "All" || item.category === activeFilter;
+    const matchesCategory = activeFilter === "All" || 
+                          item.category === activeFilter ||
+                          (activeFilter === "Videos" && item.type === "video");
     const matchesSearch = searchTerm === "" || 
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -972,12 +1079,15 @@ const Gallery = () => {
                   <div className="w-full max-w-4xl">
                     <div className="aspect-video bg-black rounded-lg overflow-hidden">
                       <iframe
-                        src={currentImage.videoUrl}
+                        src={`https://www.youtube.com/embed/${currentImage.videoUrl?.includes('youtu.be') 
+                          ? currentImage.videoUrl.split('/').pop()?.split('?')[0] 
+                          : currentImage.videoUrl?.split('watch?v=')[1]?.split('&')[0]}`}
                         title={currentImage.title}
                         className="w-full h-full"
                         allowFullScreen
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         frameBorder="0"
+                        loading="lazy"
                       />
                     </div>
                   </div>
