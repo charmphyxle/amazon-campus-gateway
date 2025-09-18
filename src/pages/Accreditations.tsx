@@ -9,6 +9,14 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Award, Download, ExternalLink, Shield, Globe, BookOpen } from "lucide-react";
 
+// Import the generated logo images
+import ministryLogo from "@/assets/logos/ministry-education.png";
+import britishCouncilLogo from "@/assets/logos/british-council.png";
+import cambridgeLogo from "@/assets/logos/cambridge-university.png";
+import tesolLogo from "@/assets/logos/tesol-international.png";
+import qualityAssuranceLogo from "@/assets/logos/quality-assurance.png";
+import internationalEducationLogo from "@/assets/logos/international-education.png";
+
 const Accreditations = () => {
   const [hoveredLogo, setHoveredLogo] = useState<number | null>(null);
 
@@ -17,7 +25,7 @@ const Accreditations = () => {
       id: 1,
       name: "Ministry of Education",
       type: "Government Registration",
-      logo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=100&fit=crop",
+      logo: ministryLogo,
       description: "Officially registered and recognized by the Ministry of Education",
       documents: [
         { name: "Registration Certificate", url: "/docs/ministry-registration.pdf" },
@@ -30,7 +38,7 @@ const Accreditations = () => {
       id: 2,
       name: "British Council",
       type: "International Partnership",
-      logo: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=200&h=100&fit=crop",
+      logo: britishCouncilLogo,
       description: "Authorized center for British Council English language programs",
       documents: [
         { name: "Partnership Agreement", url: "/docs/british-council.pdf" },
@@ -43,7 +51,7 @@ const Accreditations = () => {
       id: 3,
       name: "University of Cambridge",
       type: "Academic Partnership",
-      logo: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=200&h=100&fit=crop",
+      logo: cambridgeLogo,
       description: "Pathway programs to University of Cambridge and partner institutions",
       documents: [
         { name: "Pathway Agreement", url: "/docs/cambridge-pathway.pdf" },
@@ -56,7 +64,7 @@ const Accreditations = () => {
       id: 4,
       name: "TESOL International",
       type: "Professional Certification",
-      logo: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=200&h=100&fit=crop",
+      logo: tesolLogo,
       description: "Certified provider for TESOL teacher training programs",
       documents: [
         { name: "TESOL Certification", url: "/docs/tesol-cert.pdf" },
@@ -69,7 +77,7 @@ const Accreditations = () => {
       id: 5,
       name: "Quality Assurance Agency",
       type: "Quality Standards",
-      logo: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=200&h=100&fit=crop",
+      logo: qualityAssuranceLogo,
       description: "Certified for quality assurance in higher education",
       documents: [
         { name: "QAA Certificate", url: "/docs/qaa-certificate.pdf" },
@@ -82,7 +90,7 @@ const Accreditations = () => {
       id: 6,
       name: "International Education Board",
       type: "Global Recognition",
-      logo: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=200&h=100&fit=crop",
+      logo: internationalEducationLogo,
       description: "Globally recognized for international education standards",
       documents: [
         { name: "Global Recognition", url: "/docs/global-recognition.pdf" },
