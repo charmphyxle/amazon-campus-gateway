@@ -72,7 +72,10 @@ const AboutUs = () => {
         <div className="relative container mx-auto px-4 h-full flex items-center justify-center">
           <div className="text-center text-white animate-fade-in">
                 <h1 className="text-5xl md:text-6xl font-bold mb-4">About Amazon College</h1>
-                <p className="text-xl md:text-2xl opacity-90">Cost-Effective, Internationally Recognised Education</p>
+                <p className="text-xl md:text-2xl opacity-90 mb-6">Cost-Effective, Internationally Recognised Education</p>
+                <p className="text-lg opacity-80 max-w-4xl mx-auto leading-relaxed">
+                  Amazon College aims to deliver cost-effective, globally accredited education across multiple levels—diplomas through PhDs. All degree and postgraduate programs are recognized by the University Grants Commission (UGC) of Sri Lanka, listed in the World Higher Education Database (WHED), and endorsed by embassies and Canada's WES. The college emphasizes flexible payment plans, practical training, international credit transferability, and a supportive learning environment.
+                </p>
           </div>
         </div>
       </section>

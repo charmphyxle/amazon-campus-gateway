@@ -1264,5 +1264,227 @@ export const programsData: Program[] = [
     ],
     featured: true,
     category: "Business Management"
+  },
+  {
+    id: "diploma-teacher-training-comprehensive",
+    slug: "diploma-teacher-training-comprehensive",
+    title: "Diploma in Teacher Training (Comprehensive)",
+    level: "Diploma",
+    shortSummary: "Comprehensive teacher training covering Montessori, Early Childhood, Primary, Special Child, and English Teacher Training (UK)",
+    longDescription: `<p>Our comprehensive Diploma in Teacher Training program offers specialized pathways in multiple educational fields. This program prepares educators for diverse teaching environments with internationally recognized methodologies.</p>
+    <p>The program includes specialized training in Montessori education, early childhood development, primary education, special needs education, and English language teaching with UK certification standards.</p>`,
+    modules: [
+      { title: "Montessori Education Principles", description: "Comprehensive training in Montessori methodology and materials" },
+      { title: "Early Childhood Development", description: "Child psychology, development stages, and age-appropriate teaching methods" },
+      { title: "Primary Education Strategies", description: "Curriculum design and classroom management for primary grades" },
+      { title: "Special Needs Education", description: "Inclusive education practices and support for children with special needs" },
+      { title: "English Language Teaching (UK)", description: "UK-standard English teaching methodologies and certification" },
+      { title: "Educational Psychology", description: "Understanding learning processes and student behavior" }
+    ],
+    learningOutcomes: [
+      "Master multiple teaching methodologies and approaches",
+      "Develop skills in early childhood and primary education",
+      "Understand special needs education and inclusive practices",
+      "Obtain UK-standard English teaching certification",
+      "Create effective learning environments for diverse learners"
+    ],
+    careerPaths: [
+      "Montessori Teacher",
+      "Early Childhood Educator", 
+      "Primary School Teacher",
+      "Special Needs Support Teacher",
+      "English Language Instructor"
+    ],
+    duration: "18 months",
+    fees: {
+      total: 185000,
+      currency: "LKR",
+      installments: { count: 6, amount: 30833 }
+    },
+    entryRequirements: [
+      "G.C.E A/L with 2 passes or equivalent",
+      "English proficiency (written and spoken)",
+      "Interview and aptitude assessment"
+    ],
+    images: ["/src/assets/teacher-training-diploma.jpg"],
+    documents: ["teacher-training-brochure.pdf"],
+    accreditation: [
+      { body: "Ministry of Education", type: "Recognition", certification: "Teaching Qualification" }
+    ],
+    contacts: [
+      {
+        type: "academic",
+        email: "education@amazoncollege.lk",
+        phone: "+94-11-555-0102"
+      }
+    ],
+    category: "Education",
+    featured: true
+  },
+  {
+    id: "diploma-counselling-psychology-comprehensive",
+    slug: "diploma-counselling-psychology-comprehensive",
+    title: "Diploma in Counselling & Psychology (Comprehensive)",
+    level: "Diploma",
+    shortSummary: "Specialized counselling training covering Child, Educational, Health, and Addiction psychology",
+    longDescription: `<p>Our comprehensive Diploma in Counselling & Psychology provides specialized training across multiple counselling domains. This program prepares students for diverse counselling roles with practical experience and theoretical knowledge.</p>
+    <p>The curriculum covers child psychology, educational counselling, health psychology, and addiction counselling with hands-on practicum experience.</p>`,
+    modules: [
+      { title: "Child Psychology & Counselling", description: "Specialized techniques for counselling children and adolescents" },
+      { title: "Educational Psychology", description: "School-based counselling and learning support strategies" },
+      { title: "Health Psychology", description: "Mental health counselling and wellness approaches" },
+      { title: "Addiction Counselling", description: "Substance abuse and behavioral addiction treatment methods" },
+      { title: "Counselling Ethics & Practice", description: "Professional standards and ethical considerations" },
+      { title: "Practicum & Case Studies", description: "Supervised counselling practice and real-world experience" }
+    ],
+    learningOutcomes: [
+      "Develop specialized counselling skills across multiple domains",
+      "Understand psychological theories and their practical applications",
+      "Master ethical counselling practices and professional standards",
+      "Gain hands-on experience through supervised practicum",
+      "Create effective intervention strategies for diverse client needs"
+    ],
+    careerPaths: [
+      "Child Counsellor",
+      "Educational Counsellor",
+      "Health Psychology Assistant",
+      "Addiction Support Counsellor",
+      "Community Mental Health Worker"
+    ],
+    duration: "15 months",
+    fees: {
+      total: 175000,
+      currency: "LKR",
+      installments: { count: 5, amount: 35000 }
+    },
+    entryRequirements: [
+      "G.C.E A/L with 2 passes or equivalent",
+      "Psychology or related background preferred",
+      "Interview and psychological assessment"
+    ],
+    images: ["/src/assets/counselling-psychology-diploma.jpg"],
+    documents: ["counselling-psychology-brochure.pdf"],
+    accreditation: [
+      { body: "Sri Lanka Association of Professional Counsellors", type: "Professional Recognition" }
+    ],
+    contacts: [
+      {
+        type: "academic",
+        email: "psychology@amazoncollege.lk",
+        phone: "+94-11-555-0103"
+      }
+    ],
+    category: "Psychology"
+  },
+  {
+    id: "diplomas-english-language-comprehensive",
+    slug: "diplomas-english-language-comprehensive",
+    title: "Diplomas in English Language (Comprehensive)",
+    level: "Diploma",
+    shortSummary: "Comprehensive English language training covering Spoken English, Business English, and General English",
+    longDescription: `<p>Our comprehensive English Language Diploma programs offer specialized training in multiple aspects of English communication. These programs are designed for students seeking to master English for professional, academic, or personal development.</p>
+    <p>The program includes three specialized pathways: Spoken English for communication skills, Business English for professional environments, and General English for comprehensive language mastery.</p>`,
+    modules: [
+      { title: "Spoken English Mastery", description: "Advanced conversation skills, pronunciation, and public speaking" },
+      { title: "Business English Communication", description: "Professional writing, presentations, and corporate communication" },
+      { title: "General English Proficiency", description: "Comprehensive grammar, vocabulary, and language skills" },
+      { title: "English Literature & Culture", description: "Cultural context and literary appreciation" },
+      { title: "Language Teaching Methods", description: "Techniques for teaching English as a second language" },
+      { title: "Digital Communication Skills", description: "Online communication and digital literacy in English" }
+    ],
+    learningOutcomes: [
+      "Achieve fluency in spoken and written English",
+      "Master business communication and professional English",
+      "Develop teaching skills for English language instruction",
+      "Understand cultural contexts and nuances of English",
+      "Create effective English learning materials and programs"
+    ],
+    careerPaths: [
+      "English Language Trainer",
+      "Business Communication Specialist",
+      "Corporate English Instructor",
+      "Content Writer",
+      "Customer Service Representative"
+    ],
+    duration: "12 months",
+    fees: {
+      total: 95000,
+      currency: "LKR",
+      installments: { count: 4, amount: 23750 }
+    },
+    entryRequirements: [
+      "G.C.E O/L with English credit",
+      "Basic English communication skills",
+      "Oral assessment for placement level"
+    ],
+    images: ["/src/assets/english-language-diploma.jpg"],
+    documents: ["english-language-brochure.pdf"],
+    accreditation: [
+      { body: "British Council", type: "Curriculum Recognition" }
+    ],
+    contacts: [
+      {
+        type: "academic",
+        email: "english@amazoncollege.lk",
+        phone: "+94-11-555-0104"
+      }
+    ],
+    category: "English Language"
+  },
+  {
+    id: "diplomas-business-management-comprehensive",
+    slug: "diplomas-business-management-comprehensive",
+    title: "Diplomas in Business Management (Comprehensive)",
+    level: "Diploma",
+    shortSummary: "Comprehensive business training covering Business Management, Marketing, Sales & Entrepreneurship Management",
+    longDescription: `<p>Our comprehensive Business Management Diploma programs provide specialized training across key business domains. These programs prepare students for leadership roles in various business environments with practical skills and theoretical knowledge.</p>
+    <p>The curriculum covers general business management, specialized marketing strategies, sales techniques, and entrepreneurship development with real-world business applications.</p>`,
+    modules: [
+      { title: "Business Management Fundamentals", description: "Core principles of business operations and management" },
+      { title: "Marketing Strategy & Implementation", description: "Market analysis, branding, and marketing campaign development" },
+      { title: "Sales Techniques & Customer Relations", description: "Advanced sales strategies and customer relationship management" },
+      { title: "Entrepreneurship & Innovation", description: "Business planning, startup strategies, and innovation management" },
+      { title: "Financial Management", description: "Business finance, budgeting, and financial analysis" },
+      { title: "Business Project Management", description: "Practical business project execution and management" }
+    ],
+    learningOutcomes: [
+      "Master core business management principles and practices",
+      "Develop advanced marketing and sales strategies",
+      "Create comprehensive business plans and startup strategies",
+      "Understand financial management and business analysis",
+      "Apply entrepreneurial thinking to business challenges"
+    ],
+    careerPaths: [
+      "Business Manager",
+      "Marketing Executive",
+      "Sales Representative",
+      "Entrepreneur",
+      "Business Development Officer"
+    ],
+    duration: "15 months",
+    fees: {
+      total: 155000,
+      currency: "LKR",
+      installments: { count: 5, amount: 31000 }
+    },
+    entryRequirements: [
+      "G.C.E A/L with 2 passes or equivalent",
+      "Basic mathematics and English proficiency",
+      "Interview and business aptitude assessment"
+    ],
+    images: ["/src/assets/business-management-diploma.jpg"],
+    documents: ["business-management-brochure.pdf"],
+    accreditation: [
+      { body: "Institute of Chartered Accountants", type: "Professional Recognition" }
+    ],
+    contacts: [
+      {
+        type: "academic",
+        email: "business@amazoncollege.lk",
+        phone: "+94-11-555-0105"
+      }
+    ],
+    category: "Business Management",
+    featured: true
   }
 ];
