@@ -125,66 +125,7 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-
-      {/* Mission, Vision, Values */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Our Foundation</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              The principles that guide everything we do
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <Card className="shadow-elegant-lg border-0 hover:scale-105 transition-transform duration-300">
-              <CardHeader className="text-center">
-                <Target className="w-16 h-16 text-primary mx-auto mb-4" />
-                <CardTitle className="text-2xl">Our Mission</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center leading-relaxed">
-                  To provide exceptional international education that empowers students to achieve their 
-                  academic and professional goals while fostering global citizenship and lifelong learning.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-elegant-lg border-0 hover:scale-105 transition-transform duration-300">
-              <CardHeader className="text-center">
-                <Eye className="w-16 h-16 text-secondary mx-auto mb-4" />
-                <CardTitle className="text-2xl">Our Vision</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center leading-relaxed">
-                  To be recognized as the leading international education provider that transforms lives 
-                  and creates pathways to global opportunities for students from all backgrounds.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, index) => {
-              const IconComponent = value.icon;
-              return (
-                <Card 
-                  key={value.title}
-                  className="group hover:shadow-elegant-lg transition-all duration-300 hover:scale-105 border-0"
-                >
-                  <CardHeader className="text-center pb-4">
-                    <IconComponent className="w-12 h-12 text-trust mx-auto mb-4 group-hover:text-primary transition-colors" />
-                    <CardTitle className="text-lg">{value.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0 text-center">
-                    <CardDescription>{value.description}</CardDescription>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      
 
       {/* CTA Section */}
       <section className="py-20">
