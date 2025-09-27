@@ -100,7 +100,7 @@ const AboutUs = () => {
                       <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary to-trust flex items-center justify-center">
                         <Users className="w-24 h-24 text-white" />
                       </div>
-                      <h3 className="text-xl font-bold text-foreground">Dr. John Smith</h3>
+                      {/* <h3 className="text-xl font-bold text-foreground">Dr. John Smith</h3> */}
                       <p className="text-muted-foreground">Founder & Principal</p>
                     </div>
                   </div>
@@ -114,7 +114,7 @@ const AboutUs = () => {
                     </blockquote>
                     <div className="text-right">
                       <div className="inline-block">
-                        <div className="text-2xl font-signature text-primary mb-2">Dr. John Smith</div>
+                        {/* <div className="text-2xl font-signature text-primary mb-2">Dr. John Smith</div> */}
                         <p className="text-sm text-muted-foreground">Founder & Principal</p>
                       </div>
                     </div>
