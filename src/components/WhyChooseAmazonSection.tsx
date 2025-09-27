@@ -193,7 +193,7 @@ const WhyChooseAmazonSection = () => {
               <Button variant="secondary" size="lg" className="shadow-elegant">
                 Apply Now
               </Button>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+              <Button variant="outline" size="lg" className="border-white text-orange hover:bg-white hover:text-primary">
                 Download Prospectus
               </Button>
             </div>
