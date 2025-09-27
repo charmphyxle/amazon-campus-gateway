@@ -1486,5 +1486,372 @@ export const programsData: Program[] = [
     ],
     category: "Business Management",
     featured: true
+  },
+  {
+    id: "diploma-education-training-002",
+    slug: "diploma-education-training",
+    title: "Diploma in Education and Training",
+    level: "Diploma",
+    shortSummary: "Equips aspiring educators with knowledge, skills, and practical tools to teach effectively in modern classrooms, blending educational psychology, leadership, and technology.",
+    longDescription: `
+      <p>The Diploma in Education equips aspiring educators with the knowledge, skills, and practical tools to teach effectively in modern classrooms.</p>
+      <p>The program blends educational psychology, leadership, and technology to prepare graduates for roles in schools, training institutions, and further academic study in teaching and education management.</p>
+    `,
+    modules: [
+      {
+        title: "Introduction to Education Systems",
+        description: "Overview of local and global education systems, understanding policies, frameworks, and curriculum structures, role of teachers in diverse learning environments"
+      },
+      {
+        title: "Learning Theories and Psychology",
+        description: "Key theories of learning (behaviorist, cognitive, constructivist), child and adolescent development, applying psychology to improve teaching practices"
+      },
+      {
+        title: "Curriculum Design and Development",
+        description: "Principles of curriculum planning and design, aligning learning outcomes with teaching strategies, incorporating inclusivity and diversity in curricula"
+      },
+      {
+        title: "Assessment and Evaluation in Education",
+        description: "Designing fair and effective assessments, analyzing student performance data, using evaluation for continuous improvement"
+      },
+      {
+        title: "Educational Leadership and Management",
+        description: "Basics of educational leadership roles, managing classrooms and school environments, building collaborative and supportive learning communities"
+      },
+      {
+        title: "Educational Technology and Innovation",
+        description: "Integrating digital tools in the classroom, leveraging emerging technologies for student engagement, innovation in teaching methodologies and e-learning platforms"
+      }
+    ],
+    learningOutcomes: [
+      "Gain foundational knowledge of educational systems and leadership",
+      "Understand key psychological theories relevant to teaching and learning",
+      "Learn curriculum planning, assessment design, and innovative teaching tools",
+      "Design and deliver effective learning experiences",
+      "Use technology to enhance classroom engagement",
+      "Manage educational settings and lead teams effectively",
+      "Evaluate and improve teaching strategies through assessments"
+    ],
+    careerPaths: [
+      "Primary or Secondary Teacher (after certification requirements)",
+      "Education Assistant / Classroom Support Officer",
+      "School Administration and Coordination Roles",
+      "Training & Development Specialist",
+      "Pathway to Bachelor's in Education or Master's in Educational Leadership"
+    ],
+    duration: "18 months",
+    fees: {
+      total: 180000,
+      currency: "LKR",
+      installments: {
+        count: 18,
+        amount: 10000
+      }
+    },
+    entryRequirements: [
+      "Age limit: 16+",
+      "Pass EDEXCEL or G.C.E O/L with 6 Credits",
+      "Any other qualification approved by the Academic Administration of Amazon College"
+    ],
+    images: [
+      "/src/assets/education-training-diploma.jpg"
+    ],
+    documents: [
+      "/documents/diploma-education-training-brochure.pdf"
+    ],
+    accreditation: [
+      {
+        body: "University Grants Commission (UGC) Sri Lanka",
+        type: "Recognition"
+      },
+      {
+        body: "Ministry of Education Sri Lanka",
+        type: "Approval"
+      }
+    ],
+    contacts: [
+      {
+        type: "academic",
+        email: "info@amazoncollege.lk",
+        phone: "+94 114-386-126"
+      }
+    ],
+    category: "Education",
+    featured: true
+  },
+  {
+    id: "diploma-psychology-counselling-002",
+    slug: "diploma-psychology-counselling",
+    title: "Diploma in Psychology and Counselling",
+    level: "Diploma",
+    shortSummary: "Foundation course providing understanding of psychological concepts and counselling techniques for careers in mental health support and further academic study.",
+    longDescription: `
+      <p>Our thoughtfully curated modules guide you through key areas of psychology and counselling, providing a solid foundation for careers in mental health support or further academic study.</p>
+      <p>The program covers fundamental psychological principles, human development, counselling techniques, and professional ethics in mental health practice.</p>
+    `,
+    modules: [
+      {
+        title: "Introduction to Psychology",
+        description: "Basic psychological principles, major theories and approaches, understanding human behavior and mental processes"
+      },
+      {
+        title: "Human Development and Lifespan",
+        description: "Stages of human development from infancy to old age, developmental milestones and challenges, lifespan psychology"
+      },
+      {
+        title: "Fundamentals of Counselling",
+        description: "Basic counselling skills and techniques, communication and listening skills, building therapeutic relationships"
+      },
+      {
+        title: "Mental Health Awareness",
+        description: "Common mental health conditions, recognizing symptoms and signs, promoting mental wellness in communities"
+      },
+      {
+        title: "Counseling Theories and Approaches",
+        description: "Major therapeutic approaches (cognitive-behavioral, humanistic, psychodynamic), understanding different counseling models"
+      },
+      {
+        title: "Ethics and Professional Issues in Counselling",
+        description: "Professional boundaries and ethical guidelines, confidentiality and legal responsibilities, professional standards in counselling practice"
+      }
+    ],
+    learningOutcomes: [
+      "Gain foundational understanding of key psychological concepts and theories",
+      "Comprehend stages of human development and their impact on individuals",
+      "Learn fundamental principles and techniques of effective counselling",
+      "Develop awareness of common mental health conditions and their impact",
+      "Explore various counselling theories and approaches and their applications",
+      "Recognize and apply ethical guidelines and professional standards in counselling practice"
+    ],
+    careerPaths: [
+      "Entry-Level Support Roles in community support and mental health advocacy",
+      "Social services and volunteer work with support organizations",
+      "Mental health awareness promotion in communities",
+      "Further academic study in psychology, counselling, or social work",
+      "Personal development and improved interpersonal skills"
+    ],
+    duration: "18 months",
+    fees: {
+      total: 185000,
+      currency: "LKR",
+      installments: {
+        count: 18,
+        amount: 10278
+      }
+    },
+    entryRequirements: [
+      "Age limit: 16+",
+      "Pass EDEXCEL / G.C.E O/L with 6 Credits",
+      "Any other education qualification acceptable by Academic administration of Amazon College"
+    ],
+    images: [
+      "/src/assets/psychology-counselling-diploma.jpg"
+    ],
+    documents: [
+      "/documents/diploma-psychology-counselling-brochure.pdf"
+    ],
+    accreditation: [
+      {
+        body: "University Grants Commission (UGC) Sri Lanka",
+        type: "Recognition"
+      },
+      {
+        body: "Sri Lanka Psychological Association",
+        type: "Professional Recognition"
+      }
+    ],
+    contacts: [
+      {
+        type: "academic",
+        email: "info@amazoncollege.lk",
+        phone: "+94 114-386-126"
+      }
+    ],
+    category: "Health & Psychology",
+    featured: true
+  },
+  {
+    id: "diploma-digital-marketing-002",
+    slug: "diploma-digital-marketing",
+    title: "Diploma in Digital Media Marketing",
+    level: "Diploma",
+    shortSummary: "Comprehensive foundation in digital marketing covering social media, SEO, content marketing, analytics, and mobile marketing for modern business needs.",
+    longDescription: `
+      <p>Our expertly crafted modules guide you through the critical components of digital marketing, preparing you for the dynamic world of online business and marketing.</p>
+      <p>The program covers social media strategy, search engine optimization, content creation, analytics, and modern digital marketing techniques essential for business success.</p>
+    `,
+    modules: [
+      {
+        title: "Introduction to Digital Marketing",
+        description: "Fundamentals of digital marketing landscape, understanding online consumer behavior, digital marketing channels and platforms"
+      },
+      {
+        title: "Social Media Marketing Strategy",
+        description: "Developing effective social media strategies, platform-specific marketing approaches, community building and engagement techniques"
+      },
+      {
+        title: "Search Engine Optimization (SEO) Basics",
+        description: "Understanding search engines and ranking factors, keyword research and optimization, on-page and off-page SEO techniques"
+      },
+      {
+        title: "Content Marketing and Branding",
+        description: "Creating compelling digital content, brand development and positioning, content strategy and storytelling for digital platforms"
+      },
+      {
+        title: "Digital Marketing Analytics",
+        description: "Understanding web analytics tools, measuring campaign performance, data interpretation and reporting for decision making"
+      },
+      {
+        title: "Email and Mobile Marketing",
+        description: "Email marketing campaign design and execution, mobile marketing strategies, automation and personalization techniques"
+      }
+    ],
+    learningOutcomes: [
+      "Understand fundamental concepts and landscape of digital marketing",
+      "Develop effective strategies for social media presence and engagement",
+      "Grasp basics of Search Engine Optimization (SEO) to improve online visibility",
+      "Learn to create compelling content and build strong brand online",
+      "Interpret digital marketing data and analytics to inform decisions",
+      "Master principles of email and mobile marketing for targeted campaigns"
+    ],
+    careerPaths: [
+      "Digital Marketing Assistant",
+      "Social Media Coordinator",
+      "Content Creator/Marketer",
+      "SEO Assistant",
+      "Email Marketing Assistant",
+      "Entrepreneur/Small Business Owner"
+    ],
+    duration: "15 months",
+    fees: {
+      total: 175000,
+      currency: "LKR",
+      installments: {
+        count: 15,
+        amount: 11667
+      }
+    },
+    entryRequirements: [
+      "Age limit: 16+",
+      "Pass EDEXCEL / G.C.E O/L with 6 Credits",
+      "Any other education qualification acceptable by Academic administration of Amazon College"
+    ],
+    images: [
+      "/src/assets/digital-marketing-diploma.jpg"
+    ],
+    documents: [
+      "/documents/diploma-digital-marketing-brochure.pdf"
+    ],
+    accreditation: [
+      {
+        body: "University Grants Commission (UGC) Sri Lanka",
+        type: "Recognition"
+      },
+      {
+        body: "Digital Marketing Institute",
+        type: "Professional Certification"
+      }
+    ],
+    contacts: [
+      {
+        type: "academic", 
+        email: "info@amazoncollege.lk",
+        phone: "+94 114-386-126"
+      }
+    ],
+    category: "Business & Marketing",
+    featured: true
+  },
+  {
+    id: "diploma-english-language-002",
+    slug: "diploma-english-language",
+    title: "Diploma in English Language & Communication",
+    level: "Diploma", 
+    shortSummary: "Comprehensive English language program covering grammar, comprehension, presentation skills, and business writing for academic and professional success.",
+    longDescription: `
+      <p>Our thoughtfully structured modules cover key aspects of English language and effective communication, preparing you for academic success and professional excellence.</p>
+      <p>The program focuses on building strong foundations in grammar, reading comprehension, presentation skills, and business communication essential for career advancement.</p>
+    `,
+    modules: [
+      {
+        title: "Basic English Grammar",
+        description: "Fundamental grammar rules and usage, sentence structure and paragraph construction, common grammar mistakes and corrections"
+      },
+      {
+        title: "Skimming and Scanning",
+        description: "Efficient reading strategies for information extraction, speed reading techniques, understanding main ideas and specific details"
+      },
+      {
+        title: "Comprehension Skills", 
+        description: "Critical reading and analysis of various text types, developing inference and interpretation skills, vocabulary building"
+      },
+      {
+        title: "Presentation Skills",
+        description: "Public speaking techniques and confidence building, structuring and delivering effective presentations, visual aids and technology use"
+      },
+      {
+        title: "Communication Skills",
+        description: "Verbal and non-verbal communication techniques, active listening skills, interpersonal communication in diverse settings"
+      },
+      {
+        title: "Business Writing",
+        description: "Professional email and letter writing, report writing and documentation, business proposals and formal communication"
+      }
+    ],
+    learningOutcomes: [
+      "Reinforce and solidify fundamental English grammar rules and usage",
+      "Develop efficient reading strategies such as skimming and scanning for information extraction",
+      "Improve critical comprehension skills for various texts and contexts", 
+      "Acquire and practice effective public speaking and presentation techniques",
+      "Enhance overall communication abilities, including active listening and clear expression",
+      "Master principles of professional and persuasive business writing"
+    ],
+    careerPaths: [
+      "Administrative roles requiring strong communication",
+      "Customer service and marketing positions",
+      "Business & entrepreneurship opportunities",
+      "International communication roles",
+      "Further study in specialized language programs",
+      "Academic writing and business communication"
+    ],
+    duration: "12 months",
+    fees: {
+      total: 150000,
+      currency: "LKR",
+      installments: {
+        count: 12,
+        amount: 12500
+      }
+    },
+    entryRequirements: [
+      "Age limit: 16+",
+      "Pass EDEXCEL / G.C.E O/L with 6 Credits",
+      "Any other education qualification acceptable by Academic administration of Amazon College"
+    ],
+    images: [
+      "/src/assets/english-language-diploma.jpg"
+    ],
+    documents: [
+      "/documents/diploma-english-language-brochure.pdf"
+    ],
+    accreditation: [
+      {
+        body: "University Grants Commission (UGC) Sri Lanka",
+        type: "Recognition"
+      },
+      {
+        body: "British Council Sri Lanka",
+        type: "Language Standards Approval"
+      }
+    ],
+    contacts: [
+      {
+        type: "academic",
+        email: "info@amazoncollege.lk", 
+        phone: "+94 114-386-126"
+      }
+    ],
+    category: "Language & Communication",
+    featured: true
   }
 ];
