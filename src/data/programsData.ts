@@ -1853,5 +1853,538 @@ export const programsData: Program[] = [
     ],
     category: "Language & Communication",
     featured: true
+  },
+  // HND Programs - UK Accredited
+  {
+    id: "hnd-business-management-uk",
+    slug: "hnd-business-management-uk",
+    title: "HND (UK) in Business Management",
+    level: "HND",
+    shortSummary: "Comprehensive UK-accredited Higher National Diploma in Business Management covering all essential business disciplines across two semesters.",
+    longDescription: `
+      <p>This diploma is structured across two semesters, covering essential business disciplines including business environment, human resource management, financial management, digital marketing, entrepreneurship, and project management.</p>
+      <p>The program provides comprehensive training for management roles and business operations with practical applications.</p>
+      <p>Graduates can pursue careers in business administration, human resources, marketing, and entrepreneurship.</p>
+    `,
+    modules: [
+      {
+        title: "Business Environment & Planning",
+        description: "Understanding the complexities of the business environment and developing effective business plans"
+      },
+      {
+        title: "Human Resource Management",
+        description: "Core principles and practices of human resource management including recruitment, training, and performance"
+      },
+      {
+        title: "Financial Management",
+        description: "Fundamental concepts of financial management for informed decision-making"
+      },
+      {
+        title: "Organization Behavior",
+        description: "Analyzing organizational behavior to foster effective team dynamics and leadership"
+      },
+      {
+        title: "Digital Marketing",
+        description: "Essential skills in digital marketing to promote businesses effectively"
+      },
+      {
+        title: "Entrepreneurship",
+        description: "Cultivating an entrepreneurial mindset and identifying business opportunities"
+      },
+      {
+        title: "Project Management",
+        description: "Mastering the principles and tools of project management to deliver successful initiatives"
+      },
+      {
+        title: "Final Project",
+        description: "Applying theoretical knowledge to real-world scenarios through a comprehensive final project"
+      }
+    ],
+    learningOutcomes: [
+      "Formulate strategic business plans and adapt to changing market conditions",
+      "Manage human capital effectively, including recruitment, training, and performance",
+      "Interpret financial statements and make sound financial decisions",
+      "Lead and motivate teams, understanding individual and group dynamics within an organization",
+      "Implement basic digital marketing strategies for online presence and growth",
+      "Develop innovative business ideas and assess their feasibility",
+      "Plan, execute, and monitor projects efficiently from inception to completion",
+      "Demonstrate integrated knowledge and practical application through a capstone project"
+    ],
+    careerPaths: [
+      "Business Administrator/Manager",
+      "Human Resources Officer",
+      "Financial Analyst/Assistant",
+      "Marketing Coordinator/Executive",
+      "Project Coordinator/Manager",
+      "Entrepreneur/Business Owner"
+    ],
+    duration: "2 years (4 semesters)",
+    fees: {
+      total: 420000,
+      currency: "LKR",
+      installments: {
+        count: 24,
+        amount: 17500
+      }
+    },
+    entryRequirements: [
+      "Age limit above 18+",
+      "Pass EDEXCEL / G.C.E O/L with 6 Credits OR Pass EDEXCEL / G.C.E A/L",
+      "OR a Diploma in Relevant field",
+      "OR any other education qualification acceptable by Academic administration of Amazon Campus"
+    ],
+    images: [
+      "src/assets/hnd-business-management.jpg",
+      "/src/assets/business-class.jpg"
+    ],
+    documents: [
+      "/documents/hnd-business-management-uk-brochure.pdf"
+    ],
+    accreditation: [
+      {
+        body: "UK Awarding Body",
+        type: "Accreditation",
+        certification: "UK Accredited HND"
+      },
+      {
+        body: "University Grants Commission (UGC) Sri Lanka",
+        type: "Recognition"
+      }
+    ],
+    contacts: [
+      {
+        type: "admissions",
+        email: "info@amazoncollege.lk",
+        phone: "+94 114-386-126"
+      }
+    ],
+    featured: true,
+    category: "Business Management"
+  },
+  {
+    id: "hnd-information-technology-uk",
+    slug: "hnd-information-technology-uk",
+    title: "HND (UK) in Information Technology",
+    level: "HND",
+    shortSummary: "Intensive UK-accredited Higher National Diploma in Information Technology covering software engineering and modern IT practices across two semesters.",
+    longDescription: `
+      <p>This diploma covers key aspects of software engineering including system analysis, development life cycles, IoT, cyber security, programming, and web development across two intensive semesters.</p>
+      <p>Students gain comprehensive training in modern IT practices and software engineering principles.</p>
+      <p>The program prepares graduates for careers in software development, system analysis, and IT support roles.</p>
+    `,
+    modules: [
+      {
+        title: "System Analysis and Design",
+        description: "Understanding the principles of system analysis and design for software solutions"
+      },
+      {
+        title: "System Development Life Cycle",
+        description: "Grasping the different phases of the system development life cycle"
+      },
+      {
+        title: "Flowcharts and Algorithms",
+        description: "Developing logical thinking through flowcharts and algorithms"
+      },
+      {
+        title: "Software Development Life Cycle",
+        description: "Understanding software development methodologies and lifecycle management"
+      },
+      {
+        title: "Internet of Things",
+        description: "Introduction to IoT concepts and applications in modern technology"
+      },
+      {
+        title: "E-business Technologies",
+        description: "Exploring technologies and strategies behind e-business"
+      },
+      {
+        title: "Business Process Support",
+        description: "Learning how to provide technical support for business processes"
+      },
+      {
+        title: "Planning a Computer Project",
+        description: "Acquiring skills in planning and managing computer-related projects"
+      },
+      {
+        title: "Cyber Security",
+        description: "Understanding fundamental concepts of cyber security and its importance"
+      },
+      {
+        title: "Programming Techniques",
+        description: "Mastering various programming techniques to develop software applications"
+      },
+      {
+        title: "Web Design and Development",
+        description: "Developing proficiency in designing and developing responsive web solutions"
+      },
+      {
+        title: "Final Project",
+        description: "Applying integrated knowledge and practical skills to a significant final project"
+      }
+    ],
+    learningOutcomes: [
+      "Analyze user requirements and design robust system architectures",
+      "Apply appropriate methodologies to manage software development projects",
+      "Translate complex problems into solvable logical steps using algorithms",
+      "Understand the role of IoT in modern technology and business",
+      "Identify and utilize key e-business technologies",
+      "Provide effective technical support for business operations",
+      "Formulate comprehensive project plans for IT initiatives",
+      "Implement basic security measures to protect digital assets",
+      "Write clean, efficient, and maintainable code in various programming languages",
+      "Create functional and visually appealing websites and web applications",
+      "Showcase a practical, working software solution as part of portfolio"
+    ],
+    careerPaths: [
+      "Junior Software Developer/Programmer",
+      "Web Developer",
+      "System Analyst Assistant",
+      "IT Support Specialist",
+      "Quality Assurance (QA) Tester",
+      "Entry-Level Cyber Security Analyst",
+      "IT Project Assistant"
+    ],
+    duration: "2 years (2 semesters)",
+    fees: {
+      total: 450000,
+      currency: "LKR",
+      installments: {
+        count: 24,
+        amount: 18750
+      }
+    },
+    entryRequirements: [
+      "Age limit above 18+",
+      "Pass EDEXCEL / G.C.E O/L with 6 Credits OR Pass EDEXCEL / G.C.E A/L",
+      "OR a Diploma in Relevant field",
+      "OR any other education qualification acceptable by Academic administration of Amazon Campus"
+    ],
+    images: [
+      "src/assets/hnd-information-technology.jpg",
+      "/src/assets/computer-lab.jpg"
+    ],
+    documents: [
+      "/documents/hnd-information-technology-uk-brochure.pdf"
+    ],
+    accreditation: [
+      {
+        body: "UK Awarding Body",
+        type: "Accreditation",
+        certification: "UK Accredited HND"
+      },
+      {
+        body: "University Grants Commission (UGC) Sri Lanka",
+        type: "Recognition"
+      }
+    ],
+    contacts: [
+      {
+        type: "admissions",
+        email: "info@amazoncollege.lk",
+        phone: "+94 114-386-126"
+      }
+    ],
+    featured: true,
+    category: "Information Technology"
+  },
+  {
+    id: "hnd-teacher-training-uk",
+    slug: "hnd-teacher-training-uk",
+    title: "HND (UK) in Teacher Training",
+    level: "HND",
+    shortSummary: "UK-accredited Higher National Diploma in Teacher Training covering modern teaching methodologies and practices with focused curriculum structure.",
+    longDescription: `
+      <p>This diploma features a focused structure covering key aspects of modern teaching including curriculum design, assessment methods, professional development, and practical teaching experience.</p>
+      <p>The program prepares educators with contemporary teaching skills and methodologies.</p>
+      <p>Graduates can pursue careers in education and teaching support roles.</p>
+    `,
+    modules: [
+      {
+        title: "Introduction to Teacher Training",
+        description: "Gaining foundational understanding of the principles and theories of effective teaching"
+      },
+      {
+        title: "Curriculum Design and Planning",
+        description: "Learning how to design and plan engaging and effective curricula"
+      },
+      {
+        title: "Assessment and Evaluation",
+        description: "Understanding various assessment and evaluation methods to gauge student learning"
+      },
+      {
+        title: "Professional Development and Reflective Practice",
+        description: "Developing commitment to continuous professional growth and reflective teaching practices"
+      },
+      {
+        title: "Teacher Practice and Evaluation",
+        description: "Applying theoretical knowledge in practical teaching scenarios and receiving constructive feedback"
+      }
+    ],
+    learningOutcomes: [
+      "Articulate the roles and responsibilities of a professional educator",
+      "Create well-structured lesson plans and unit plans aligned with learning objectives",
+      "Design and implement appropriate assessment tools for diverse learners",
+      "Engage in self-assessment and reflective practices to enhance teaching effectiveness",
+      "Demonstrate practical teaching skills in a classroom setting"
+    ],
+    careerPaths: [
+      "Assistant Teacher/Teaching Aide",
+      "Early Childhood Educator",
+      "Private Tutor",
+      "Adult Educator",
+      "Education Coordinator/Administrator",
+      "Curriculum Developer Assistant"
+    ],
+    duration: "Focused program",
+    fees: {
+      total: 320000,
+      currency: "LKR",
+      installments: {
+        count: 18,
+        amount: 17778
+      }
+    },
+    entryRequirements: [
+      "Age limit above 18+",
+      "Pass EDEXCEL / G.C.E O/L with 6 Credits OR Pass EDEXCEL / G.C.E A/L",
+      "OR a Diploma in Relevant field",
+      "OR any other education qualification acceptable by Academic administration of Amazon Campus"
+    ],
+    images: [
+      "src/assets/hnd-teacher-training.jpg",
+      "/src/assets/teacher-training.jpg"
+    ],
+    documents: [
+      "/documents/hnd-teacher-training-uk-brochure.pdf"
+    ],
+    accreditation: [
+      {
+        body: "UK Awarding Body",
+        type: "Accreditation",
+        certification: "UK Accredited HND"
+      },
+      {
+        body: "University Grants Commission (UGC) Sri Lanka",
+        type: "Recognition"
+      }
+    ],
+    contacts: [
+      {
+        type: "admissions",
+        email: "info@amazoncollege.lk",
+        phone: "+94 114-386-126"
+      }
+    ],
+    featured: false,
+    category: "Education"
+  },
+  {
+    id: "hnd-english-uk",
+    slug: "hnd-english-uk",
+    title: "HND (UK) in English",
+    level: "HND",
+    shortSummary: "UK-accredited Higher National Diploma in English covering language skills, linguistics, literature, and professional communication with robust curriculum structure.",
+    longDescription: `
+      <p>This diploma features a robust structure covering both practical language skills and theoretical aspects of literature, linguistics, professional writing, and education management.</p>
+      <p>Students develop advanced English language competencies and communication skills.</p>
+      <p>The program prepares graduates for careers in writing, communications, and language-related fields.</p>
+    `,
+    modules: [
+      {
+        title: "Reading and Vocabulary Development",
+        description: "Significantly expanding English vocabulary and enhancing reading comprehension"
+      },
+      {
+        title: "Effective Communication Skills",
+        description: "Mastering effective verbal and non-verbal communication techniques"
+      },
+      {
+        title: "Listening Skills",
+        description: "Developing advanced listening skills for better understanding and retention"
+      },
+      {
+        title: "Language Structure",
+        description: "Gaining deeper understanding of English grammar and language structure"
+      },
+      {
+        title: "Introduction to Linguistics",
+        description: "Introduction to fundamental concepts and theories of linguistics"
+      },
+      {
+        title: "Introduction to Literature",
+        description: "Exploring major literary genres, periods, and critical approaches"
+      },
+      {
+        title: "Professional Writing",
+        description: "Acquiring proficiency in various forms of professional writing"
+      },
+      {
+        title: "Education Management",
+        description: "Understanding basic principles of education management"
+      }
+    ],
+    learningOutcomes: [
+      "Read and interpret complex texts with greater speed and accuracy, and articulate their meaning effectively",
+      "Communicate clearly, concisely, and persuasively in both formal and informal settings",
+      "Actively listen and respond appropriately in diverse communication scenarios",
+      "Analyze the structure and function of the English language",
+      "Discuss fundamental linguistic concepts and their application",
+      "Identify and analyze key elements of literary works across different periods and cultures",
+      "Produce well-structured, coherent, and professional written documents",
+      "Apply basic management principles within an educational context"
+    ],
+    careerPaths: [
+      "Content Creator/Writer",
+      "Copywriter",
+      "Communications Assistant/Specialist",
+      "Public Relations Assistant",
+      "Editor/Proofreader",
+      "Researcher",
+      "Teaching Assistant/Tutor",
+      "Administrative Roles"
+    ],
+    duration: "Comprehensive program",
+    fees: {
+      total: 350000,
+      currency: "LKR",
+      installments: {
+        count: 20,
+        amount: 17500
+      }
+    },
+    entryRequirements: [
+      "Age limit above 18+",
+      "Pass EDEXCEL / G.C.E O/L with 6 Credits OR Pass EDEXCEL / G.C.E A/L",
+      "OR a Diploma in Relevant field",
+      "OR any other education qualification acceptable by Academic administration of Amazon Campus"
+    ],
+    images: [
+      "src/assets/hnd-english-language.jpg",
+      "/src/assets/language-class.jpg"
+    ],
+    documents: [
+      "/documents/hnd-english-uk-brochure.pdf"
+    ],
+    accreditation: [
+      {
+        body: "UK Awarding Body",
+        type: "Accreditation",
+        certification: "UK Accredited HND"
+      },
+      {
+        body: "University Grants Commission (UGC) Sri Lanka",
+        type: "Recognition"
+      }
+    ],
+    contacts: [
+      {
+        type: "admissions",
+        email: "info@amazoncollege.lk",
+        phone: "+94 114-386-126"
+      }
+    ],
+    featured: false,
+    category: "English Language"
+  },
+  {
+    id: "hnd-psychology-counselling-uk",
+    slug: "hnd-psychology-counselling-uk",
+    title: "HND (UK) in Psychology and Counselling",
+    level: "HND",
+    shortSummary: "Advanced UK-accredited Higher National Diploma in Psychology and Counselling with practical experience placement and comprehensive curriculum structure.",
+    longDescription: `
+      <p>This advanced diploma provides comprehensive understanding of psychology and counseling practices including psychological assessments, advanced counseling skills, research methods, and supervised practical experience.</p>
+      <p>Students gain both theoretical knowledge and practical skills in psychology and counselling.</p>
+      <p>The program includes placement and practical experience for real-world application.</p>
+    `,
+    modules: [
+      {
+        title: "Introduction to Psychology",
+        description: "Gaining thorough understanding of foundational psychological theories and concepts"
+      },
+      {
+        title: "Foundations of Counseling",
+        description: "Acquiring core principles and ethical guidelines of professional counseling"
+      },
+      {
+        title: "Psychological Assessments",
+        description: "Learning to utilize and interpret various psychological assessment tools"
+      },
+      {
+        title: "Advanced Counseling Skills",
+        description: "Developing and refining advanced counseling techniques for diverse client needs"
+      },
+      {
+        title: "Research Methods in Psychology",
+        description: "Understanding research methodologies in psychology and applying critical thinking to psychological studies"
+      },
+      {
+        title: "Placement and Practical Experience",
+        description: "Applying theoretical knowledge in real-world settings through supervised practical experience"
+      }
+    ],
+    learningOutcomes: [
+      "Analyze human behavior, cognition, and emotion from a psychological perspective",
+      "Establish effective therapeutic relationships and apply foundational counseling interventions",
+      "Administer, score, and interpret basic psychological assessments under supervision",
+      "Demonstrate proficiency in advanced communication and active listening skills essential for counseling",
+      "Critically evaluate psychological research and understand its implications for practice",
+      "Gain invaluable hands-on experience in relevant professional environment, preparing for entry-level roles"
+    ],
+    careerPaths: [
+      "Counseling Assistant/Aide",
+      "Mental Health Support Worker",
+      "Rehabilitation Support Worker",
+      "Youth Worker",
+      "Crisis Line Responder",
+      "Social Services Assistant",
+      "Research Assistant"
+    ],
+    duration: "Advanced program",
+    fees: {
+      total: 480000,
+      currency: "LKR",
+      installments: {
+        count: 24,
+        amount: 20000
+      }
+    },
+    entryRequirements: [
+      "Age limit above 18+",
+      "Pass EDEXCEL / G.C.E O/L with 6 Credits OR Pass EDEXCEL / G.C.E A/L",
+      "OR a Diploma in Relevant field",
+      "OR any other education qualification acceptable by Academic administration of Amazon Campus"
+    ],
+    images: [
+      "src/assets/hnd-psychology-counselling.jpg",
+      "/src/assets/library-study.jpg"
+    ],
+    documents: [
+      "/documents/hnd-psychology-counselling-uk-brochure.pdf"
+    ],
+    accreditation: [
+      {
+        body: "UK Awarding Body",
+        type: "Accreditation",
+        certification: "UK Accredited HND"
+      },
+      {
+        body: "University Grants Commission (UGC) Sri Lanka",
+        type: "Recognition"
+      },
+      {
+        body: "Sri Lanka Psychological Association",
+        type: "Professional Recognition"
+      }
+    ],
+    contacts: [
+      {
+        type: "admissions",
+        email: "info@amazoncollege.lk",
+        phone: "+94 114-386-126"
+      }
+    ],
+    featured: true,
+    category: "Psychology"
   }
 ];
