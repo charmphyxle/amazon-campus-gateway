@@ -247,7 +247,7 @@ const DegreePrograms = () => {
               <Button size="lg" variant="secondary" className="hover-lift hover-glow" asChild>
                 <Link to="/apply">Apply for Degree</Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-orange-600" asChild>
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary" asChild>
                 <Link to="/contact">Academic Guidance</Link>
               </Button>
             </div>

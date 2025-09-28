@@ -282,7 +282,7 @@ const MastersPhDPrograms = () => {
               <Button size="lg" variant="secondary" className="hover-lift hover-glow" asChild>
                 <Link to="/apply">Apply for Postgraduate</Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-red-600" asChild>
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary" asChild>
                 <Link to="/contact">Research Guidance</Link>
               </Button>
             </div>

@@ -51,9 +51,11 @@ const CTASection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-            <Button size="xl" variant="hero" className="group hover-lift hover-glow animate-pulse-glow">
-              Apply Now
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            <Button size="xl" variant="hero" className="group hover-lift hover-glow animate-pulse-glow" asChild>
+              <a href="/apply">
+                Apply Now
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
             <Button 
               size="xl" 

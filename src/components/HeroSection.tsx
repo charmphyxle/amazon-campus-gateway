@@ -142,7 +142,7 @@ export default function HeroSection() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight drop-shadow-[0_3px_10px_rgba(0,0,0,0.8)] bg-gradient-to-r from-white via-blue-100 to-orange-100 bg-clip-text text-transparent px-2">
             {slides[current].title}
           </h1>
-          <p className="mt-2 sm:mt-3 text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-orange-200 drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] px-2">
+          <p className="mt-2 sm:mt-3 text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-white/90 drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] px-2">
             {slides[current].subtitle}
           </p>
           <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-blue-100 max-w-4xl mx-auto drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] px-2 leading-relaxed">

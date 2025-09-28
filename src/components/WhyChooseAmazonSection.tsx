@@ -190,10 +190,15 @@ const WhyChooseAmazonSection = () => {
               Take the first step towards your educational and career goals with Amazon College
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg" className="shadow-elegant">
-                Apply Now
+              <Button variant="secondary" size="lg" className="shadow-elegant" asChild>
+                <a href="/apply">Apply Now</a>
               </Button>
-              <Button variant="outline" size="lg" className="border-white text-orange hover:bg-white hover:text-primary">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-white text-white hover:bg-white hover:text-primary"
+                onClick={() => window.open('/amazon-college-brochure.pdf', '_blank')}
+              >
                 Download Prospectus
               </Button>
             </div>

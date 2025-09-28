@@ -258,12 +258,15 @@ const ProgramsSection = () => {
                               </div>
                               
                               <div className="flex flex-col sm:flex-row gap-4">
-                                <Button className="flex-1 hover-lift bg-gradient-to-r from-muted to-muted/80 text-foreground border-0 rounded-xl">
+                                <Button 
+                                  className="flex-1 hover-lift bg-gradient-to-r from-muted to-muted/80 text-foreground border-0 rounded-xl"
+                                  onClick={() => window.open('/amazon-college-brochure.pdf', '_blank')}
+                                >
                                   <Download className="w-4 h-4 mr-2" />
                                   Download Brochure
                                 </Button>
-                                <Button className="flex-1 hover-lift hover-glow bg-gradient-to-r from-secondary to-secondary/80 text-white border-0 rounded-xl">
-                                  Apply Now
+                                <Button className="flex-1 hover-lift hover-glow bg-gradient-to-r from-secondary to-secondary/80 text-secondary-foreground border-0 rounded-xl" asChild>
+                                  <a href="/apply">Apply Now</a>
                                 </Button>
                               </div>
                             </div>
@@ -386,12 +389,15 @@ const ProgramsSection = () => {
                       </div>
                       
                       <div className="flex flex-col gap-3">
-                        <Button className="hover-lift bg-gradient-to-r from-muted to-muted/80 text-foreground border-0">
+                        <Button 
+                          className="hover-lift bg-gradient-to-r from-muted to-muted/80 text-foreground border-0"
+                          onClick={() => window.open('/amazon-college-brochure.pdf', '_blank')}
+                        >
                           <Download className="w-4 h-4 mr-2" />
                           Download Brochure
                         </Button>
-                        <Button className="hover-lift bg-gradient-to-r from-secondary to-secondary/80 text-white border-0">
-                          Apply Now
+                        <Button className="hover-lift bg-gradient-to-r from-secondary to-secondary/80 text-secondary-foreground border-0" asChild>
+                          <a href="/apply">Apply Now</a>
                         </Button>
                       </div>
                     </div>
