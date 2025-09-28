@@ -2386,5 +2386,341 @@ export const programsData: Program[] = [
     ],
     featured: true,
     category: "Psychology"
+  },
+  // Degree Programs
+  {
+    id: 'deg-business-admin',
+    slug: 'bachelor-business-administration',
+    title: 'Bachelor\'s in Business Administration (Top-Up)',
+    level: 'Degree',
+    category: 'Business',
+    shortSummary: 'Advanced business management degree covering strategic planning, leadership, and global business operations.',
+    longDescription: 'This advanced diploma features a robust structure covering essential and strategic aspects of business management, preparing graduates for senior leadership roles in diverse industries.',
+    modules: [
+      { title: 'Core Concepts of Business Management', description: 'Master advanced concepts in core business management principles' },
+      { title: 'Marketing Management', description: 'Develop comprehensive marketing strategies for diverse markets' }, 
+      { title: 'Global Business Environment and Entrepreneurship', description: 'Analyze global business environment and foster entrepreneurial mindset' },
+      { title: 'Financial Management', description: 'Apply advanced financial management techniques for decision-making' },
+      { title: 'Business Laws', description: 'Understand critical business laws and their operational implications' },
+      { title: 'Business Communication and Managing People', description: 'Enhance professional communication skills and lead teams effectively' },
+      { title: 'Understanding Strategy', description: 'Formulate and implement robust business strategies for growth' },
+      { title: 'Thesis / Final Project', description: 'Conduct independent research and present comprehensive final project' }
+    ],
+    learningOutcomes: [
+      'Evaluate and apply sophisticated business theories and models',
+      'Design and execute integrated marketing plans',
+      'Identify global business opportunities and develop innovative solutions',
+      'Perform advanced financial analysis, budgeting, and risk management',
+      'Ensure legal compliance in business operations',
+      'Communicate persuasively and inspire high-performing teams',
+      'Develop strategic frameworks for organizational objectives',
+      'Demonstrate strong research and analytical skills'
+    ],
+    careerPaths: [
+      'Operations Manager',
+      'Marketing Manager', 
+      'HR Manager',
+      'Financial Manager',
+      'Business Consultant',
+      'Entrepreneur/Business Owner',
+      'Project Manager',
+      'Business Development Executive'
+    ],
+    duration: '12 months',
+    fees: {
+      total: 350000,
+      currency: 'LKR',
+      installments: {
+        count: 4,
+        amount: 87500
+      }
+    },
+    entryRequirements: [
+      'Age limit above 19+',
+      'A/L OR NVQ & HND OR NDT',
+      'Recognized Professional Qualifications OR',
+      '5 Years Working Experience in Relevant Field'
+    ],
+    images: ['/src/assets/business-administration-degree.jpg'],
+    documents: [],
+    accreditation: [
+      { body: 'UGC Sri Lanka', type: 'government', certification: 'University Recognition' },
+      { body: 'WHED', type: 'international', certification: 'World Higher Education Database Listed' }
+    ],
+    contacts: [{
+      type: 'general' as const,
+      email: 'info@amazoncollege.lk', 
+      phone: '+94 114-386-126'
+    }],
+    featured: true
+  },
+  {
+    id: 'deg-english-arts',
+    slug: 'bachelor-arts-english',
+    title: 'Bachelor of Arts in English',
+    level: 'Degree',
+    category: 'Arts & Humanities',
+    shortSummary: 'Comprehensive English language and literature degree covering academic writing, linguistics, and creative expression.',
+    longDescription: 'This rigorous program covers both theoretical and practical aspects of English language and literature, developing sophisticated communication and analytical skills.',
+    modules: [
+      { title: 'Academic Writing Skills', description: 'Develop sophisticated academic writing skills for scholarly purposes' },
+      { title: 'Language Techniques', description: 'Analyze and apply advanced language techniques in communication' },
+      { title: 'Shakespearean Literature', description: 'Comprehensive understanding of Shakespeare\'s works and legacy' },
+      { title: 'Language Testing And Evaluation', description: 'Learn principles and methods of language assessment' },
+      { title: 'Business English', description: 'Master professional communication in business contexts' },
+      { title: 'English And Globalization', description: 'Explore English\'s role in the globalized world' },
+      { title: 'Creative Writing', description: 'Cultivate creative writing abilities across different genres' },
+      { title: 'Dissertation', description: 'Conduct independent research in specialized area' },
+      { title: 'Thesis / Final Project', description: 'Produce substantial independent research project' }
+    ],
+    learningOutcomes: [
+      'Produce well-researched and eloquently written academic papers',
+      'Analyze and utilize complex linguistic devices and structures',
+      'Interpret Shakespeare\'s works within historical contexts',
+      'Design and evaluate language assessments',
+      'Communicate effectively in business scenarios',
+      'Discuss sociolinguistic aspects of English as global language',
+      'Develop original creative works across genres',
+      'Demonstrate advanced research and scholarly writing skills'
+    ],
+    careerPaths: [
+      'Content Strategist/Editor',
+      'Technical Writer',
+      'Journalist/Feature Writer',
+      'Copywriter/Brand Storyteller',
+      'Communications Manager',
+      'Language Educator/Trainer',
+      'Literary Researcher/Critic',
+      'Public Relations Specialist'
+    ],
+    duration: '12 months',
+    fees: {
+      total: 320000,
+      currency: 'LKR',
+      installments: {
+        count: 4,
+        amount: 80000
+      }
+    },
+    entryRequirements: [
+      'Age limit above 19+',
+      'A/L OR NVQ & HND OR NDT OR',
+      'Recognized Professional Qualifications and',
+      '5 Years Working Experience in Relevant Field'
+    ],
+    images: ['/src/assets/english-arts-degree.jpg'],
+    documents: [],
+    accreditation: [
+      { body: 'UGC Sri Lanka', type: 'government', certification: 'University Recognition' },
+      { body: 'WHED', type: 'international', certification: 'World Higher Education Database Listed' }
+    ],
+    contacts: [{
+      type: 'general' as const,
+      email: 'info@amazoncollege.lk',
+      phone: '+94 114-386-126'
+    }],
+    featured: true
+  },
+  {
+    id: 'deg-information-technology',
+    slug: 'bachelor-science-information-technology',
+    title: 'Bachelor of Science in Information Technology',
+    level: 'Degree',
+    category: 'Technology',
+    shortSummary: 'Advanced IT degree covering data management, security, programming, and emerging technologies like IoT and data science.',
+    longDescription: 'This rigorous program covers key aspects of modern Information Technology, preparing graduates for advanced roles in the rapidly evolving tech industry.',
+    modules: [
+      { title: 'Information System And Data Management', description: 'Understand and manage complex information systems and data lifecycles' },
+      { title: 'Information Security', description: 'Implement robust security measures to protect digital assets' },
+      { title: 'Advanced Programme', description: 'Develop advanced programming solutions for sophisticated applications' },
+      { title: 'Advance Data Base Systems', description: 'Design, implement, and manage advanced database systems' },
+      { title: 'Data Science', description: 'Grasp fundamental concepts and techniques of data science' },
+      { title: 'Compiler Construction', description: 'Understand principles of compiler construction and language processing' },
+      { title: 'Advanced Analytics', description: 'Apply advanced analytical techniques to extract insights from data' },
+      { title: 'Embedded Systems And Internet Of Things', description: 'Explore architecture and applications of embedded systems and IoT' },
+      { title: 'Research Methodology', description: 'Conduct systematic research in IT and analyze findings effectively' },
+      { title: 'Thesis / Final Project', description: 'Apply integrated knowledge to substantial thesis or final project' }
+    ],
+    learningOutcomes: [
+      'Design and optimize information systems and data management strategies',
+      'Identify and mitigate security vulnerabilities in IT infrastructures',
+      'Write efficient, scalable code for complex software solutions',
+      'Develop and administer high-performance database systems',
+      'Perform data analysis and visualization using data science tools',
+      'Comprehend programming language translation mechanisms',
+      'Utilize advanced analytical tools for business intelligence',
+      'Develop embedded systems and understand IoT integration',
+      'Conduct systematic IT research and present findings',
+      'Showcase comprehensive industry-relevant IT projects'
+    ],
+    careerPaths: [
+      'Information Systems Manager/Analyst',
+      'Database Administrator/Developer',
+      'Software Developer/Engineer (Advanced)',
+      'Data Analyst/Scientist',
+      'Information Security Analyst',
+      'Embedded Systems Developer',
+      'IT Project Manager',
+      'Cloud Solutions Specialist'
+    ],
+    duration: '12 months',
+    fees: {
+      total: 380000,
+      currency: 'LKR',
+      installments: {
+        count: 4,
+        amount: 95000
+      }
+    },
+    entryRequirements: [
+      'Age limit above 19+',
+      'A/L OR NVQ & HND OR NDT',
+      'Recognized Professional Qualifications OR',
+      '5 Years Working Experience in Relevant Field'
+    ],
+    images: ['/src/assets/information-technology-degree.jpg'],
+    documents: [],
+    accreditation: [
+      { body: 'UGC Sri Lanka', type: 'government', certification: 'University Recognition' },
+      { body: 'WHED', type: 'international', certification: 'World Higher Education Database Listed' }
+    ],
+    contacts: [{
+      type: 'general' as const,
+      email: 'info@amazoncollege.lk',
+      phone: '+94 114-386-126'
+    }],
+    featured: true
+  },
+  {
+    id: 'deg-psychology-counselling',
+    slug: 'bachelor-social-science-psychology-counselling',
+    title: 'Bachelor of Social Science in Psychology & Counselling',
+    level: 'Degree',
+    category: 'Psychology',
+    shortSummary: 'Specialized psychology degree covering advanced theories, abnormal psychology, psychometrics, and supervised practice.',
+    longDescription: 'This rich and specialized curriculum provides comprehensive training in psychology and counselling, preparing graduates for professional practice in mental health.',
+    modules: [
+      { title: 'Advanced Theories And Practices In Psychology And Counselling', description: 'Master advanced theoretical frameworks and practical applications' },
+      { title: 'Personality, Motivation And Emotion', description: 'In-depth understanding of personality theories and emotional processes' },
+      { title: 'Abnormal Psychology', description: 'Comprehensive knowledge of psychological disorders and interventions' },
+      { title: 'Psychometrics', description: 'Learn principles and application of psychometric assessment' },
+      { title: 'Placement', description: 'Apply theoretical knowledge in supervised professional environment' },
+      { title: 'Social Psychology', description: 'Explore dynamics of social influence and group behavior' },
+      { title: 'Memory And Cognition', description: 'Understand mechanisms of memory, attention and cognitive processes' },
+      { title: 'Thesis / Final Project', description: 'Conduct independent research in chosen area of psychology' }
+    ],
+    learningOutcomes: [
+      'Critically analyze advanced psychological and counselling theories',
+      'Interpret psychological underpinnings of personality and emotion',
+      'Recognize and understand various psychological disorders',
+      'Administer and interpret psychological tests ethically',
+      'Demonstrate proficient counselling skills during supervised practice',
+      'Analyze social behavior and its impact on individuals',
+      'Explain cognitive processes and their implications',
+      'Execute substantial independent research projects'
+    ],
+    careerPaths: [
+      'Professional Counsellor (entry-level/assistant)',
+      'Mental Health Specialist/Case Manager',
+      'Rehabilitation Counsellor',
+      'Psychological Assistant/Associate',
+      'Researcher in Psychology',
+      'Social Worker (with further training)',
+      'Human Resources Specialist (well-being focus)',
+      'Mental Health Advocate'
+    ],
+    duration: '12 months',
+    fees: {
+      total: 340000,
+      currency: 'LKR',
+      installments: {
+        count: 4,
+        amount: 85000
+      }
+    },
+    entryRequirements: [
+      'Age limit above 19+',
+      'A/L OR NVQ & HND OR NDT',
+      'Recognized Professional Qualifications OR',
+      '5 Years Working Experience in Relevant Field'
+    ],
+    images: ['/src/assets/psychology-counselling-degree.jpg'],
+    documents: [],
+    accreditation: [
+      { body: 'UGC Sri Lanka', type: 'government', certification: 'University Recognition' },
+      { body: 'WHED', type: 'international', certification: 'World Higher Education Database Listed' }
+    ],
+    contacts: [{
+      type: 'general' as const,
+      email: 'info@amazoncollege.lk',
+      phone: '+94 114-386-126'
+    }],
+    featured: true
+  },
+  {
+    id: 'deg-education',
+    slug: 'bachelor-education',
+    title: 'Bachelor of Education',
+    level: 'Degree',
+    category: 'Education',
+    shortSummary: 'Comprehensive education degree covering psychology, curriculum development, management, and inclusive teaching methodologies.',
+    longDescription: 'This specialized curriculum covers key aspects of educational leadership, preparing graduates for influential careers in education management and policy.',
+    modules: [
+      { title: 'Education Psychology', description: 'Understand psychological principles underpinning learning and development' },
+      { title: 'Curriculum Development And Designing', description: 'Master processes of curriculum development, design, and implementation' },
+      { title: 'Education Management', description: 'Acquire skills in managing educational institutions and programs effectively' },
+      { title: 'Educational Research Methodology', description: 'Conduct systematic educational research and apply findings to practice' },
+      { title: 'Neurodiversity In Education', description: 'Gain insights into neurodiversity and implications for inclusive education' },
+      { title: 'Early Childhood Development And Child Psychology', description: 'Strong understanding of early childhood development and child psychology' },
+      { title: 'Teaching Methodologies And Current Issues In Teaching And Learning', description: 'Explore contemporary teaching methodologies and address current educational issues' },
+      { title: 'Thesis / Final Project', description: 'Undertake independent research related to education management' }
+    ],
+    learningOutcomes: [
+      'Apply psychological theories to enhance teaching and learning',
+      'Design, evaluate, and adapt curricula for diverse needs',
+      'Demonstrate leadership capabilities in educational contexts',
+      'Critically analyze educational research and design studies',
+      'Develop inclusive strategies for neurodiverse learners',
+      'Apply child psychology principles in educational settings',
+      'Implement innovative teaching strategies',
+      'Showcase advanced analytical and research skills'
+    ],
+    careerPaths: [
+      'Educational Administrator/Coordinator',
+      'Curriculum Developer/Specialist',
+      'School Leader/Head of Department',
+      'Education Consultant',
+      'Training and Development Manager',
+      'Educational Researcher',
+      'Early Childhood Education Manager',
+      'Inclusive Education Coordinator'
+    ],
+    duration: '12 months',
+    fees: {
+      total: 330000,
+      currency: 'LKR',
+      installments: {
+        count: 4,
+        amount: 82500
+      }
+    },
+    entryRequirements: [
+      'Age limit above 19+',
+      'A/L OR NVQ & HND OR NDT',
+      'Recognized Professional Qualifications OR',
+      '5 Years Working Experience in Relevant Field'
+    ],
+    images: ['/src/assets/education-degree.jpg'],
+    documents: [],
+    accreditation: [
+      { body: 'UGC Sri Lanka', type: 'government', certification: 'University Recognition' },
+      { body: 'WHED', type: 'international', certification: 'World Higher Education Database Listed' }
+    ],
+    contacts: [{
+      type: 'general' as const,
+      email: 'info@amazoncollege.lk',
+      phone: '+94 114-386-126'
+    }],
+    featured: true
   }
 ];
