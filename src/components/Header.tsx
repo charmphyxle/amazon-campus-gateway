@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { Award, Download, Users, BookOpen, Shield, Search } from "lucide-react";
 import { findStudentById, StudentRecord } from "@/data/dummyStudents";
 import StudentVerificationModal from "./StudentVerificationModal";
-import awardsImage from "@/assets/awards-achievements.png";
 
 const Header = () => {
   const [quickVerifyId, setQuickVerifyId] = useState("");
@@ -50,11 +49,6 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center justify-between py-2 gap-2 lg:gap-4">
             <div className="flex items-center gap-2 lg:gap-4 flex-wrap justify-center lg:justify-start">
-              <img 
-                src={awardsImage} 
-                alt="15 Years Excellence Awards" 
-                className="h-6 sm:h-8 md:h-10 w-auto object-contain"
-              />
               <Badge variant="secondary" className="flex items-center gap-1 text-xs">
                 <Award className="w-3 h-3" />
                 <span className="hidden sm:inline">15+ Years Excellence</span>
