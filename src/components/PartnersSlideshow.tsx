@@ -12,10 +12,32 @@ import partner2 from "@/assets/logos/partner-2.png";
 import university3 from "@/assets/logos/university-3.png";
 import accreditation3 from "@/assets/logos/accreditation-3.png";
 
+// Import new accreditation and partner logos
+import tvecAccreditation from "@/assets/logos/tvec-accreditation.png";
+import cityGuilds from "@/assets/logos/city-guilds.png";
+import ipaUk from "@/assets/logos/ipa-uk.png";
+import eplusPartners from "@/assets/logos/eplus-partners.png";
+import ukSkillsAwards from "@/assets/logos/uk-skills-awards.png";
+import chinaThreeGorges from "@/assets/logos/china-three-gorges.png";
+import iso9001 from "@/assets/logos/iso-9001.png";
+import bcsChartered from "@/assets/logos/bcs-chartered.png";
+import iqfUk from "@/assets/logos/iqf-uk.jpg";
+import qualifi from "@/assets/logos/qualifi.jpg";
+
 const PartnersSlideshow = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const partners = [
+    { logo: tvecAccreditation, name: "TVEC - Tertiary & Vocational Education Commission", type: "Accreditation Body" },
+    { logo: cityGuilds, name: "City & Guilds Approved Centre", type: "Accreditation Body" },
+    { logo: ipaUk, name: "International Professional Academy, UK", type: "University Partner" },
+    { logo: chinaThreeGorges, name: "China Three Gorges University", type: "University Partner" },
+    { logo: iso9001, name: "ISO 9001:2015 Certified", type: "Quality Certification" },
+    { logo: bcsChartered, name: "BCS - The Chartered Institute for IT", type: "Professional Body" },
+    { logo: iqfUk, name: "International Qualification Forum Ltd - UK", type: "Accreditation Body" },
+    { logo: qualifi, name: "QUALIFI", type: "Awarding Body" },
+    { logo: ukSkillsAwards, name: "UK Skills Awards", type: "Professional Recognition" },
+    { logo: eplusPartners, name: "EPlus Exams & Partners", type: "Examination Bodies" },
     { logo: university1, name: "Global University Network", type: "University Partner" },
     { logo: accreditation1, name: "International Education Council", type: "Accreditation Body" },
     { logo: partner1, name: "World Education Alliance", type: "Strategic Partner" },
@@ -105,11 +127,12 @@ const PartnersSlideshow = () => {
                   key={index}
                   className="flex-shrink-0 w-full md:w-1/3 xl:w-1/5 px-2 md:px-4"
                 >
-                   <div className="group bg-gradient-to-br from-white to-blue-50 dark:from-gray-800 dark:to-blue-900/20 rounded-lg p-4 md:p-6 shadow-elegant border-2 border-blue-200 dark:border-blue-800 hover:border-orange-300 dark:hover:border-orange-700 transition-all duration-300 hover:shadow-lg hover:scale-105 hover:rotate-1 h-24 md:h-32 flex items-center justify-center">
+                   <div className="group bg-gradient-to-br from-white to-blue-50 dark:from-gray-800 dark:to-blue-900/20 rounded-lg p-3 md:p-4 shadow-elegant border-2 border-blue-200 dark:border-blue-800 hover:border-orange-300 dark:hover:border-orange-700 transition-all duration-300 hover:shadow-lg hover:scale-105 hover:rotate-1 h-20 md:h-28 flex items-center justify-center">
                      <img
                        src={partner.logo}
                        alt={partner.name}
-                       className="max-w-full max-h-12 md:max-h-16 object-contain filter brightness-110 contrast-110 hover:brightness-125 transition-all duration-300"
+                       className="max-w-full max-h-10 md:max-h-14 w-auto object-contain filter brightness-110 contrast-110 hover:brightness-125 transition-all duration-300"
+                       style={{ maxWidth: '90%' }}
                      />
                    </div>
                   <div className="mt-2 md:mt-3 text-center">
