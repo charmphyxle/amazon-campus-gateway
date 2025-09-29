@@ -296,18 +296,17 @@ const ContactUs = () => {
           </div>
 
           <Card className="shadow-elegant-lg border-0 overflow-hidden">
-            <div className="h-96 bg-gradient-to-br from-muted to-muted-foreground/20 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-foreground mb-2">Interactive Map</h3>
-                <p className="text-muted-foreground">
-                  Google Maps integration would be embedded here
-                </p>
-                <Button variant="outline" className="mt-4">
-                  Get Directions
-                </Button>
-              </div>
-            </div>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.0649741592874!2d79.85599197499612!3d6.882820293116146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25bc41c6d071d%3A0xb9a3227a451d7e0e!2sAmazon%20College!5e0!3m2!1sen!2slk!4v1759186258186!5m2!1sen!2slk" 
+              width="100%" 
+              height="400" 
+              style={{border: 0}} 
+              allowFullScreen={true}
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+              title="Amazon College Location"
+            />
           </Card>
         </div>
       </section>
