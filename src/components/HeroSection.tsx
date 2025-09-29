@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, BookOpen, UserPlus, Play } from "lucide-react";
+import YouTubeModal from "./YouTubeModal";
 import heroGraduation from "@/assets/hero-graduation.jpg";
 import heroClassroom from "@/assets/hero-classroom.jpg";
 import heroCampus from "@/assets/hero-campus.jpg";
@@ -22,6 +23,7 @@ const SLIDE_INTERVAL = 6000;
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
+  const [showVideoModal, setShowVideoModal] = useState(false);
   const navigate = useNavigate();
 
   const slides = useMemo(
@@ -87,14 +89,11 @@ export default function HeroSection() {
   );
 
   const badges = [
-    { text: "15+ Years Excellence", icon: excellenceBadge, isImage: true },
-    { text: "Award-Winning Institution", icon: awardsBadge, isImage: true },
-    { text: "International Recognition", icon: accreditationBadge, isImage: true },
-    { text: "Student Success", icon: successBadge, isImage: true },
-    { text: "Industry Partnerships", icon: partnershipBadge, isImage: true },
-    { text: "10,000+ Graduates", icon: "🎓" },
-    { text: "Global Campus", icon: "🌐" },
-    { text: "Research Excellence", icon: "🔬" },
+    { icon: excellenceBadge, isImage: true },
+    { icon: awardsBadge, isImage: true },
+    { icon: accreditationBadge, isImage: true },
+    { icon: successBadge, isImage: true },
+    { icon: partnershipBadge, isImage: true },
   ];
 
   useEffect(() => {
@@ -141,19 +140,14 @@ export default function HeroSection() {
           {badges.map((badge, i) => (
             <div
               key={i}
-              className="bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl px-2 sm:px-3 py-1.5 sm:py-2 text-center animate-bounce-in hover:bg-white/25 hover:scale-105 transition-all duration-300 cursor-pointer group"
+              className="bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 flex items-center justify-center animate-bounce-in hover:bg-white/25 hover:scale-105 transition-all duration-300 cursor-pointer group"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
-              <div className="text-lg sm:text-xl md:text-2xl mb-0.5 sm:mb-1 group-hover:scale-110 transition-transform">
-                {badge.isImage ? (
-                  <img src={badge.icon} alt={badge.text} className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 mx-auto object-contain" />
-                ) : (
-                  badge.icon
-                )}
-              </div>
-              <div className="text-xs sm:text-sm md:text-base font-semibold text-white drop-shadow-lg leading-tight">
-                {badge.text}
-              </div>
+              <img 
+                src={badge.icon} 
+                alt="Achievement Badge" 
+                className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 object-contain group-hover:scale-110 transition-transform" 
+              />
             </div>
           ))}
         </div>
@@ -196,7 +190,10 @@ export default function HeroSection() {
 
           {/* Additional Call-to-Action */}
           <div className="mt-4 sm:mt-6 flex justify-center">
-            <button className="group flex items-center gap-2 text-white/90 hover:text-white text-sm sm:text-base transition-colors">
+            <button 
+              onClick={() => setShowVideoModal(true)}
+              className="group flex items-center gap-2 text-white/90 hover:text-white text-sm sm:text-base transition-colors"
+            >
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-all group-hover:scale-110">
                 <Play className="w-4 h-4 sm:w-5 sm:h-5 ml-0.5" />
               </div>
@@ -232,6 +229,13 @@ export default function HeroSection() {
           />
         ))}
       </div>
+
+      {/* YouTube Modal */}
+      <YouTubeModal 
+        isOpen={showVideoModal}
+        onClose={() => setShowVideoModal(false)}
+        videoId="0MAgpCSsVWI"
+      />
     </section>
   );
 }
