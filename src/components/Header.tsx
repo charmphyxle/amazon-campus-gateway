@@ -127,7 +127,7 @@ const Header = () => {
             
             <div className="text-xs lg:text-sm text-center lg:text-right">
               <span className="opacity-90">
-                <span className="hidden sm:inline">🎓 For employers & institutions to verify credentials instantly</span>
+                {/* <span className="hidden sm:inline">🎓 For employers & institutions to verify credentials instantly</span> */}
                 <span className="sm:hidden">🎓 Instant credential verification</span>
               </span>
             </div>
