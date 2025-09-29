@@ -110,22 +110,13 @@ const ProgramsSection = () => {
   const handleMouseLeave = () => setIsAutoPlaying(true);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-background via-background/95 to-muted/10 relative overflow-hidden">
+    <section className="py-8 bg-gradient-to-br from-background via-background/95 to-muted/10 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pattern-dots opacity-5" />
       <div className="absolute top-20 right-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-20 w-32 h-32 bg-secondary/5 rounded-full blur-2xl" />
       
       <div className="relative z-10 container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-16 px-4">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent mb-6">
-            Our Programs
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Discover world-class educational programs designed to unlock your potential and shape your future in today's competitive landscape
-          </p>
-        </div>
 
         {/* Desktop and Tablet View */}
         <div className="hidden md:block">
