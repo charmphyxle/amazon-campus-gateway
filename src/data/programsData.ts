@@ -2722,5 +2722,327 @@ export const programsData: Program[] = [
       phone: '+94 114-386-126'
     }],
     featured: true
+  },
+  
+  // TVEC & Short Courses
+  {
+    id: "tvec-counselling-psychology",
+    slug: "tvec-diploma-counselling-psychology",
+    title: "Diploma in Counselling and Psychology",
+    level: "TVEC",
+    shortSummary: "Comprehensive diploma covering psychology fundamentals, counselling processes, mental health, and practical training with workshops on ethics and leadership.",
+    longDescription: `<p>Our extensive Diploma in Counselling and Psychology provides a comprehensive foundation in psychological theories and counselling practices. This TVEC-recognized program combines theoretical knowledge with practical training to prepare you for a rewarding career in mental health support.</p>
+    
+    <p>The program covers essential topics from psychology fundamentals to advanced counselling processes, including specialized workshops on Islamic psychology, nutrition, and first aid. Students gain hands-on experience through practical training and case studies.</p>
+    
+    <p>This diploma is ideal for individuals passionate about helping others and seeking to understand human behavior and mental health. The program emphasizes ethical practice, cultural sensitivity, and professional development.</p>`,
+    modules: [
+      { title: "Psychology Fundamentals and Theories", description: "Core psychological theories and human development principles" },
+      { title: "Development Psychology", description: "Understanding human development across the lifespan" },
+      { title: "Counselling Fundamentals and Theories", description: "Essential counselling theories and approaches" },
+      { title: "Field of Counselling", description: "Various counselling specializations and applications" },
+      { title: "Counselling Process", description: "Practical counselling techniques and processes" },
+      { title: "Social Issues", description: "Understanding societal challenges and their psychological impact" },
+      { title: "Mental Health", description: "Mental health disorders, treatment, and support" },
+      { title: "Study of Brain and Mind", description: "Neuropsychology and cognitive processes" },
+      { title: "Introduction to Psychotherapy Skills", description: "Basic psychotherapy techniques and applications" },
+      { title: "Introduction of Therapies", description: "Various therapeutic approaches and methods" },
+      { title: "Relaxation Techniques", description: "Stress management and relaxation methods" },
+      { title: "Case Studies", description: "Practical analysis of real counselling scenarios" },
+      { title: "Food & Nutrition", description: "Nutritional impact on mental health and wellbeing" },
+      { title: "Practical Training", description: "Hands-on counselling experience under supervision" }
+    ],
+    learningOutcomes: [
+      "Articulate key psychological and counselling theories in real-world applications",
+      "Conduct basic counselling sessions with ethical and professional approach",
+      "Identify common mental health challenges and understand their impact",
+      "Apply practical techniques for relaxation and stress management",
+      "Analyze social issues and their psychological implications",
+      "Understand brain function and its role in behavior and mental processes",
+      "Recognize the importance of nutrition in overall health and well-being",
+      "Demonstrate strong interpersonal, leadership, and ethical reasoning skills",
+      "Provide basic first aid and understand principles of paranoid psychology"
+    ],
+    careerPaths: [
+      "Counselling Assistant/Aide in schools, community centers, or private practices",
+      "Mental Health Support Worker in clinical or community environments",
+      "Youth Worker/Adolescent Counsellor (Entry-Level)",
+      "Community Support Specialist for individuals and families",
+      "Wellness Coach/Practitioner for personal growth and stress management",
+      "Human Resources Assistant with well-being focus",
+      "Volunteer in NGOs/Helplines for crisis intervention",
+      "Further education in Psychology, Counselling, or Social Work"
+    ],
+    duration: "12 Months",
+    fees: {
+      total: 95000,
+      currency: "LKR",
+      installments: {
+        count: 12,
+        amount: 7500
+      }
+    },
+    entryRequirements: [
+      "Age limit between 18-50 years",
+      "Pass EDEXCEL/G.C.E O/L with 6 credits including Maths and English",
+      "OR Pass EDEXCEL/G.C.E A/L",
+      "OR any other educational qualification acceptable by Academic syndicates"
+    ],
+    images: ["/src/assets/counselling-psychology-diploma.jpg"],
+    documents: [],
+    accreditation: [
+      {
+        body: "TVEC",
+        type: "Government Recognition",
+        certification: "Diploma in Teaching & Training (Psychology & Counselling Focus)"
+      }
+    ],
+    contacts: [
+      {
+        type: "admissions" as const,
+        email: "admissions@amazoncampus.edu.lk",
+        phone: "+94 11 234 5678"
+      }
+    ],
+    featured: true,
+    category: "Psychology"
+  },
+  {
+    id: "tvec-montessori-early-childhood",
+    slug: "tvec-diploma-montessori-early-childhood-education",
+    title: "Diploma in Montessori & Early Childhood Education",
+    level: "TVEC",
+    shortSummary: "TVEC-recognized diploma in Montessori education principles, child development, teaching methodologies, and early childhood center management.",
+    longDescription: `<p>Our Diploma in Montessori & Early Childhood Education is a TVEC-recognized program that provides comprehensive training in child-centered education approaches. This program combines the renowned Montessori methodology with modern early childhood development practices.</p>
+    
+    <p>Students learn to create nurturing environments that foster holistic child development, including psychomotor skills, aesthetic abilities, language development, and social skills. The curriculum emphasizes hands-on learning, eco-friendly practices, and effective management of early childhood centers.</p>
+    
+    <p>This program is ideal for individuals passionate about early childhood education and seeking to make a positive impact on young learners' development. Graduates are well-prepared to work in various early childhood settings or establish their own centers.</p>`,
+    modules: [
+      { title: "Montessori Education", description: "Principles and practices of Montessori methodology" },
+      { title: "Develop Psychomotor Skills", description: "Physical development and motor skills in children" },
+      { title: "Build Aesthetic Abilities", description: "Fostering creativity and artistic expression" },
+      { title: "Language Development of the Child", description: "Supporting language acquisition and communication" },
+      { title: "Health, Nutrition & Sports", description: "Promoting physical health and well-being" },
+      { title: "Guiding the Child to the Eco Friendly", description: "Environmental awareness and sustainability" },
+      { title: "Co-existence Habits and Values", description: "Social skills and value development" },
+      { title: "Develop Social Skills", description: "Interpersonal relationships and social competence" },
+      { title: "Develop Intellectual Skills", description: "Cognitive development and critical thinking" },
+      { title: "Use Teaching Methods", description: "Effective early childhood teaching strategies" },
+      { title: "Manage Early Childhood Development Center", description: "Administrative and management skills" },
+      { title: "Continuous Professional Development", description: "Ongoing learning and career advancement" },
+      { title: "Practical Training", description: "Hands-on experience in early childhood settings" }
+    ],
+    learningOutcomes: [
+      "Implement child-centered teaching strategies for holistic development",
+      "Design activities enhancing motor skills, creativity, and language acquisition",
+      "Create nurturing environments supporting health and environmental awareness",
+      "Apply effective communication and classroom management techniques",
+      "Plan and oversee daily operations of early childhood centers",
+      "Demonstrate strong observational skills and adapt to individual needs",
+      "Reflect on teaching practice and commit to ongoing professional growth",
+      "Apply theoretical knowledge through supervised practical experience"
+    ],
+    careerPaths: [
+      "Montessori Teacher/Pre-School Teacher",
+      "Daycare Manager/Supervisor",
+      "Early Childhood Educator",
+      "Child Development Specialist (Assistant)",
+      "Curriculum Developer (Early Years)",
+      "Special Needs Assistant (Early Years)",
+      "Entrepreneur - Early childhood education center owner",
+      "Further education in Early Childhood Education or Child Psychology"
+    ],
+    duration: "12 Months",
+    fees: {
+      total: 125000,
+      currency: "LKR",
+      installments: {
+        count: 12,
+        amount: 10000
+      }
+    },
+    entryRequirements: [
+      "Age limit between 18-50 years",
+      "Pass EDEXCEL/G.C.E O/L with 6 credits including Maths and English",
+      "OR Pass EDEXCEL/G.C.E A/L",
+      "OR any other educational qualification acceptable by Academic syndicates",
+      "Suitable for school leavers, students with pending O/L results, and teachers"
+    ],
+    images: ["/src/assets/montessori-early-childhood.jpg"],
+    documents: [],
+    accreditation: [
+      {
+        body: "TVEC",
+        type: "Government Recognition",
+        certification: "Diploma in Early Childhood Development"
+      }
+    ],
+    contacts: [
+      {
+        type: "admissions" as const,
+        email: "admissions@amazoncampus.edu.lk",
+        phone: "+94 11 234 5678"
+      }
+    ],
+    featured: true,
+    category: "Early Childhood"
+  },
+  {
+    id: "cert-childcare-operator",
+    slug: "certificate-childcare-center-operator",
+    title: "Certificate for Childcare Center Operator",
+    level: "Certificate",
+    shortSummary: "Practical certificate program covering childcare operations, health and safety, child development, administration, and special needs care.",
+    longDescription: `<p>Our Certificate for Childcare Center Operator provides essential training for individuals seeking to work in or manage childcare facilities. This practical program covers all aspects of professional childcare operations, from maintaining safe environments to fostering child development.</p>
+    
+    <p>The curriculum emphasizes hands-on skills including housekeeping standards, nutrition planning, medication administration, first aid, and administrative duties. Students also learn specialized care for children with special needs and develop professional communication skills.</p>
+    
+    <p>This certificate program is designed for immediate entry into the childcare workforce, providing graduates with the competencies needed to ensure quality care and safety for children in various childcare settings.</p>`,
+    modules: [
+      { title: "Maintain Housekeeping Standards", description: "Professional cleaning and organization of childcare facilities" },
+      { title: "Arrange Physical Environment", description: "Creating safe and stimulating physical spaces for children" },
+      { title: "Maintain Health, Safety and Effective Environment", description: "Health protocols and safety procedures" },
+      { title: "Provide Food and Beverages", description: "Nutrition planning and meal preparation for children" },
+      { title: "Provide Physical Care", description: "Personal care assistance and hygiene support" },
+      { title: "Foster Holistic Development of Children", description: "Activities promoting cognitive, emotional, and social growth" },
+      { title: "Administer Medications and Provide First Aid", description: "Medical care and emergency response procedures" },
+      { title: "Carry out Child Care Centre Administration", description: "Record keeping and administrative responsibilities" },
+      { title: "Maintain Professionalism", description: "Professional ethics and communication in childcare" },
+      { title: "Care of a Child with Special Needs", description: "Specialized care techniques for diverse needs" },
+      { title: "Career Guidance", description: "Professional development and career planning" },
+      { title: "Psychology & Counseling", description: "Basic psychological principles for childcare" },
+      { title: "Spoken English", description: "Communication skills enhancement" }
+    ],
+    learningOutcomes: [
+      "Efficiently manage daily operational environment of childcare facilities",
+      "Implement safety protocols and hygiene practices for children's well-being",
+      "Plan and prepare age-appropriate meals and snacks",
+      "Facilitate activities promoting comprehensive child development",
+      "Respond effectively to childhood illnesses and minor injuries",
+      "Assist with administrative duties and record-keeping",
+      "Communicate professionally with children, parents, and colleagues",
+      "Provide empathetic and tailored care for children with diverse needs",
+      "Apply basic psychological principles to support children and families"
+    ],
+    careerPaths: [
+      "Childcare Assistant/Worker in daycare centers and preschools",
+      "Nanny/Babysitter for home-based care",
+      "Early Childhood Educator Assistant",
+      "Special Needs Childcare Assistant",
+      "Playgroup Leader/Facilitator",
+      "After-School Program Assistant",
+      "Entrepreneur - Home-based childcare service",
+      "Further education in Early Childhood Education or Child Psychology"
+    ],
+    duration: "6 Months",
+    fees: {
+      total: 65000,
+      currency: "LKR",
+      installments: {
+        count: 6,
+        amount: 10000
+      }
+    },
+    entryRequirements: [
+      "Age limit between 18-50 years",
+      "Grade 08 completion",
+      "OR any other educational qualification acceptable by Academic syndicates"
+    ],
+    images: ["/src/assets/childcare-operator-certificate.jpg"],
+    documents: [],
+    accreditation: [
+      {
+        body: "TVEC",
+        type: "Vocational Certification",
+        certification: "Certificate in Childcare Operations"
+      }
+    ],
+    contacts: [
+      {
+        type: "admissions" as const,
+        email: "admissions@amazoncampus.edu.lk",
+        phone: "+94 11 234 5678"
+      }
+    ],
+    featured: false,
+    category: "Early Childhood"
+  },
+  {
+    id: "cert-elderly-caregiver",
+    slug: "certificate-elderly-caregiver",
+    title: "Certificate for Caregiver",
+    level: "Certificate",
+    shortSummary: "Professional certification in elderly care covering client relationships, personal care, nutrition, medication management, and vital signs monitoring.",
+    longDescription: `<p>Our Certificate for Caregiver provides comprehensive training for individuals seeking to work in the rapidly growing elderly care sector. This program focuses on developing the skills and knowledge necessary to provide compassionate, professional care to elderly clients.</p>
+    
+    <p>The curriculum covers essential aspects of elderly care including relationship building, personal hygiene assistance, nutrition management, medication administration, and health monitoring. Students also learn about the psychological and emotional needs of elderly individuals.</p>
+    
+    <p>This certificate program prepares graduates for immediate employment in various elderly care settings, from home care to assisted living facilities, ensuring they can provide dignified and respectful care that promotes independence and well-being.</p>`,
+    modules: [
+      { title: "Maintain the Relationship with the Client", description: "Building trust and positive relationships with elderly clients" },
+      { title: "Attend Domestic Affairs of the Client", description: "Household management and daily living assistance" },
+      { title: "Prepare Living Area of the Client", description: "Creating safe and comfortable living environments" },
+      { title: "Maintain Personal Hygiene and Appearance", description: "Assistance with bathing, grooming, and personal care" },
+      { title: "Maintain Nutrition of the Client", description: "Meal planning and dietary management for seniors" },
+      { title: "Provide Drug Treatment", description: "Safe medication administration and management" },
+      { title: "Check and Record Vital Signs", description: "Health monitoring and documentation procedures" },
+      { title: "Care of an Elderly Person", description: "Comprehensive elderly care practices and techniques" },
+      { title: "Career Guidance", description: "Professional development in elderly care sector" },
+      { title: "Psychology & Counseling", description: "Understanding psychological needs of elderly clients" },
+      { title: "Spoken English", description: "Communication skills for professional caregiving" }
+    ],
+    learningOutcomes: [
+      "Communicate effectively and empathetically with elderly clients and families",
+      "Manage household tasks and create safe, organized living spaces",
+      "Assist clients with bathing, dressing, grooming, and mobility",
+      "Plan and prepare balanced meals addressing dietary needs and restrictions",
+      "Safely administer prescribed medications and observe for adverse reactions",
+      "Accurately measure and record vital signs, recognizing health changes",
+      "Provide respectful care promoting independence and well-being",
+      "Apply basic psychological principles to understand emotional needs of seniors"
+    ],
+    careerPaths: [
+      "Elderly Caregiver/Assistant in nursing homes and assisted living",
+      "Personal Care Aide for daily living activities",
+      "Home Health Aide providing in-home support",
+      "Rehabilitation Aide (Geriatric) supporting recovery programs",
+      "Support Worker for Seniors providing companionship",
+      "Private Nanny/Caregiver for personalized senior care",
+      "Community Support Worker helping seniors access resources",
+      "Further education in Gerontology, Nursing, or Social Work"
+    ],
+    duration: "6 Months",
+    fees: {
+      total: 65000,
+      currency: "LKR",
+      installments: {
+        count: 6,
+        amount: 10000
+      }
+    },
+    entryRequirements: [
+      "Age limit between 18-50 years",
+      "Grade 08 completion",
+      "OR any other educational qualification acceptable by Academic syndicates"
+    ],
+    images: ["/src/assets/elderly-caregiver-certificate.jpg"],
+    documents: [],
+    accreditation: [
+      {
+        body: "TVEC",
+        type: "Vocational Certification",
+        certification: "Certificate in Elderly Care"
+      }
+    ],
+    contacts: [
+      {
+        type: "admissions" as const,
+        email: "admissions@amazoncampus.edu.lk",
+        phone: "+94 11 234 5678"
+      }
+    ],
+    featured: false,
+    category: "Healthcare"
   }
 ];
