@@ -3,9 +3,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Award, Download, Users, BookOpen, Shield, Search } from "lucide-react";
+import { Award, Download, Users, BookOpen, Shield, Search, GraduationCap, Globe, Star, Trophy, Calendar, MapPin } from "lucide-react";
 import { findStudentById, StudentRecord } from "@/data/dummyStudents";
 import StudentVerificationModal from "./StudentVerificationModal";
+import excellenceBadge from "@/assets/excellence-badge.png";
+import accreditationBadge from "@/assets/accreditation-badge.png";
 
 const Header = () => {
   const [quickVerifyId, setQuickVerifyId] = useState("");
@@ -49,17 +51,27 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center justify-between py-2 gap-2 lg:gap-4">
             <div className="flex items-center gap-2 lg:gap-4 flex-wrap justify-center lg:justify-start">
-              <Badge variant="secondary" className="flex items-center gap-1 text-xs">
-                <Award className="w-3 h-3" />
+              <Badge variant="secondary" className="flex items-center gap-1 text-xs bg-white/15 backdrop-blur-sm">
+                <img src={excellenceBadge} alt="Excellence" className="w-3 h-3" />
                 <span className="hidden sm:inline">15+ Years Excellence</span>
                 <span className="sm:hidden">15+ Years</span>
               </Badge>
-              <Badge variant="secondary" className="flex items-center gap-1 text-xs">
-                <Shield className="w-3 h-3" />
-                <span className="hidden sm:inline">Award-Winning Institution</span>
-                <span className="sm:hidden">Award-Winning</span>
+              <Badge variant="secondary" className="flex items-center gap-1 text-xs bg-white/15 backdrop-blur-sm">
+                <img src={accreditationBadge} alt="Accreditation" className="w-3 h-3" />
+                <span className="hidden sm:inline">International Accredited</span>
+                <span className="sm:hidden">Accredited</span>
               </Badge>
-              <div className="hidden md:flex items-center text-xs lg:text-sm">
+              <Badge variant="secondary" className="flex items-center gap-1 text-xs bg-white/15 backdrop-blur-sm">
+                <GraduationCap className="w-3 h-3" />
+                <span className="hidden sm:inline">10,000+ Graduates</span>
+                <span className="sm:hidden">10K+ Grads</span>
+              </Badge>
+              <Badge variant="secondary" className="flex items-center gap-1 text-xs bg-white/15 backdrop-blur-sm">
+                <Globe className="w-3 h-3" />
+                <span className="hidden sm:inline">Global Recognition</span>
+                <span className="sm:hidden">Global</span>
+              </Badge>
+              <div className="hidden lg:flex items-center text-xs">
                 <span className="opacity-80">📞 +94 114-386-126</span>
                 <span className="mx-2 opacity-60">|</span>
                 <span className="opacity-80">📧 info@amazoncollege.lk</span>
@@ -67,19 +79,27 @@ const Header = () => {
             </div>
             
             <div className="flex items-center gap-1 lg:gap-2 flex-wrap justify-center">
-              <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs px-2 lg:px-3">
+              <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs px-2 lg:px-3 hover:scale-105 transition-transform">
                 <Users className="w-3 h-3 lg:w-4 lg:h-4" />
                 <span className="hidden sm:inline ml-1">Student LMS</span>
               </Button>
-              <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs px-2 lg:px-3">
+              <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs px-2 lg:px-3 hover:scale-105 transition-transform">
                 <BookOpen className="w-3 h-3 lg:w-4 lg:h-4" />
                 <span className="hidden sm:inline ml-1">Staff LMS</span>
               </Button>
-              <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs px-2 lg:px-3">
+              <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs px-2 lg:px-3 hover:scale-105 transition-transform">
                 <Download className="w-3 h-3 lg:w-4 lg:h-4" />
                 <span className="hidden md:inline ml-1">Download App</span>
               </Button>
-              <Button variant="cta" size="sm" className="text-xs px-2 lg:px-3">
+              <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs px-2 lg:px-3 hover:scale-105 transition-transform">
+                <Calendar className="w-3 h-3 lg:w-4 lg:h-4" />
+                <span className="hidden md:inline ml-1">Events</span>
+              </Button>
+              <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs px-2 lg:px-3 hover:scale-105 transition-transform">
+                <MapPin className="w-3 h-3 lg:w-4 lg:h-4" />
+                <span className="hidden md:inline ml-1">Campus</span>
+              </Button>
+              <Button variant="cta" size="sm" className="text-xs px-2 lg:px-3 hover:scale-105 transition-transform">
                 <span className="hidden sm:inline">Register Online</span>
                 <span className="sm:hidden">Register</span>
               </Button>

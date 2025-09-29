@@ -1,10 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, BookOpen, UserPlus } from "lucide-react";
+import { ChevronLeft, ChevronRight, BookOpen, UserPlus, Play } from "lucide-react";
 import heroGraduation from "@/assets/hero-graduation.jpg";
 import heroClassroom from "@/assets/hero-classroom.jpg";
 import heroCampus from "@/assets/hero-campus.jpg";
 import awardsBadge from "@/assets/awards-badge.png";
+import excellenceBadge from "@/assets/excellence-badge.png";
+import accreditationBadge from "@/assets/accreditation-badge.png";
+import successBadge from "@/assets/success-badge.png";
+import partnershipBadge from "@/assets/partnership-badge.png";
 
 /**
  * HeroSection (Bright + Sharp + Responsive)
@@ -17,6 +22,7 @@ const SLIDE_INTERVAL = 6000;
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
+  const navigate = useNavigate();
 
   const slides = useMemo(
     () => [
@@ -81,12 +87,14 @@ export default function HeroSection() {
   );
 
   const badges = [
-    { text: "15+ Years Excellence", icon: "🏆" },
-    { text: "Award-Winning Institution", icon: "🥇" },
-    { text: "International Recognition", icon: "🌍" },
-    { text: "Top-Rated Programs", icon: "⭐" },
-    { text: "Industry Partnerships", icon: "🤝" },
-    { text: "Awards & Recognition", icon: awardsBadge, isImage: true },
+    { text: "15+ Years Excellence", icon: excellenceBadge, isImage: true },
+    { text: "Award-Winning Institution", icon: awardsBadge, isImage: true },
+    { text: "International Recognition", icon: accreditationBadge, isImage: true },
+    { text: "Student Success", icon: successBadge, isImage: true },
+    { text: "Industry Partnerships", icon: partnershipBadge, isImage: true },
+    { text: "10,000+ Graduates", icon: "🎓" },
+    { text: "Global Campus", icon: "🌐" },
+    { text: "Research Excellence", icon: "🔬" },
   ];
 
   useEffect(() => {
@@ -95,6 +103,14 @@ export default function HeroSection() {
   }, [slides.length]);
 
   const go = (dir) => setCurrent((p) => (p + dir + slides.length) % slides.length);
+
+  const handleExplorePrograms = () => {
+    navigate('/programs');
+  };
+
+  const handleRegisterNow = () => {
+    navigate('/apply');
+  };
 
   return (
     <section className="relative w-full h-[85svh] sm:h-[90svh] md:h-screen overflow-hidden">
@@ -121,16 +137,16 @@ export default function HeroSection() {
 
       {/* Achievement Badges - Mobile Responsive */}
       <div className="absolute top-4 sm:top-6 md:top-8 left-1/2 -translate-x-1/2 z-20 w-full max-w-7xl px-2 sm:px-4">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 md:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2 sm:gap-3 md:gap-4">
           {badges.map((badge, i) => (
             <div
               key={i}
-              className="bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl px-2 sm:px-3 py-1.5 sm:py-2 text-center animate-bounce-in hover-glow"
+              className="bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl px-2 sm:px-3 py-1.5 sm:py-2 text-center animate-bounce-in hover:bg-white/25 hover:scale-105 transition-all duration-300 cursor-pointer group"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
-              <div className="text-lg sm:text-xl md:text-2xl mb-0.5 sm:mb-1">
+              <div className="text-lg sm:text-xl md:text-2xl mb-0.5 sm:mb-1 group-hover:scale-110 transition-transform">
                 {badge.isImage ? (
-                  <img src={badge.icon} alt="Awards" className="w-8 h-8 sm:w-10 sm:h-10 mx-auto object-contain" />
+                  <img src={badge.icon} alt={badge.text} className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 mx-auto object-contain" />
                 ) : (
                   badge.icon
                 )}
@@ -159,21 +175,33 @@ export default function HeroSection() {
           {/* Buttons */}
           <div className="mt-5 sm:mt-6 md:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2">
             <Button
+              onClick={handleExplorePrograms}
               variant="hero"
               size="xl"
-              className="group rounded-xl sm:rounded-2xl px-4 sm:px-6 py-2.5 sm:py-3 text-base sm:text-lg font-semibold bg-white/15 hover:bg-white/25 text-white shadow-lg transition w-full sm:w-auto"
+              className="group rounded-xl sm:rounded-2xl px-4 sm:px-6 py-2.5 sm:py-3 text-base sm:text-lg font-semibold bg-white/15 hover:bg-white/25 text-white shadow-lg transition w-full sm:w-auto hover:scale-105"
             >
               <BookOpen className="w-4 sm:w-5 h-4 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
               Explore Programs
             </Button>
             <Button
+              onClick={handleRegisterNow}
               variant="cta"
               size="xl"
-              className="group rounded-xl sm:rounded-2xl px-4 sm:px-6 py-2.5 sm:py-3 text-base sm:text-lg font-semibold bg-secondary hover:bg-secondary/90 text-white shadow-lg transition w-full sm:w-auto"
+              className="group rounded-xl sm:rounded-2xl px-4 sm:px-6 py-2.5 sm:py-3 text-base sm:text-lg font-semibold bg-gradient-to-r from-secondary to-secondary/80 hover:from-secondary/90 hover:to-secondary text-white shadow-lg transition w-full sm:w-auto hover:scale-105"
             >
               <UserPlus className="w-4 sm:w-5 h-4 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
               Register Now
             </Button>
+          </div>
+
+          {/* Additional Call-to-Action */}
+          <div className="mt-4 sm:mt-6 flex justify-center">
+            <button className="group flex items-center gap-2 text-white/90 hover:text-white text-sm sm:text-base transition-colors">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-all group-hover:scale-110">
+                <Play className="w-4 h-4 sm:w-5 sm:h-5 ml-0.5" />
+              </div>
+              <span className="font-medium">Watch Our Story</span>
+            </button>
           </div>
         </div>
       </div>
