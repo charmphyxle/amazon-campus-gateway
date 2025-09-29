@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, BookOpen, UserPlus } from "lucide-react";
 import heroGraduation from "@/assets/hero-graduation.jpg";
 import heroClassroom from "@/assets/hero-classroom.jpg";
 import heroCampus from "@/assets/hero-campus.jpg";
+import awardsBadge from "@/assets/awards-badge.png";
 
 /**
  * HeroSection (Bright + Sharp + Responsive)
@@ -86,6 +87,7 @@ export default function HeroSection() {
     { text: "Top-Rated Programs", icon: "⭐" },
     { text: "Industry Partnerships", icon: "🤝" },
     { text: "Career Success Rate 95%", icon: "📈" },
+    { text: "Awards & Recognition", icon: awardsBadge, isImage: true },
   ];
 
   useEffect(() => {
@@ -127,7 +129,13 @@ export default function HeroSection() {
               className="bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl px-2 sm:px-3 py-1.5 sm:py-2 text-center animate-bounce-in hover-glow"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
-              <div className="text-lg sm:text-xl md:text-2xl mb-0.5 sm:mb-1">{badge.icon}</div>
+              <div className="text-lg sm:text-xl md:text-2xl mb-0.5 sm:mb-1">
+                {badge.isImage ? (
+                  <img src={badge.icon} alt="Awards" className="w-8 h-8 sm:w-10 sm:h-10 mx-auto object-contain" />
+                ) : (
+                  badge.icon
+                )}
+              </div>
               <div className="text-xs sm:text-sm md:text-base font-semibold text-white drop-shadow-lg leading-tight">
                 {badge.text}
               </div>
