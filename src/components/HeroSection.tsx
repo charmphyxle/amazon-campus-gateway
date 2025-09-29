@@ -86,7 +86,6 @@ export default function HeroSection() {
     { text: "International Recognition", icon: "🌍" },
     { text: "Top-Rated Programs", icon: "⭐" },
     { text: "Industry Partnerships", icon: "🤝" },
-    { text: "Career Success Rate 95%", icon: "📈" },
     { text: "Awards & Recognition", icon: awardsBadge, isImage: true },
   ];
 
