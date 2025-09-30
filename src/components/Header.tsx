@@ -58,25 +58,25 @@ const Header = () => {
           <div className="flex flex-col lg:flex-row items-center justify-between py-3 gap-4">
             {/* Left side - Badges */}
             <div className="flex items-center gap-2 lg:gap-4 flex-wrap justify-center lg:justify-start order-1 lg:order-1">
-              <Badge variant="secondary" className="flex flex-col items-center gap-1 text-xs bg-white/15 backdrop-blur-sm px-3 py-2">
-                <Star className="w-6 h-6 text-yellow-400" />
-                <span className="hidden sm:inline">Excellence</span>
-                <span className="text-xs opacity-80">15+ Years Excellence</span>
+              <Badge variant="secondary" className="flex items-center gap-1 text-xs bg-white/15 backdrop-blur-sm">
+                <img src={excellenceBadge} alt="Excellence" className="w-3 h-3" />
+                <span className="hidden sm:inline">15+ Years Excellence</span>
+                <span className="sm:hidden">15+ Years</span>
               </Badge>
-              <Badge variant="secondary" className="flex flex-col items-center gap-1 text-xs bg-white/15 backdrop-blur-sm px-3 py-2">
-                <Shield className="w-6 h-6 text-blue-400" />
-                <span className="hidden sm:inline">Accreditation</span>
-                <span className="text-xs opacity-80">International Accredited</span>
+              <Badge variant="secondary" className="flex items-center gap-1 text-xs bg-white/15 backdrop-blur-sm">
+                <img src={accreditationBadge} alt="Accreditation" className="w-3 h-3" />
+                <span className="hidden sm:inline">International Accredited</span>
+                <span className="sm:hidden">Accredited</span>
               </Badge>
-              <Badge variant="secondary" className="flex flex-col items-center gap-1 text-xs bg-white/15 backdrop-blur-sm px-3 py-2">
-                <GraduationCap className="w-6 h-6 text-green-400" />
+              <Badge variant="secondary" className="flex items-center gap-1 text-xs bg-white/15 backdrop-blur-sm">
+                <GraduationCap className="w-3 h-3" />
                 <span className="hidden sm:inline">10,000+ Graduates</span>
-                <span className="sm:hidden text-xs opacity-80">10K+ Grads</span>
+                <span className="sm:hidden">10K+ Grads</span>
               </Badge>
-              <Badge variant="secondary" className="flex flex-col items-center gap-1 text-xs bg-white/15 backdrop-blur-sm px-3 py-2">
-                <Globe className="w-6 h-6 text-purple-400" />
+              <Badge variant="secondary" className="flex items-center gap-1 text-xs bg-white/15 backdrop-blur-sm">
+                <Globe className="w-3 h-3" />
                 <span className="hidden sm:inline">Global Recognition</span>
-                <span className="sm:hidden text-xs opacity-80">Global</span>
+                <span className="sm:hidden">Global</span>
               </Badge>
             </div>
             
