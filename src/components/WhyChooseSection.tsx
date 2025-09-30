@@ -131,12 +131,12 @@ const WhyChooseSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full text-sm font-medium text-primary border border-primary/20">
             <Sparkles className="w-4 h-4 mr-2" />
             Ready to start your journey with us?
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
