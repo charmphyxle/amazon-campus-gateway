@@ -32,6 +32,7 @@ export interface Program {
   level: 'Certificate' | 'TVEC' | 'Diploma' | 'HND' | 'Degree' | 'Top-up' | 'Masters' | 'PhD';
   shortSummary: string;
   longDescription: string; // HTML-ready
+  courseObjectives?: string[]; // New field for course objectives
   modules: ProgramModule[];
   learningOutcomes: string[];
   careerPaths: string[];

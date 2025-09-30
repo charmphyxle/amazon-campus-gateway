@@ -12,6 +12,13 @@ export const programsData: Program[] = [
       <p>It is ideal for beginners or those seeking to enhance their skills for career entry in technology or related fields.</p>
       <p>The course blends theory and hands-on learning to prepare students for both higher education pathways and industry demands.</p>
     `,
+    courseObjectives: [
+      "Develop fundamental knowledge of IT systems and computer operations",
+      "Understand cybersecurity principles and implement basic security measures",
+      "Learn digital marketing strategies and social media management",
+      "Gain practical skills in hardware troubleshooting and software management",
+      "Build competency in network systems and data management"
+    ],
     modules: [
       {
         title: "Introduction to IT and Data Information",
@@ -113,6 +120,13 @@ export const programsData: Program[] = [
       <p>The program covers modern teaching methodologies, classroom management, and educational psychology.</p>
       <p>Specializations include Montessori & Early Childhood, Primary Education, and Special Child Education.</p>
     `,
+    courseObjectives: [
+      "Master effective teaching methodologies for diverse learning environments",
+      "Develop comprehensive understanding of child psychology and development",
+      "Implement effective classroom management and student engagement strategies",
+      "Create inclusive learning environments for children with special needs",
+      "Design and evaluate age-appropriate curricula and lesson plans"
+    ],
     modules: [
       {
         title: "Educational Psychology",
@@ -195,195 +209,6 @@ export const programsData: Program[] = [
     ],
     featured: true,
     category: "Education"
-  },
-  {
-    id: "hnd-business-management-001",
-    slug: "hnd-business-management",
-    title: "HND in Business Management",
-    level: "HND",
-    shortSummary: "UK-affiliated Higher National Diploma in Business Management covering all aspects of modern business operations and leadership.",
-    longDescription: `
-      <p>Our HND in Business Management is a UK-affiliated program that provides comprehensive training in business operations, management principles, and leadership skills.</p>
-      <p>The program is designed to prepare students for management roles in various industries and provides a pathway to degree completion.</p>
-      <p>Students gain practical experience through case studies, projects, and industry exposure.</p>
-    `,
-    modules: [
-      {
-        title: "Business Environment",
-        description: "Understanding business contexts, economic factors, and organizational structures"
-      },
-      {
-        title: "Marketing Essentials",
-        description: "Marketing principles, consumer behavior, market research, and promotional strategies"
-      },
-      {
-        title: "Managing People and Organizations",
-        description: "Human resource management, organizational behavior, and leadership development"
-      },
-      {
-        title: "Management Accounting",
-        description: "Financial planning, budgeting, cost analysis, and management reporting"
-      },
-      {
-        title: "Business Operations",
-        description: "Operations management, supply chain, quality management, and process improvement"
-      },
-      {
-        title: "Strategic Management",
-        description: "Strategic planning, competitive analysis, and business development"
-      }
-    ],
-    learningOutcomes: [
-      "Understand fundamental business principles and operations",
-      "Develop management and leadership capabilities",
-      "Master financial analysis and accounting principles",
-      "Learn marketing strategies and customer relationship management",
-      "Acquire project management and operational skills",
-      "Understand strategic planning and business development"
-    ],
-    careerPaths: [
-      "Business Manager",
-      "Operations Supervisor",
-      "Marketing Coordinator", 
-      "HR Assistant Manager",
-      "Project Coordinator",
-      "Business Analyst"
-    ],
-    duration: "24 months",
-    fees: {
-      total: 380000,
-      currency: "LKR",
-      installments: {
-        count: 24,
-        amount: 15833
-      }
-    },
-    entryRequirements: [
-      "G.C.E A/L with 3 passes or equivalent",
-      "Relevant diploma with good grades",
-      "English proficiency (written and spoken)"
-    ],
-    images: [
-      "/src/assets/business-class.jpg",
-      "/src/assets/student-lounge.jpg"
-    ],
-    documents: [
-      "/documents/hnd-business-management-brochure.pdf"
-    ],
-    accreditation: [
-      {
-        body: "UK Awarding Body",
-        type: "Affiliation",
-        certification: "Pearson BTEC HND"
-      },
-      {
-        body: "University Grants Commission (UGC) Sri Lanka",
-        type: "Recognition"
-      }
-    ],
-    contacts: [
-      {
-        type: "admissions",
-        email: "info@amazoncollege.lk",
-        phone: "+94 114-386-126"
-      }
-    ],
-    featured: true,
-    category: "Business Management"
-  },
-  {
-    id: "ba-english-001",
-    slug: "ba-english",
-    title: "Bachelor of Arts in English",
-    level: "Degree",
-    shortSummary: "Comprehensive degree program in English literature, linguistics, and communication skills for career advancement in education and media.",
-    longDescription: `
-      <p>The Bachelor of Arts in English program offers a comprehensive study of English literature, linguistics, and communication skills.</p>
-      <p>Students explore classical and contemporary literature while developing critical thinking and analytical writing abilities.</p>
-      <p>The program prepares graduates for careers in education, media, publishing, and corporate communication.</p>
-    `,
-    modules: [
-      {
-        title: "English Literature Survey",
-        description: "Overview of English literature from medieval to contemporary periods"
-      },
-      {
-        title: "Linguistics and Language Structure",
-        description: "Study of language systems, phonetics, syntax, and semantics"
-      },
-      {
-        title: "Creative Writing",
-        description: "Development of creative writing skills in various genres and styles"
-      },
-      {
-        title: "Critical Theory and Analysis",
-        description: "Literary criticism, theoretical approaches, and analytical methodologies"
-      },
-      {
-        title: "Communication Skills",
-        description: "Advanced written and oral communication, presentation skills"
-      },
-      {
-        title: "Research Methodology",
-        description: "Academic research methods, citation, and scholarly writing"
-      }
-    ],
-    learningOutcomes: [
-      "Demonstrate deep understanding of English literature and literary traditions",
-      "Develop advanced written and oral communication skills",
-      "Apply critical thinking and analytical skills to texts and contexts",
-      "Conduct independent research in literary and linguistic topics",
-      "Create original written works in various genres",
-      "Understand language structure and linguistic principles"
-    ],
-    careerPaths: [
-      "English Teacher/Lecturer",
-      "Content Writer/Editor",
-      "Journalist/Reporter",
-      "Publishing Professional",
-      "Communications Specialist",
-      "Research Assistant"
-    ],
-    duration: "36 months",
-    fees: {
-      total: 720000,
-      currency: "LKR",
-      installments: {
-        count: 36,
-        amount: 20000
-      }
-    },
-    entryRequirements: [
-      "G.C.E A/L with 3 passes including English",
-      "Minimum grade C in English at A/L",
-      "Interview and aptitude test"
-    ],
-    images: [
-      "/src/assets/language-class.jpg",
-      "/src/assets/library-study.jpg"
-    ],
-    documents: [
-      "/documents/ba-english-brochure.pdf"
-    ],
-    accreditation: [
-      {
-        body: "University Grants Commission (UGC) Sri Lanka",
-        type: "Recognition",
-        certification: "UGC Recognized Degree"
-      },
-      {
-        body: "World Higher Education Database (WHED)",
-        type: "Listing"
-      }
-    ],
-    contacts: [
-      {
-        type: "academic",
-        email: "info@amazoncollege.lk", 
-        phone: "+94 114-386-126"
-      }
-    ],
-    category: "English Language"
   },
   {
     id: "msc-psychology-001",
@@ -588,6 +413,13 @@ export const programsData: Program[] = [
       <p>The program includes theoretical knowledge combined with practical experience through supervised sessions.</p>
       <p>Graduates are prepared for entry-level counselling roles in various settings including schools, healthcare, and community organizations.</p>
     `,
+    courseObjectives: [
+      "Build fundamental understanding of psychological theories and human behavior",
+      "Develop practical counselling skills and therapeutic communication techniques",
+      "Gain experience in group counselling and therapy facilitation",
+      "Apply ethical principles and professional standards in counselling practice",
+      "Prepare for immediate entry into counselling support roles"
+    ],
     modules: [
       {
         title: "Introduction to Psychology",
@@ -1588,7 +1420,16 @@ export const programsData: Program[] = [
     longDescription: `
       <p>Our thoughtfully curated modules guide you through key areas of psychology and counselling, providing a solid foundation for careers in mental health support or further academic study.</p>
       <p>The program covers fundamental psychological principles, human development, counselling techniques, and professional ethics in mental health practice.</p>
+      <p><strong>Syllabus Structure:</strong> The program is divided into three main areas: Core Psychology (covering fundamental theories and human development), Counselling Practice (focusing on techniques and therapeutic approaches), and Professional Development (emphasizing ethics and real-world applications).</p>
     `,
+    courseObjectives: [
+      "Establish solid foundation in psychological theories and human development principles",
+      "Develop essential counselling skills and therapeutic communication techniques",
+      "Understand mental health awareness and common psychological conditions",
+      "Apply ethical guidelines and professional standards in counselling practice",
+      "Prepare for advanced study in psychology, counselling, or mental health fields",
+      "Build competency in supporting individuals with mental health challenges"
+    ],
     modules: [
       {
         title: "Introduction to Psychology",
@@ -1613,6 +1454,18 @@ export const programsData: Program[] = [
       {
         title: "Ethics and Professional Issues in Counselling",
         description: "Professional boundaries and ethical guidelines, confidentiality and legal responsibilities, professional standards in counselling practice"
+      },
+      {
+        title: "Advanced Therapeutic Techniques",
+        description: "Specialized counselling interventions and crisis intervention strategies"
+      },
+      {
+        title: "Group Counselling and Family Therapy",
+        description: "Group dynamics, family systems theory, and therapeutic group facilitation"
+      },
+      {
+        title: "Research Methods in Psychology",
+        description: "Quantitative and qualitative research approaches in psychological studies"
       }
     ],
     learningOutcomes: [
@@ -1866,6 +1719,14 @@ export const programsData: Program[] = [
       <p>The program provides comprehensive training for management roles and business operations with practical applications.</p>
       <p>Graduates can pursue careers in business administration, human resources, marketing, and entrepreneurship.</p>
     `,
+    courseObjectives: [
+      "Develop comprehensive understanding of business environment and strategic planning",
+      "Master human resource management principles and practices",
+      "Apply financial management concepts for informed business decision-making",
+      "Implement digital marketing strategies for business growth",
+      "Foster entrepreneurial mindset and identify business opportunities",
+      "Acquire project management skills for successful initiative delivery"
+    ],
     modules: [
       {
         title: "Business Environment & Planning",
@@ -1918,7 +1779,7 @@ export const programsData: Program[] = [
       "Project Coordinator/Manager",
       "Entrepreneur/Business Owner"
     ],
-    duration: "2 years (4 semesters)",
+    duration: "2 years (2 semesters)",
     fees: {
       total: 420000,
       currency: "LKR",
@@ -2396,6 +2257,14 @@ export const programsData: Program[] = [
     category: 'Business',
     shortSummary: 'Advanced business management degree covering strategic planning, leadership, and global business operations.',
     longDescription: 'This advanced diploma features a robust structure covering essential and strategic aspects of business management, preparing graduates for senior leadership roles in diverse industries.',
+    courseObjectives: [
+      "Master advanced business management theories and strategic frameworks",
+      "Develop comprehensive marketing management and global business competencies",
+      "Apply financial management techniques for strategic decision-making",
+      "Understand business law and regulatory compliance requirements",
+      "Enhance communication and leadership skills for team management",
+      "Formulate and implement strategic business plans for organizational growth"
+    ],
     modules: [
       { title: 'Core Concepts of Business Management', description: 'Master advanced concepts in core business management principles' },
       { title: 'Marketing Management', description: 'Develop comprehensive marketing strategies for diverse markets' }, 
@@ -2529,6 +2398,14 @@ export const programsData: Program[] = [
     category: 'Technology',
     shortSummary: 'Advanced IT degree covering data management, security, programming, and emerging technologies like IoT and data science.',
     longDescription: 'This rigorous program covers key aspects of modern Information Technology, preparing graduates for advanced roles in the rapidly evolving tech industry.',
+    courseObjectives: [
+      "Design and implement complex information systems and data management solutions",
+      "Master advanced information security principles and cybersecurity practices",
+      "Develop expertise in advanced programming and software development",
+      "Understand database design, implementation, and administration",
+      "Apply data science techniques for business intelligence and analytics",
+      "Integrate embedded systems and Internet of Things (IoT) technologies"
+    ],
     modules: [
       { title: 'Information System And Data Management', description: 'Understand and manage complex information systems and data lifecycles' },
       { title: 'Information Security', description: 'Implement robust security measures to protect digital assets' },
@@ -2599,6 +2476,14 @@ export const programsData: Program[] = [
     category: 'Psychology',
     shortSummary: 'Specialized psychology degree covering advanced theories, abnormal psychology, psychometrics, and supervised practice.',
     longDescription: 'This rich and specialized curriculum provides comprehensive training in psychology and counselling, preparing graduates for professional practice in mental health.',
+    courseObjectives: [
+      "Master advanced psychological theories and therapeutic practices",
+      "Develop expertise in personality assessment and emotional understanding",
+      "Gain comprehensive knowledge of psychological disorders and interventions",
+      "Apply psychometric assessment tools and interpretation techniques",
+      "Acquire practical counselling experience through supervised placement",
+      "Understand social psychological dynamics and cognitive processes"
+    ],
     modules: [
       { title: 'Advanced Theories And Practices In Psychology And Counselling', description: 'Master advanced theoretical frameworks and practical applications' },
       { title: 'Personality, Motivation And Emotion', description: 'In-depth understanding of personality theories and emotional processes' },
@@ -2665,6 +2550,14 @@ export const programsData: Program[] = [
     category: 'Education',
     shortSummary: 'Comprehensive education degree covering psychology, curriculum development, management, and inclusive teaching methodologies.',
     longDescription: 'This specialized curriculum covers key aspects of educational leadership, preparing graduates for influential careers in education management and policy.',
+    courseObjectives: [
+      "Apply educational psychology principles to enhance teaching and learning effectiveness",
+      "Master curriculum development, design, and implementation processes",
+      "Develop educational management and leadership capabilities",
+      "Conduct educational research and apply findings to practice",
+      "Create inclusive learning environments for neurodiverse students",
+      "Implement innovative teaching methodologies and address contemporary educational challenges"
+    ],
     modules: [
       { title: 'Education Psychology', description: 'Understand psychological principles underpinning learning and development' },
       { title: 'Curriculum Development And Designing', description: 'Master processes of curriculum development, design, and implementation' },
