@@ -87,10 +87,10 @@ const PartnersSlideshow = () => {
           <h2 className="text-3xl md:text-4xl font-black text-foreground mb-4 bg-gradient-to-r from-blue-600 via-primary to-orange-600 bg-clip-text text-transparent">
             Trusted Partners & Accreditations
           </h2>
-          <p className="text-lg font-semibold text-muted-foreground max-w-2xl mx-auto">
+          {/* <p className="text-lg font-semibold text-muted-foreground max-w-2xl mx-auto">
             Amazon College is proudly affiliated with leading universities, accreditation bodies, 
             and international organizations that recognize our commitment to educational excellence.
-          </p>
+          </p> */}
         </div>
 
         {/* Logo Carousel */}
