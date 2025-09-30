@@ -42,30 +42,38 @@ const VerificationSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-muted/50 to-accent/30">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-700 relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-float"></div>
+        <div className="absolute top-1/2 right-20 w-24 h-24 bg-cyan-400/20 rounded-full blur-lg animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-purple-400/15 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center">
-                <Shield className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-gradient-to-r from-white/20 to-cyan-300/40 rounded-full flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/20">
+                <Shield className="w-8 h-8 text-white animate-pulse" />
               </div>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-fade-in">
               Official Student Verification
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-white/90 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Instant credential verification for employers, universities, and institutions worldwide
             </p>
           </div>
 
-          <Card className="shadow-elegant-lg border-0 bg-gradient-to-br from-background to-muted/30">
+          <Card className="shadow-2xl border-0 bg-white/10 backdrop-blur-lg border border-white/20 animate-scale-in" style={{ animationDelay: '0.4s' }}>
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl flex items-center justify-center gap-2">
-                <Shield className="w-6 h-6 text-primary" />
+              <CardTitle className="text-2xl flex items-center justify-center gap-2 text-white">
+                <Shield className="w-6 h-6 text-cyan-300" />
                 Credential Verification System
               </CardTitle>
-              <CardDescription className="text-base">
+              <CardDescription className="text-base text-white/80">
                 Enter a student ID to verify enrollment or graduation status instantly
               </CardDescription>
             </CardHeader>

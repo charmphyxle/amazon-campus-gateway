@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Globe, Plane, GraduationCap, Users, FileText, MessageCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const InternationalSection = () => {
+  const navigate = useNavigate();
+
   const services = [
     {
       icon: FileText,
@@ -25,6 +28,14 @@ const InternationalSection = () => {
       description: "Programs to help you adapt to the local culture and community"
     }
   ];
+
+  const handleExplorePathways = () => {
+    navigate('/programs');
+  };
+
+  const handleContactInternationalDesk = () => {
+    navigate('/contact-us');
+  };
 
   return (
     <section className="py-20 bg-gradient-to-br from-trust/10 to-primary/5">
@@ -72,11 +83,11 @@ const InternationalSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="default" size="lg">
+              <Button variant="default" size="lg" onClick={handleExplorePathways}>
                 <GraduationCap className="w-5 h-5 mr-2" />
                 Explore Pathways
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" onClick={handleContactInternationalDesk}>
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Contact International Desk
               </Button>

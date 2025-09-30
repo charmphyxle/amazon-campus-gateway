@@ -3,6 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import certificateCeremony from "@/assets/certificate-ceremony.jpg";
+import sarahJohnson from "@/assets/student-portraits/sarah-johnson.jpg";
+import ahmedHassan from "@/assets/student-portraits/ahmed-hassan.jpg";
+import mariaRodriguez from "@/assets/student-portraits/maria-rodriguez.jpg";
+import chenWei from "@/assets/student-portraits/chen-wei.jpg";
 
 const TestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -14,15 +18,15 @@ const TestimonialsSection = () => {
       course: "Diploma in Business Administration",
       rating: 5,
       text: "Amazon College provided me with exceptional education and support. The international environment helped me grow both personally and professionally.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=150&h=150&fit=crop&crop=face"
+      image: sarahJohnson
     },
     {
       name: "Ahmed Hassan",
-      country: "Egypt",
+      country: "Egypt", 
       course: "English Language Course",
       rating: 5,
       text: "The English program here is outstanding. I improved my language skills significantly and gained confidence for my career advancement.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+      image: ahmedHassan
     },
     {
       name: "Maria Rodriguez",
@@ -30,15 +34,15 @@ const TestimonialsSection = () => {
       course: "Teacher Training Program",
       rating: 5,
       text: "The teacher training course transformed my teaching methods. The practical approach and experienced instructors made all the difference.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+      image: mariaRodriguez
     },
     {
       name: "Chen Wei",
       country: "China",
-      course: "International Foundation Program",
+      course: "International Foundation Program", 
       rating: 5,
       text: "Amazon College helped me transition smoothly to university studies. The support and guidance I received were invaluable.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+      image: chenWei
     }
   ];
 
