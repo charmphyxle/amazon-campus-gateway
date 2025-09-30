@@ -9,7 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Mail, Phone, MapPin, Clock, MessageCircle, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, MessageCircle, Send, Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -51,11 +51,11 @@ const ContactUs = () => {
   ];
 
   const socialLinks = [
-    { name: "Facebook", icon: "📘", link: "#" },
-    { name: "Instagram", icon: "📷", link: "#" },
-    { name: "LinkedIn", icon: "💼", link: "#" },
-    { name: "Twitter", icon: "🐦", link: "#" },
-    { name: "YouTube", icon: "📺", link: "#" }
+    { name: "Facebook", icon: Facebook, link: "https://facebook.com", color: "from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600" },
+    { name: "Instagram", icon: Instagram, link: "https://instagram.com", color: "from-pink-500 via-purple-500 to-indigo-500 hover:from-pink-400 hover:via-purple-400 hover:to-indigo-400" },
+    { name: "LinkedIn", icon: Linkedin, link: "https://linkedin.com", color: "from-blue-700 to-blue-800 hover:from-blue-600 hover:to-blue-700" },
+    { name: "Twitter", icon: Twitter, link: "https://twitter.com", color: "from-sky-500 to-sky-600 hover:from-sky-400 hover:to-sky-500" },
+    { name: "YouTube", icon: Youtube, link: "https://youtube.com", color: "from-red-600 to-red-700 hover:from-red-500 hover:to-red-600" }
   ];
 
   const handleInputChange = (field: string, value: string) => {
@@ -263,20 +263,22 @@ const ContactUs = () => {
                   <CardDescription>Stay connected on social media</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex gap-4">
-                    {socialLinks.map((social) => (
-                      <Button
-                        key={social.name}
-                        variant="outline"
-                        size="icon"
-                        className="hover:scale-110 transition-transform duration-300"
-                        asChild
-                      >
-                        <a href={social.link} target="_blank" rel="noopener noreferrer">
-                          <span className="text-lg">{social.icon}</span>
+                  <div className="flex flex-wrap gap-3">
+                    {socialLinks.map((social) => {
+                      const IconComponent = social.icon;
+                      return (
+                        <a
+                          key={social.name}
+                          href={social.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`group w-12 h-12 bg-gradient-to-r ${social.color} rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border border-white/20`}
+                          title={social.name}
+                        >
+                          <IconComponent className="w-5 h-5 text-white" />
                         </a>
-                      </Button>
-                    ))}
+                      );
+                    })}
                   </div>
                 </CardContent>
               </Card>

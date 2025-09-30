@@ -217,41 +217,41 @@ export default function HeroSection() {
                   href="https://facebook.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="group w-8 h-8 sm:w-9 sm:h-9 bg-white/15 hover:bg-blue-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border border-white/20"
+                  className="group w-8 h-8 sm:w-9 sm:h-9 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border border-blue-400/30"
                 >
-                  <Facebook className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white group-hover:text-white" />
+                  <Facebook className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
                 </a>
                 <a 
                   href="https://twitter.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="group w-8 h-8 sm:w-9 sm:h-9 bg-white/15 hover:bg-sky-500 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border border-white/20"
+                  className="group w-8 h-8 sm:w-9 sm:h-9 bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-400 hover:to-sky-500 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border border-sky-300/30"
                 >
-                  <Twitter className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white group-hover:text-white" />
+                  <Twitter className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
                 </a>
                 <a 
                   href="https://instagram.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="group w-8 h-8 sm:w-9 sm:h-9 bg-white/15 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border border-white/20"
+                  className="group w-8 h-8 sm:w-9 sm:h-9 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:from-pink-400 hover:via-purple-400 hover:to-indigo-400 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border border-pink-300/30"
                 >
-                  <Instagram className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white group-hover:text-white" />
+                  <Instagram className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
                 </a>
                 <a 
                   href="https://youtube.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="group w-8 h-8 sm:w-9 sm:h-9 bg-white/15 hover:bg-red-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border border-white/20"
+                  className="group w-8 h-8 sm:w-9 sm:h-9 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border border-red-400/30"
                 >
-                  <Youtube className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white group-hover:text-white" />
+                  <Youtube className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
                 </a>
                 <a 
                   href="https://linkedin.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="group w-8 h-8 sm:w-9 sm:h-9 bg-white/15 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border border-white/20"
+                  className="group w-8 h-8 sm:w-9 sm:h-9 bg-gradient-to-r from-blue-700 to-blue-800 hover:from-blue-600 hover:to-blue-700 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border border-blue-400/30"
                 >
-                  <Linkedin className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white group-hover:text-white" />
+                  <Linkedin className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
                 </a>
               </div>
             </div>
