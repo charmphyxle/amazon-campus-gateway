@@ -2,8 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Download, Phone, MessageCircle } from "lucide-react";
 import campusExterior from "@/assets/campus-exterior.jpg";
+import ChatBot from "@/components/ChatBot";
+import { useState } from "react";
 
 const CTASection = () => {
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const actions = [
     {
       icon: Download,
@@ -97,7 +100,13 @@ const CTASection = () => {
                   <Button 
                     variant={action.variant}
                     className="w-full group-hover:scale-105 transition-transform duration-300 hover-glow"
-                    onClick={action.title === "Download Brochure" ? () => window.open('/amazon-college-brochure.pdf', '_blank') : undefined}
+                    onClick={() => {
+                      if (action.title === "Download Brochure") {
+                        window.open('/amazon-college-brochure.pdf', '_blank');
+                      } else if (action.title === "Live Chat Support") {
+                        setIsChatOpen(true);
+                      }
+                    }}
                   >
                     {action.button}
                   </Button>
@@ -123,6 +132,8 @@ const CTASection = () => {
           </div>
         </div>
       </div>
+
+      <ChatBot isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
     </section>
   );
 };
