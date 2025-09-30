@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -131,9 +131,10 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose }) => {
       <div className="fixed bottom-4 right-4 z-50">
         <Button
           onClick={() => setIsMinimized(false)}
-          className="rounded-full w-14 h-14 bg-primary hover:bg-primary/90 shadow-lg"
+          className="rounded-full w-12 h-12 sm:w-14 sm:h-14 bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-200"
+          aria-label="Open chat"
         >
-          <MessageCircle className="w-6 h-6 text-white" />
+          <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
         </Button>
       </div>
     );
@@ -141,56 +142,63 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose }) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md h-[600px] flex flex-col p-0">
-        <DialogHeader className="flex flex-row items-center justify-between p-4 border-b bg-primary text-white">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-              <Bot className="w-5 h-5 text-white" />
+      <DialogContent className="sm:max-w-lg w-[95vw] max-h-[90vh] h-[600px] flex flex-col p-0 gap-0">
+        <DialogDescription className="sr-only">
+          AI chatbot for Amazon College assistance with programs, admissions, and general inquiries
+        </DialogDescription>
+        <DialogHeader className="shrink-0">
+          <div className="flex items-center justify-between p-4 border-b bg-primary text-white">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                <Bot className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <DialogTitle className="text-white text-sm sm:text-base">Amazon College AI Assistant</DialogTitle>
+                <p className="text-xs text-white/80">Online • Always here to help</p>
+              </div>
             </div>
-            <div>
-              <DialogTitle className="text-white">Amazon College AI Assistant</DialogTitle>
-              <p className="text-xs text-white/80">Online • Always here to help</p>
+            <div className="flex items-center gap-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsMinimized(true)}
+                className="text-white hover:bg-white/20 h-8 w-8 p-0"
+                aria-label="Minimize chat"
+              >
+                <Minimize2 className="w-4 h-4" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={onClose}
+                className="text-white hover:bg-white/20 h-8 w-8 p-0"
+                aria-label="Close chat"
+              >
+                <X className="w-4 h-4" />
+              </Button>
             </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsMinimized(true)}
-              className="text-white hover:bg-white/20"
-            >
-              <Minimize2 className="w-4 h-4" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={onClose}
-              className="text-white hover:bg-white/20"
-            >
-              <X className="w-4 h-4" />
-            </Button>
           </div>
         </DialogHeader>
 
-        <ScrollArea className="flex-1 p-4">
-          <div className="space-y-4">
+        <ScrollArea className="flex-1 min-h-0">
+          <div className="space-y-4 p-4">
             {messages.map((message) => (
               <div
                 key={message.id}
-                className={`flex gap-3 ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                className={`flex gap-2 sm:gap-3 ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 {message.sender === 'bot' && (
-                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                    <Bot className="w-4 h-4 text-white" />
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
+                    <Bot className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                   </div>
                 )}
                 
-                <Card className={`max-w-[80%] p-3 ${
+                <Card className={`max-w-[85%] sm:max-w-[80%] p-2 sm:p-3 ${
                   message.sender === 'user' 
                     ? 'bg-primary text-white' 
                     : 'bg-muted'
                 }`}>
-                  <p className="text-sm whitespace-pre-line">{message.content}</p>
+                  <p className="text-xs sm:text-sm whitespace-pre-line leading-relaxed">{message.content}</p>
                   <p className={`text-xs mt-1 ${
                     message.sender === 'user' ? 'text-white/70' : 'text-muted-foreground'
                   }`}>
@@ -199,19 +207,19 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose }) => {
                 </Card>
 
                 {message.sender === 'user' && (
-                  <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
-                    <User className="w-4 h-4 text-white" />
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 mt-1">
+                    <User className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                   </div>
                 )}
               </div>
             ))}
             
             {isLoading && (
-              <div className="flex gap-3 justify-start">
-                <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                  <Bot className="w-4 h-4 text-white" />
+              <div className="flex gap-2 sm:gap-3 justify-start">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary flex items-center justify-center mt-1">
+                  <Bot className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 </div>
-                <Card className="bg-muted p-3">
+                <Card className="bg-muted p-2 sm:p-3">
                   <div className="flex space-x-1">
                     <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce"></div>
                     <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
@@ -220,21 +228,21 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose }) => {
                 </Card>
               </div>
             )}
+            <div ref={messagesEndRef} />
           </div>
-          <div ref={messagesEndRef} />
         </ScrollArea>
 
         {messages.length === 1 && (
-          <div className="px-4 pb-2">
-            <p className="text-sm text-muted-foreground mb-2">Quick questions:</p>
-            <div className="flex flex-wrap gap-2">
+          <div className="px-4 pb-2 shrink-0 border-t bg-muted/30">
+            <p className="text-xs sm:text-sm text-muted-foreground mb-2 pt-2">Quick questions:</p>
+            <div className="flex flex-wrap gap-1 sm:gap-2">
               {quickActions.map((action, index) => (
                 <Button
                   key={index}
                   variant="outline"
                   size="sm"
                   onClick={() => handleSendMessage(action)}
-                  className="text-xs"
+                  className="text-xs h-7 px-2"
                 >
                   {action}
                 </Button>
@@ -243,7 +251,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose }) => {
           </div>
         )}
 
-        <div className="border-t p-4">
+        <div className="border-t p-3 sm:p-4 bg-background shrink-0">
           <div className="flex gap-2">
             <Input
               value={inputValue}
@@ -251,13 +259,15 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose }) => {
               onKeyPress={handleKeyPress}
               placeholder="Type your message..."
               disabled={isLoading}
-              className="flex-1"
+              className="flex-1 text-sm"
+              maxLength={500}
             />
             <Button
               onClick={() => handleSendMessage()}
               disabled={!inputValue.trim() || isLoading}
               size="sm"
-              className="px-3"
+              className="px-3 shrink-0"
+              aria-label="Send message"
             >
               <Send className="w-4 h-4" />
             </Button>
