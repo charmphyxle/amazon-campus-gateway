@@ -89,9 +89,9 @@ const WhyChooseSection = () => {
                   </p>
 
                   {/* Hover Arrow */}
-                  <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <ArrowRight className="w-5 h-5 text-primary mx-auto" />
-                  </div>
+                  </div> */}
                 </CardContent>
               </Card>
             );
