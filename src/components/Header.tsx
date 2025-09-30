@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -10,6 +11,7 @@ import excellenceBadge from "@/assets/excellence-badge.png";
 import accreditationBadge from "@/assets/accreditation-badge.png";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [quickVerifyId, setQuickVerifyId] = useState("");
   const [isQuickLoading, setIsQuickLoading] = useState(false);
   const [quickModalOpen, setQuickModalOpen] = useState(false);
@@ -44,13 +46,18 @@ const Header = () => {
     setIsQuickError(false);
   };
 
+  const handleRegisterClick = () => {
+    navigate('/apply');
+  };
+
   return (
     <div className="bg-gradient-primary text-primary-foreground">
       {/* Top Quick Access Bar */}
       <div className="border-b border-primary-light/20">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center justify-between py-2 gap-2 lg:gap-4">
-            <div className="flex items-center gap-2 lg:gap-4 flex-wrap justify-center lg:justify-start">
+          <div className="flex flex-col lg:flex-row items-center justify-between py-3 gap-4">
+            {/* Left side - Badges */}
+            <div className="flex items-center gap-2 lg:gap-4 flex-wrap justify-center lg:justify-start order-1 lg:order-1">
               <Badge variant="secondary" className="flex items-center gap-1 text-xs bg-white/15 backdrop-blur-sm">
                 <img src={excellenceBadge} alt="Excellence" className="w-3 h-3" />
                 <span className="hidden sm:inline">15+ Years Excellence</span>
@@ -71,26 +78,43 @@ const Header = () => {
                 <span className="hidden sm:inline">Global Recognition</span>
                 <span className="sm:hidden">Global</span>
               </Badge>
-              <div className="hidden lg:flex items-center text-xs">
-                <span className="opacity-80">📞 +94 114-386-126</span>
-                <span className="mx-2 opacity-60">|</span>
-                <span className="opacity-80">📧 info@amazoncollege.lk</span>
-              </div>
             </div>
             
-            <div className="flex items-center gap-1 lg:gap-2 flex-wrap justify-center">
-              <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs px-2 lg:px-3 hover:scale-105 transition-transform">
-                <Users className="w-3 h-3 lg:w-4 lg:h-4" />
-                <span className="hidden sm:inline ml-1">Student LMS</span>
-              </Button>
-              <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs px-2 lg:px-3 hover:scale-105 transition-transform">
-                <BookOpen className="w-3 h-3 lg:w-4 lg:h-4" />
-                <span className="hidden sm:inline ml-1">Staff LMS</span>
-              </Button>
-              <Button variant="cta" size="sm" className="text-xs px-2 lg:px-3 hover:scale-105 transition-transform">
-                <span className="hidden sm:inline">Register Online</span>
-                <span className="sm:hidden">Register</span>
-              </Button>
+            {/* Right side - Action Buttons and Contact Info */}
+            <div className="flex flex-col items-center lg:items-end gap-3 order-2 lg:order-2">
+              {/* Buttons */}
+              <div className="flex items-center gap-2 flex-wrap justify-center">
+                <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs px-3 hover:scale-105 transition-transform">
+                  <Users className="w-4 h-4" />
+                  <span className="hidden sm:inline ml-1">Student LMS</span>
+                </Button>
+                <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs px-3 hover:scale-105 transition-transform">
+                  <BookOpen className="w-4 h-4" />
+                  <span className="hidden sm:inline ml-1">Staff LMS</span>
+                </Button>
+                <Button 
+                  variant="cta" 
+                  size="sm" 
+                  onClick={handleRegisterClick}
+                  className="text-xs px-3 hover:scale-105 transition-transform"
+                >
+                  <span className="hidden sm:inline">Register Online</span>
+                  <span className="sm:hidden">Register</span>
+                </Button>
+              </div>
+              
+              {/* Contact Info - Larger and more prominent */}
+              <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-sm lg:text-base">
+                <div className="flex items-center gap-2 font-medium">
+                  <span className="text-lg">📞</span>
+                  <span className="text-primary-foreground">+94 114-386-126</span>
+                </div>
+                <div className="hidden sm:block w-px h-4 bg-white/30"></div>
+                <div className="flex items-center gap-2 font-medium">
+                  <span className="text-lg">📧</span>
+                  <span className="text-primary-foreground">info@amazoncollege.lk</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
