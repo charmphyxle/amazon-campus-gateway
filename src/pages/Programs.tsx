@@ -265,7 +265,7 @@ const Programs = () => {
                                 </div>
 
                                 <div className="mt-6 space-y-3">
-                                  <Button className="w-full">
+                                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
                                     Apply Now
                                   </Button>
                                   <Button variant="outline" className="w-full">
@@ -292,7 +292,7 @@ const Programs = () => {
         <div className="fixed bottom-8 right-8 z-50">
           <Button 
             size="lg" 
-            className="shadow-elegant-lg animate-pulse hover:animate-none"
+            className="shadow-elegant-lg animate-pulse hover:animate-none bg-primary text-primary-foreground hover:bg-primary/90"
             onClick={() => setFloatingApplyVisible(false)}
           >
             Apply Now
