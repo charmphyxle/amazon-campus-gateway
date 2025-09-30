@@ -214,7 +214,7 @@ export default function HeroSection() {
               <span className="text-white/80 text-sm sm:text-base font-medium mr-2">Follow Us:</span>
               <div className="flex items-center gap-2 sm:gap-3">
                 <a 
-                  href="https://facebook.com" 
+                  href="https://web.facebook.com/amazoncollege?ref=embed_page" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="group w-8 h-8 sm:w-9 sm:h-9 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border border-blue-400/30"
@@ -238,7 +238,7 @@ export default function HeroSection() {
                   <Instagram className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
                 </a>
                 <a 
-                  href="https://youtube.com" 
+                  href="https://youtube.com/amazoncollege" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="group w-8 h-8 sm:w-9 sm:h-9 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border border-red-400/30"

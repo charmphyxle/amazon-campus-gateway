@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Globe, Plane, GraduationCap, Users, FileText, MessageCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import InternationalContactForm from "./InternationalContactForm";
 
 const InternationalSection = () => {
   const navigate = useNavigate();
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
   const services = [
     {
@@ -34,7 +37,7 @@ const InternationalSection = () => {
   };
 
   const handleContactInternationalDesk = () => {
-    navigate('/contact-us');
+    setIsContactFormOpen(true);
   };
 
   return (
@@ -128,6 +131,12 @@ const InternationalSection = () => {
           </div>
         </div>
       </div>
+
+      {/* International Contact Form Modal */}
+      <InternationalContactForm 
+        isOpen={isContactFormOpen} 
+        onClose={() => setIsContactFormOpen(false)} 
+      />
     </section>
   );
 };
