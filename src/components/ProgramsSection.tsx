@@ -274,7 +274,7 @@ const ProgramsSection = () => {
           </div>
 
           {/* Pagination Indicators */}
-          <div className="flex justify-center mt-12 space-x-3">
+          {/* <div className="flex justify-center mt-12 space-x-3">
             {Array.from({ length: maxIndex + 1 }).map((_, index) => (
               <button
                 key={index}
@@ -287,7 +287,7 @@ const ProgramsSection = () => {
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Mobile View - Grid Layout */}
