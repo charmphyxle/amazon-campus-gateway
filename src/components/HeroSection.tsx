@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, BookOpen, UserPlus, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight, BookOpen, UserPlus, Play, Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
 import YouTubeModal from "./YouTubeModal";
 import heroGraduation from "@/assets/hero-graduation.jpg";
 import heroClassroom from "@/assets/hero-classroom.jpg";
@@ -118,7 +118,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative w-full h-[85svh] sm:h-[90svh] md:h-screen overflow-hidden">
+    <section className="relative w-full min-h-screen overflow-hidden">
       {/* Background Images */}
       <div className="absolute inset-0" aria-hidden>
         {slides.map((s, i) => (
@@ -161,8 +161,8 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex items-center justify-center h-full px-3 sm:px-4 md:px-6 text-center pt-20 sm:pt-24 md:pt-0">
-        <div className="max-w-5xl text-white">
+      <div className="relative z-10 flex items-center justify-center min-h-screen px-3 sm:px-4 md:px-6 text-center pt-20 sm:pt-24 md:pt-28 lg:pt-0">
+        <div className="max-w-5xl text-white w-full">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight drop-shadow-[0_3px_10px_rgba(0,0,0,0.8)] bg-gradient-to-r from-white via-blue-100 to-orange-100 bg-clip-text text-transparent px-2">
             {slides[current].title}
           </h1>
@@ -207,6 +207,55 @@ export default function HeroSection() {
               <span className="font-medium">Watch Our Story</span>
             </button>
           </div>
+
+          {/* Social Media Icons */}
+          <div className="mt-4 sm:mt-6 flex justify-center">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <span className="text-white/80 text-sm sm:text-base font-medium mr-2">Follow Us:</span>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <a 
+                  href="https://facebook.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group w-8 h-8 sm:w-9 sm:h-9 bg-white/15 hover:bg-blue-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border border-white/20"
+                >
+                  <Facebook className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white group-hover:text-white" />
+                </a>
+                <a 
+                  href="https://twitter.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group w-8 h-8 sm:w-9 sm:h-9 bg-white/15 hover:bg-sky-500 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border border-white/20"
+                >
+                  <Twitter className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white group-hover:text-white" />
+                </a>
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group w-8 h-8 sm:w-9 sm:h-9 bg-white/15 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border border-white/20"
+                >
+                  <Instagram className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white group-hover:text-white" />
+                </a>
+                <a 
+                  href="https://youtube.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group w-8 h-8 sm:w-9 sm:h-9 bg-white/15 hover:bg-red-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border border-white/20"
+                >
+                  <Youtube className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white group-hover:text-white" />
+                </a>
+                <a 
+                  href="https://linkedin.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group w-8 h-8 sm:w-9 sm:h-9 bg-white/15 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border border-white/20"
+                >
+                  <Linkedin className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white group-hover:text-white" />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -225,7 +274,7 @@ export default function HeroSection() {
       </button>
 
       {/* Indicators */}
-      <div className="absolute bottom-4 sm:bottom-5 md:bottom-7 left-1/2 -translate-x-1/2 z-20 flex gap-1.5 sm:gap-2">
+      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-1.5 sm:gap-2">
         {slides.map((_, i) => (
           <button
             key={i}
