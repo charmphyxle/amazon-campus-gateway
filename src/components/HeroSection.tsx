@@ -6,11 +6,14 @@ import YouTubeModal from "./YouTubeModal";
 import heroGraduation from "@/assets/hero-graduation.jpg";
 import heroClassroom from "@/assets/hero-classroom.jpg";
 import heroCampus from "@/assets/hero-campus.jpg";
-import awardsBadge from "@/assets/awards-badge.png";
-import excellenceBadge from "@/assets/excellence-badge.png";
-import accreditationBadge from "@/assets/accreditation-badge.png";
-import successBadge from "@/assets/success-badge.png";
-import partnershipBadge from "@/assets/partnership-badge.png";
+import excellenceResponsive from "@/assets/badges/excellence-responsive.png";
+import awardsResponsive from "@/assets/badges/awards-responsive.png";
+import accreditationResponsive from "@/assets/badges/accreditation-responsive.png";
+import successResponsive from "@/assets/badges/success-responsive.png";
+import partnershipResponsive from "@/assets/badges/partnership-responsive.png";
+import globalResponsive from "@/assets/badges/global-responsive.png";
+import graduatesResponsive from "@/assets/badges/graduates-responsive.png";
+import researchResponsive from "@/assets/badges/research-responsive.png";
 
 /**
  * HeroSection (Bright + Sharp + Responsive)
@@ -89,11 +92,14 @@ export default function HeroSection() {
   );
 
   const badges = [
-    { icon: excellenceBadge, isImage: true },
-    { icon: awardsBadge, isImage: true },
-    { icon: accreditationBadge, isImage: true },
-    { icon: successBadge, isImage: true },
-    { icon: partnershipBadge, isImage: true },
+    { icon: excellenceResponsive },
+    { icon: awardsResponsive },
+    { icon: accreditationResponsive },
+    { icon: successResponsive },
+    { icon: partnershipResponsive },
+    { icon: globalResponsive },
+    { icon: graduatesResponsive },
+    { icon: researchResponsive },
   ];
 
   useEffect(() => {
@@ -136,17 +142,18 @@ export default function HeroSection() {
 
       {/* Achievement Badges - Mobile Responsive */}
       <div className="absolute top-4 sm:top-6 md:top-8 left-1/2 -translate-x-1/2 z-20 w-full max-w-7xl px-2 sm:px-4">
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2 sm:gap-3 md:gap-4">
+        <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-2 sm:gap-3 md:gap-4 justify-items-center"
+        style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(60px, 1fr))' }}>
           {badges.map((badge, i) => (
             <div
               key={i}
-              className="bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 flex items-center justify-center animate-bounce-in hover:bg-white/25 hover:scale-105 transition-all duration-300 cursor-pointer group"
+              className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-2 sm:p-3 flex items-center justify-center animate-bounce-in hover:bg-white/20 hover:scale-110 transition-all duration-300 cursor-pointer group shadow-lg"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               <img 
                 src={badge.icon} 
                 alt="Achievement Badge" 
-                className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 object-contain group-hover:scale-110 transition-transform" 
+                className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-contain group-hover:scale-105 transition-transform filter drop-shadow-sm" 
               />
             </div>
           ))}
