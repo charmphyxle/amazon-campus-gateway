@@ -87,10 +87,6 @@ const Header = () => {
                 <BookOpen className="w-3 h-3 lg:w-4 lg:h-4" />
                 <span className="hidden sm:inline ml-1">Staff LMS</span>
               </Button>
-              <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs px-2 lg:px-3 hover:scale-105 transition-transform">
-                <Download className="w-3 h-3 lg:w-4 lg:h-4" />
-                <span className="hidden md:inline ml-1">Download App</span>
-              </Button>
               <Button variant="cta" size="sm" className="text-xs px-2 lg:px-3 hover:scale-105 transition-transform">
                 <span className="hidden sm:inline">Register Online</span>
                 <span className="sm:hidden">Register</span>
