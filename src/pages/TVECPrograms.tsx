@@ -280,7 +280,7 @@ const TVECPrograms = () => {
               <Button size="lg" variant="secondary" className="hover-lift hover-glow" asChild>
                 <Link to="/apply">Reserve Your Seat</Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-blue-600" asChild>
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary-foreground bg-white/10 backdrop-blur-sm" asChild>
                 <Link to="/contact">Get Information</Link>
               </Button>
             </div>

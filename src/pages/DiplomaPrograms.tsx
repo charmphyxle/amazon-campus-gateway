@@ -180,7 +180,7 @@ const DiplomaPrograms = () => {
               <Button size="lg" variant="secondary" className="hover-lift hover-glow" asChild>
                 <Link to="/apply">Apply Now</Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary" asChild>
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary-foreground bg-white/10 backdrop-blur-sm" asChild>
                 <Link to="/contact">Get Guidance</Link>
               </Button>
             </div>

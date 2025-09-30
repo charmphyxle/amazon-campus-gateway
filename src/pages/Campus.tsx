@@ -151,7 +151,7 @@ const Campus = () => {
                 <Camera className="w-4 h-4 mr-2" />
                 Virtual Tour
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary-foreground bg-white/10 backdrop-blur-sm">
                 <MapPin className="w-4 h-4 mr-2" />
                 Visit Campus
               </Button>
