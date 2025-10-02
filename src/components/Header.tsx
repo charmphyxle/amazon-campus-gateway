@@ -104,17 +104,6 @@ const Header = () => {
               </div>
               
               {/* Contact Info - Larger and more prominent */}
-              <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-sm lg:text-base">
-                <div className="flex items-center gap-2 font-medium">
-                  <span className="text-lg">📞</span>
-                  <span className="text-primary-foreground">+94 114-386-126</span>
-                </div>
-                <div className="hidden sm:block w-px h-4 bg-white/30"></div>
-                <div className="flex items-center gap-2 font-medium">
-                  <span className="text-lg">📧</span>
-                  <span className="text-primary-foreground">info@amazoncollege.lk</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
