@@ -208,8 +208,8 @@ export default function HeroSection() {
               <span className="font-medium">Watch Our Story</span>
             </button>
           </div>
-
-          
+        </div>
+      </div>
 
       {/* Navigation Arrows */}
       <button
