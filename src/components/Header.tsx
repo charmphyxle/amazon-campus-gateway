@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -17,6 +17,25 @@ const Header = () => {
   const [quickModalOpen, setQuickModalOpen] = useState(false);
   const [quickFoundStudent, setQuickFoundStudent] = useState<StudentRecord | null>(null);
   const [isQuickError, setIsQuickError] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const handleQuickVerification = () => {
     if (!quickVerifyId.trim()) return;
@@ -51,7 +70,7 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-gradient-primary text-primary-foreground">
+    <div className={`bg-gradient-primary text-primary-foreground sticky top-[73px] z-40 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       {/* Top Quick Access Bar */}
       <div className="py-2 lg:py-3">
         <div className="container mx-auto px-4">

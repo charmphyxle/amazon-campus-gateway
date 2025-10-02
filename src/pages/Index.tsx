@@ -21,8 +21,8 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <Navigation />
+      <Header />
       <main className="w-full">
         <HeroSection />
         <div className="space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-20">
