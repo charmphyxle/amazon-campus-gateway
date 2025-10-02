@@ -27,6 +27,7 @@ const SLIDE_INTERVAL = 6000;
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
   const [showVideoModal, setShowVideoModal] = useState(false);
+  const [showSocialBar, setShowSocialBar] = useState(true);
   const navigate = useNavigate();
 
   const slides = useMemo(
@@ -284,6 +285,80 @@ export default function HeroSection() {
             }`}
           />
         ))}
+      </div>
+
+      {/* Right Side Social Media Bar */}
+      <div className={`fixed right-0 top-1/2 -translate-y-1/2 z-30 transition-transform duration-300 ${showSocialBar ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="bg-white/10 backdrop-blur-md border-l border-t border-b border-white/20 rounded-l-2xl shadow-2xl overflow-hidden">
+          {/* Toggle Button */}
+          <button
+            onClick={() => setShowSocialBar(!showSocialBar)}
+            className="w-full py-2 px-3 bg-white/20 hover:bg-white/30 transition-colors border-b border-white/20 flex items-center justify-center"
+            title={showSocialBar ? "Hide social media" : "Show social media"}
+          >
+            <ChevronRight className={`w-5 h-5 text-white transition-transform ${showSocialBar ? 'rotate-0' : 'rotate-180'}`} />
+          </button>
+          
+          {/* Social Media Icons */}
+          <div className="flex flex-col gap-3 py-4 px-3">
+            <a 
+              href="https://facebook.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group w-11 h-11 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border border-blue-400/30"
+              title="Follow us on Facebook"
+            >
+              <Facebook className="w-5 h-5 text-white" />
+            </a>
+            <a 
+              href="https://twitter.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group w-11 h-11 bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-400 hover:to-sky-500 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border border-sky-300/30"
+              title="Follow us on Twitter"
+            >
+              <Twitter className="w-5 h-5 text-white" />
+            </a>
+            <a 
+              href="https://instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group w-11 h-11 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:from-pink-400 hover:via-purple-400 hover:to-indigo-400 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border border-pink-300/30"
+              title="Follow us on Instagram"
+            >
+              <Instagram className="w-5 h-5 text-white" />
+            </a>
+            <a 
+              href="https://youtube.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group w-11 h-11 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border border-red-400/30"
+              title="Watch us on YouTube"
+            >
+              <Youtube className="w-5 h-5 text-white" />
+            </a>
+            <a 
+              href="https://linkedin.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group w-11 h-11 bg-gradient-to-r from-blue-700 to-blue-800 hover:from-blue-600 hover:to-blue-700 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border border-blue-400/30"
+              title="Connect on LinkedIn"
+            >
+              <Linkedin className="w-5 h-5 text-white" />
+            </a>
+          </div>
+        </div>
+        
+        {/* Hidden state toggle button */}
+        {!showSocialBar && (
+          <button
+            onClick={() => setShowSocialBar(true)}
+            className="absolute -left-10 top-1/2 -translate-y-1/2 w-10 h-20 bg-white/10 backdrop-blur-md hover:bg-white/20 border-l border-t border-b border-white/20 rounded-l-lg transition-colors flex items-center justify-center shadow-lg"
+            title="Show social media"
+          >
+            <ChevronLeft className="w-5 h-5 text-white" />
+          </button>
+        )}
       </div>
 
       {/* YouTube Modal */}
