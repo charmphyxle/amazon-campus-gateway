@@ -72,20 +72,20 @@ const Header = () => {
   return (
     <div className={`bg-gradient-primary text-primary-foreground sticky top-[73px] z-40 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       {/* Top Quick Access Bar */}
-      <div className="py-2 lg:py-3">
+      <div className="py-3 md:py-4">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-3 lg:gap-4">
-            <div className="flex flex-col sm:flex-row items-center gap-2 w-full lg:w-auto">
-              <div className="flex items-center gap-1 mr-0 sm:mr-2">
-                <Shield className="w-4 h-4" />
-                <span className="text-sm font-medium">Quick Verification:</span>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+              <div className="flex items-center gap-2">
+                <Shield className="w-4 h-4 md:w-5 md:h-5" />
+                <span className="text-sm md:text-base font-semibold">Quick Verification</span>
               </div>
               <div className="flex items-center gap-2 w-full sm:w-auto">
                 <Input
                   placeholder="Student ID (e.g., AMZ/A001)"
                   value={quickVerifyId}
                   onChange={(e) => setQuickVerifyId(e.target.value)}
-                  className="w-full sm:w-48 lg:w-64 bg-white/10 border-white/20 text-white placeholder:text-white/70 focus:bg-white/20 text-sm"
+                  className="w-full sm:w-52 md:w-64 bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:bg-white/20 text-sm md:text-base h-9 md:h-10"
                   onKeyPress={(e) => e.key === 'Enter' && handleQuickVerification()}
                 />
                 <Button 
@@ -93,26 +93,22 @@ const Header = () => {
                   size="sm"
                   onClick={handleQuickVerification}
                   disabled={!quickVerifyId.trim() || isQuickLoading}
-                  className="bg-white/20 hover:bg-white/30 whitespace-nowrap"
+                  className="bg-white/20 hover:bg-white/30 text-white border-white/30 h-9 md:h-10 px-3 md:px-4"
                 >
                   {isQuickLoading ? (
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary" />
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white" />
                   ) : (
                     <>
-                      <Search className="w-4 h-4 mr-1" />
-                      {/* <span className="hidden sm:inline">Verify</span> */}
-                      <span className="sm:hidden">✓</span>
+                      <Search className="w-4 h-4" />
+                      <span className="ml-1 hidden sm:inline">Verify</span>
                     </>
                   )}
                 </Button>
               </div>
             </div>
             
-            <div className="text-xs lg:text-sm text-center lg:text-right">
-              <span className="opacity-90">
-                {/* <span className="hidden sm:inline">🎓 For employers & institutions to verify credentials instantly</span> */}
-                <span className="sm:hidden">🎓 Instant credential verification</span>
-              </span>
+            <div className="text-xs md:text-sm text-center md:text-right opacity-90 hidden md:block">
+              <span>🎓 For employers & institutions to verify credentials instantly</span>
             </div>
           </div>
         </div>

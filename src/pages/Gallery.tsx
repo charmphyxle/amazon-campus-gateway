@@ -887,8 +887,8 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <Navigation />
+      <Header />
       
       {/* Hero Banner */}
       <section className="relative h-96 bg-gradient-to-br from-secondary to-trust overflow-hidden">

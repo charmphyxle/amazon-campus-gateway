@@ -20,8 +20,8 @@ const TVECPrograms = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
       <Navigation />
+      <Header />
       
       <main className="flex-1">
         {/* Hero Section */}

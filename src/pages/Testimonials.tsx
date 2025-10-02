@@ -170,8 +170,8 @@ const Testimonials = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <Navigation />
+      <Header />
 
       {/* Hero Section */}
       <section className="relative h-96 bg-gradient-to-br from-success to-trust overflow-hidden">

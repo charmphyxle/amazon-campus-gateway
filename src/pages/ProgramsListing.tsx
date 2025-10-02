@@ -155,8 +155,8 @@ const Programs: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <Navigation />
+      <Header />
       
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary/10 to-primary/5 py-16">

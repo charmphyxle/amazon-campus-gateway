@@ -7,8 +7,8 @@ import { Shield, Mail, Phone, Clock } from "lucide-react";
 const Privacy = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <Navigation />
+      <Header />
 
       {/* Hero Section */}
       <section className="relative h-96 bg-gradient-to-br from-primary to-trust overflow-hidden">

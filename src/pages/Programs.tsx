@@ -116,8 +116,8 @@ const Programs = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <Navigation />
+      <Header />
       
       {/* Hero Banner */}
       <section className="relative h-96 bg-gradient-to-br from-primary to-secondary overflow-hidden">

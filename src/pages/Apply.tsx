@@ -616,8 +616,8 @@ const Apply = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <Navigation />
+      <Header />
       
       {/* Hero Section */}
       <section className="relative py-16 bg-gradient-to-br from-primary to-secondary overflow-hidden">
