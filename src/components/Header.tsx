@@ -56,29 +56,7 @@ const Header = () => {
       <div className="border-b border-primary-light/20">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center justify-between py-3 gap-4">
-            {/* Left side - Badges */}
-            <div className="flex items-center gap-2 lg:gap-4 flex-wrap justify-center lg:justify-start order-1 lg:order-1">
-              <Badge variant="secondary" className="flex items-center gap-1 text-xs bg-white/15 backdrop-blur-sm">
-                <img src={excellenceBadge} alt="Excellence" className="w-3 h-3" />
-                <span className="hidden sm:inline">15+ Years Excellence</span>
-                <span className="sm:hidden">15+ Years</span>
-              </Badge>
-              <Badge variant="secondary" className="flex items-center gap-1 text-xs bg-white/15 backdrop-blur-sm">
-                <img src={accreditationBadge} alt="Accreditation" className="w-3 h-3" />
-                <span className="hidden sm:inline">International Accredited</span>
-                <span className="sm:hidden">Accredited</span>
-              </Badge>
-              <Badge variant="secondary" className="flex items-center gap-1 text-xs bg-white/15 backdrop-blur-sm">
-                <GraduationCap className="w-3 h-3" />
-                <span className="hidden sm:inline">10,000+ Graduates</span>
-                <span className="sm:hidden">10K+ Grads</span>
-              </Badge>
-              <Badge variant="secondary" className="flex items-center gap-1 text-xs bg-white/15 backdrop-blur-sm">
-                <Globe className="w-3 h-3" />
-                <span className="hidden sm:inline">Global Recognition</span>
-                <span className="sm:hidden">Global</span>
-              </Badge>
-            </div>
+           
             
             {/* Right side - Action Buttons and Contact Info */}
             <div className="flex flex-col items-center lg:items-end gap-3 order-2 lg:order-2">
@@ -86,11 +64,7 @@ const Header = () => {
               <div className="flex items-center gap-2 flex-wrap justify-center">
                 <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs px-3 hover:scale-105 transition-transform">
                   <Users className="w-4 h-4" />
-                  <span className="hidden sm:inline ml-1">Student LMS</span>
-                </Button>
-                <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs px-3 hover:scale-105 transition-transform">
-                  <BookOpen className="w-4 h-4" />
-                  <span className="hidden sm:inline ml-1">Staff LMS</span>
+                  <span className="hidden sm:inline ml-1">Amazon LMS</span>
                 </Button>
                 <Button 
                   variant="cta" 
@@ -104,6 +78,17 @@ const Header = () => {
               </div>
               
               {/* Contact Info - Larger and more prominent */}
+              <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-sm lg:text-base">
+                <div className="flex items-center gap-2 font-medium">
+                  <span className="text-lg">📞</span>
+                  <span className="text-primary-foreground">+94 114-386-126</span>
+                </div>
+                <div className="hidden sm:block w-px h-4 bg-white/30"></div>
+                <div className="flex items-center gap-2 font-medium">
+                  <span className="text-lg">📧</span>
+                  <span className="text-primary-foreground">info@amazoncollege.lk</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
