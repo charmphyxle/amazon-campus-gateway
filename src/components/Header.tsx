@@ -53,9 +53,6 @@ const Header = () => {
   return (
     <div className="bg-gradient-primary text-primary-foreground">
       {/* Top Quick Access Bar */}
-
-      
-      {/* Student Verification Bar */}
       <div className="py-2 lg:py-3">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-3 lg:gap-4">
